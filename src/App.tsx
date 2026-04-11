@@ -12,6 +12,7 @@ import BlogPage from "./pages/BlogPage.tsx";
 import BlogPostPage from "./pages/BlogPostPage.tsx";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage.tsx";
 import TermsPage from "./pages/TermsPage.tsx";
+import ThankYouPage from "./pages/ThankYouPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/blogi/:slug" element={<BlogPostPage />} />
           <Route path="/tietosuoja" element={<PrivacyPolicyPage />} />
           <Route path="/kayttoehdot" element={<TermsPage />} />
+          <Route path="/kiitos" element={<ThankYouPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
