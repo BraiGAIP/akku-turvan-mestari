@@ -15,8 +15,9 @@ const categories = [
 
 const CoverageSection = () => (
   <>
-    <section className="py-20 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-20 px-6 relative">
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-secondary/5 blur-[120px]" />
+      <div className="max-w-6xl mx-auto relative">
         <div className="text-center mb-14">
           <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-secondary bg-secondary/10 mb-4">
             GoSafe Electric
@@ -29,8 +30,8 @@ const CoverageSection = () => (
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-3">
           {categories.map((c) => (
-            <div key={c.title} className="bg-card rounded-xl border border-border p-4 hover:border-primary/30 transition-colors">
-              <c.icon className="w-5 h-5 text-primary mb-2" />
+            <div key={c.title} className="glass-card rounded-xl p-4 hover:border-primary/30 hover:translate-y-[-2px] transition-all duration-300">
+              <c.icon className="w-5 h-5 text-secondary mb-2" />
               <h3 className="font-semibold text-foreground text-sm mb-1">{c.title}</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">{c.desc}</p>
             </div>
@@ -42,11 +43,10 @@ const CoverageSection = () => (
       </div>
     </section>
 
-    {/* Battery capacity highlight */}
     <section className="py-12 px-6">
-      <div className="max-w-4xl mx-auto rounded-2xl p-8 border-2 border-secondary/30 bg-secondary/5">
+      <div className="max-w-4xl mx-auto rounded-2xl p-8 border border-secondary/20 bg-secondary/5">
         <div className="flex flex-col md:flex-row items-start gap-6">
-          <div className="w-14 h-14 rounded-2xl bg-secondary/20 flex items-center justify-center flex-shrink-0">
+          <div className="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center flex-shrink-0">
             <Battery className="w-7 h-7 text-secondary" />
           </div>
           <div>
@@ -58,17 +58,13 @@ const CoverageSection = () => (
               jos kapasiteetti laskee merkittävästi.
             </p>
             <div className="grid sm:grid-cols-2 gap-3">
-              <div className="flex items-start gap-2 text-sm text-foreground bg-background rounded-lg p-3 border border-border">
+              <div className="flex items-start gap-2 text-sm text-foreground bg-muted/50 rounded-lg p-3 border border-border">
                 <Check className="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" />
-                <span>
-                  Korvaa kapasiteetin laskun <strong>alle 70 %</strong>
-                </span>
+                <span>Korvaa kapasiteetin laskun <strong>alle 70 %</strong></span>
               </div>
-              <div className="flex items-start gap-2 text-sm text-foreground bg-background rounded-lg p-3 border border-border">
+              <div className="flex items-start gap-2 text-sm text-foreground bg-muted/50 rounded-lg p-3 border border-border">
                 <Check className="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" />
-                <span>
-                  Seuranta: alenema <strong>yli 6 % / 12 kk</strong>
-                </span>
+                <span>Seuranta: alenema <strong>yli 6 % / 12 kk</strong></span>
               </div>
             </div>
           </div>
