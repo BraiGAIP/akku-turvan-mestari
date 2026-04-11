@@ -1,5 +1,4 @@
-import { useState } from "react";
-import Navbar from "@/components/sections/Navbar";
+import { useState, useEffect, useCallback } from "react";
 import HeroSection from "@/components/sections/HeroSection";
 import PartnerBanner from "@/components/sections/PartnerBanner";
 import CostComparison from "@/components/sections/CostComparison";
@@ -18,6 +17,15 @@ import { Shield } from "lucide-react";
 const Index = () => {
   const [showFlow, setShowFlow] = useState(false);
   const [vehicleData, setVehicleData] = useState<VehicleData | null>(null);
+
+  const startFlow = useCallback(() => setShowFlow(true), []);
+
+  // Listen for chatbot's "start flow" event
+  useEffect(() => {
+    const handler = () => startFlow();
+    window.addEventListener("startQualificationFlow", handler);
+    return () => window.removeEventListener("startQualificationFlow", handler);
+  }, [startFlow]);
 
   if (vehicleData) {
     return <PricingResult data={vehicleData} onBack={() => setVehicleData(null)} />;
