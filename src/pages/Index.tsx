@@ -178,8 +178,8 @@ const Index = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
               { value: "10 000+", label: "Suojattua autoa", icon: Car },
-              { value: "5–15k €", label: "Akun vaihtohinta", icon: Battery },
-              { value: "3–8 v", label: "Turva-aika", icon: Clock },
+              { value: "15 000 €", label: "Korvausraja jopa", icon: Battery },
+              { value: "12–36 kk", label: "Turva-aika", icon: Clock },
               { value: "< 3 min", label: "Tarjous valmiina", icon: Zap },
             ].map((s, i) => (
               <div key={s.label} className="glass rounded-2xl p-6 text-center shadow-premium hover:shadow-premium-lg transition-all duration-500 hover:-translate-y-1">
