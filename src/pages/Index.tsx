@@ -3,7 +3,7 @@ import Navbar from "@/components/sections/Navbar";
 import HeroSection from "@/components/sections/HeroSection";
 import PartnerBanner from "@/components/sections/PartnerBanner";
 import CostComparison from "@/components/sections/CostComparison";
-import HowItWorks from "@/components/sections/HowItWorks";
+
 import CoverageSection from "@/components/sections/CoverageSection";
 import PricingTiersSection from "@/components/sections/PricingTiersSection";
 import TrustSection from "@/components/sections/TrustSection";
