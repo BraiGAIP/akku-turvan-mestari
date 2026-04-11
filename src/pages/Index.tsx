@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
+import Navbar from "@/components/sections/Navbar";
 import HeroSection from "@/components/sections/HeroSection";
 import PartnerBanner from "@/components/sections/PartnerBanner";
 import CostComparison from "@/components/sections/CostComparison";
