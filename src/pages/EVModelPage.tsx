@@ -16,7 +16,7 @@ const EVModelPage = () => {
           <Car className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
           <h1 className="text-2xl font-black text-foreground mb-2">Autoa ei löytynyt</h1>
           <p className="text-muted-foreground mb-6">Tarkista osoite tai selaa kaikkia malleja.</p>
-          <Link to="/akkuturva"><Button variant="hero" className="rounded-full">Selaa kaikkia malleja</Button></Link>
+          <Link to="/akkuturva"><Button variant="default" className="rounded-full">Selaa kaikkia malleja</Button></Link>
         </div>
       </div>
     );
@@ -64,7 +64,7 @@ const EVModelPage = () => {
             </div>
             <span className="text-xl font-extrabold text-gradient">AkkuTurva</span>
           </Link>
-          <Button variant="hero" size="sm" className="rounded-full" onClick={() => navigate("/")}>
+          <Button variant="default" size="sm" className="rounded-full" onClick={() => navigate("/")}>
             Tarkista turva
           </Button>
         </div>
@@ -86,7 +86,7 @@ const EVModelPage = () => {
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-8 animate-fade-up-delay">
             Suojaa {fullName} akku ({ev.batteryCapacity} kWh) odottamattomilta kuluilta. Akun vaihto voi maksaa jopa {ev.avgReplacementCost.toLocaleString("fi-FI")} € – AkkuTurvalla alkaen {basePrice} €.
           </p>
-          <Button variant="hero" size="lg" className="h-14 px-10 rounded-full text-base animate-fade-up-delay-2" onClick={() => navigate("/")}>
+          <Button variant="default" size="lg" className="h-14 px-10 rounded-full text-base animate-fade-up-delay-2" onClick={() => navigate("/")}>
             Tarkista {fullName} turva <ArrowRight className="w-5 h-5 ml-1" />
           </Button>
         </div>
@@ -157,7 +157,7 @@ const EVModelPage = () => {
             ))}
           </div>
           <div className="text-center mt-8">
-            <Button variant="hero" size="lg" className="h-14 px-10 rounded-full" onClick={() => navigate("/")}>
+            <Button variant="default" size="lg" className="h-14 px-10 rounded-full" onClick={() => navigate("/")}>
               Osta {fullName} akkuturva <ArrowRight className="w-5 h-5 ml-1" />
             </Button>
           </div>

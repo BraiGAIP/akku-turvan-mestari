@@ -25,7 +25,7 @@ const EVDirectoryPage = () => {
             </div>
             <span className="text-xl font-extrabold text-gradient">AkkuTurva</span>
           </Link>
-          <Link to="/"><Button variant="hero" size="sm" className="rounded-full">Tarkista turva</Button></Link>
+          <Link to="/"><Button variant="default" size="sm" className="rounded-full">Tarkista turva</Button></Link>
         </div>
       </nav>
 

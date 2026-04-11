@@ -15,7 +15,7 @@ const BlogPostPage = () => {
         <div className="text-center glass-strong rounded-3xl p-10 shadow-premium-lg max-w-md">
           <BookOpen className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
           <h1 className="text-2xl font-black text-foreground mb-2">Artikkelia ei löytynyt</h1>
-          <Link to="/blogi"><Button variant="hero" className="rounded-full mt-4">Selaa artikkeleita</Button></Link>
+          <Link to="/blogi"><Button variant="default" className="rounded-full mt-4">Selaa artikkeleita</Button></Link>
         </div>
       </div>
     );
@@ -90,7 +90,7 @@ const BlogPostPage = () => {
             </div>
             <span className="text-xl font-extrabold text-gradient">AkkuTurva</span>
           </Link>
-          <Link to="/"><Button variant="hero" size="sm" className="rounded-full">Tarkista turva</Button></Link>
+          <Link to="/"><Button variant="default" size="sm" className="rounded-full">Tarkista turva</Button></Link>
         </div>
       </nav>
 
@@ -116,7 +116,7 @@ const BlogPostPage = () => {
           <div className="mt-12 glass-strong rounded-3xl p-8 text-center shadow-premium-lg">
             <h3 className="text-2xl font-black text-foreground mb-3">Suojaa akkusi nyt</h3>
             <p className="text-muted-foreground mb-6">Tarkista autosi kelpoisuus ja saat tarjouksen alle 3 minuutissa.</p>
-            <Button variant="hero" size="lg" className="h-14 px-10 rounded-full" onClick={() => navigate("/")}>
+            <Button variant="default" size="lg" className="h-14 px-10 rounded-full" onClick={() => navigate("/")}>
               Aloita tästä <ArrowRight className="w-5 h-5 ml-1" />
             </Button>
           </div>

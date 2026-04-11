@@ -130,12 +130,12 @@ const CookieConsent = () => {
 
           <div className="flex flex-col sm:flex-row gap-2">
             {showCustomize ? (
-              <Button onClick={handleSaveCustom} variant="hero" className="rounded-full flex-1">
+              <Button onClick={handleSaveCustom} variant="default" className="rounded-full flex-1">
                 Tallenna valinnat
               </Button>
             ) : (
               <>
-                <Button onClick={handleAcceptAll} variant="hero" className="rounded-full flex-1">
+                <Button onClick={handleAcceptAll} variant="default" className="rounded-full flex-1">
                   Hyväksy kaikki
                 </Button>
                 <Button onClick={handleRejectAll} variant="outline" className="rounded-full flex-1">
