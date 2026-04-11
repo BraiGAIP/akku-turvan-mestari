@@ -41,7 +41,7 @@ const PricingResult = ({ data, onBack }: Props) => {
           <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-primary flex items-center justify-center">
             <Shield className="w-8 h-8 text-primary-foreground animate-pulse" />
           </div>
-          <h2 className="text-2xl font-black text-foreground mb-2">Lasketaan tarjousta...</h2>
+          <h2 className="text-2xl font-black text-foreground mb-2">Lasketaan hintaa...</h2>
           <p className="text-muted-foreground">{data.brand} {data.model} {data.year}</p>
           <div className="mt-6 w-40 h-1.5 rounded-full bg-muted mx-auto overflow-hidden">
             <div className="h-full rounded-full bg-primary animate-pulse w-2/3" />
@@ -58,7 +58,7 @@ const PricingResult = ({ data, onBack }: Props) => {
           <AlertTriangle className="w-14 h-14 text-destructive mx-auto mb-6" />
           <h2 className="text-2xl font-black text-foreground mb-3">Auto ei täytä ehtoja</h2>
           <p className="text-muted-foreground mb-6">
-            Fragus GoSafe Electric -turva on saatavilla alle 20 vuotta vanhoille autoille, joiden ajokilometrit ovat alle 300 000 km.
+            Akkuturva on saatavilla alle 20-vuotiaille autoille, joissa on alle 300 000 km.
           </p>
           <Button className="h-11 px-8 rounded-xl" onClick={onBack}>Kokeile toista autoa</Button>
         </div>
@@ -79,7 +79,7 @@ const PricingResult = ({ data, onBack }: Props) => {
             <div className="lg:col-span-3 space-y-6">
               <div>
                 <h2 className="text-2xl font-black text-foreground mb-1">Viimeistele tilaus</h2>
-                <p className="text-muted-foreground text-sm">Muutama tieto ja turva on valmis.</p>
+                <p className="text-muted-foreground text-sm">Vielä muutama tieto – turva alkaa heti.</p>
               </div>
 
               {/* Contact info */}
@@ -232,7 +232,7 @@ const PricingResult = ({ data, onBack }: Props) => {
     <div className="min-h-screen bg-background pb-28">
       <div className="max-w-6xl mx-auto px-6 pt-8">
         <button onClick={onBack} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-6">
-          <ArrowLeft className="w-4 h-4" /> Tarkista toinen auto
+          <ArrowLeft className="w-4 h-4" /> Kokeile toista autoa
         </button>
 
         {/* Vehicle info bar */}

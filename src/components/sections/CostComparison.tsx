@@ -53,7 +53,7 @@ const CostComparison = ({ onStartFlow }: CostComparisonProps) => (
           <CostBar label="VW ID.4 – akun vaihto" value={13000} max={20000} variant="danger" />
           <div className="border-t border-border pt-6">
             <CostBar label="AkkuTurva – suoja alkaen" value={490} max={20000} variant="success" />
-            <p className="text-secondary font-bold text-sm mt-2">tai vain 41 € / kk</p>
+            <p className="text-secondary font-bold text-sm mt-2">eli vain 41 € kuukaudessa</p>
           </div>
         </div>
         <div className="mt-8 p-4 rounded-xl bg-secondary/5 border border-secondary/20 flex items-start gap-3">
