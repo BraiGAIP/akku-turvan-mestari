@@ -36,13 +36,13 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navbar onStartFlow={startFlow} />
       <HeroSection onStartFlow={startFlow} />
-      <PartnerBanner />
-      <CostComparison onStartFlow={startFlow} />
-      <CoverageSection />
-      <PricingTiersSection onStartFlow={startFlow} />
-      <TrustSection />
-      <FAQSection />
-      <CTASection onStartFlow={startFlow} />
+      <ScrollReveal><PartnerBanner /></ScrollReveal>
+      <ScrollReveal delay={50}><CostComparison onStartFlow={startFlow} /></ScrollReveal>
+      <ScrollReveal delay={100}><CoverageSection /></ScrollReveal>
+      <ScrollReveal delay={50}><PricingTiersSection onStartFlow={startFlow} /></ScrollReveal>
+      <ScrollReveal><TrustSection /></ScrollReveal>
+      <ScrollReveal delay={50}><FAQSection /></ScrollReveal>
+      <ScrollReveal><CTASection onStartFlow={startFlow} /></ScrollReveal>
       <SiteFooter />
 
       {/* Sticky mobile CTA */}
