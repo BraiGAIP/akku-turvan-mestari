@@ -14,7 +14,7 @@ import PriceCalculatorModal from "@/components/PriceCalculatorModal";
 import PricingResult from "@/components/PricingResult";
 import type { VehicleData } from "@/components/QualificationFlow";
 import { Button } from "@/components/ui/button";
-import { Shield } from "lucide-react";
+import { Shield, ArrowRight } from "lucide-react";
 
 const Index = () => {
   const [showFlow, setShowFlow] = useState(false);
