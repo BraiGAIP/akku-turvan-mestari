@@ -14,7 +14,7 @@ const PricingResult = ({ data, onBack }: Props) => {
   const [loading, setLoading] = useState(true);
   const [selectedTier, setSelectedTier] = useState<string | null>(null);
   const [showCheckout, setShowCheckout] = useState(false);
-  const [showFinancing, setShowFinancing] = useState(false);
+  const [showFinancing, setShowFinancing] = useState(true);
   const [paymentMethod, setPaymentMethod] = useState<"card" | "klarna" | "svea">("card");
   const [termsAccepted, setTermsAccepted] = useState(false);
 
@@ -261,7 +261,7 @@ const PricingResult = ({ data, onBack }: Props) => {
               <ArrowRight className="w-5 h-5 text-muted-foreground hidden md:block" />
               <div className="flex-1 min-w-[160px]">
                 <p className="text-sm text-muted-foreground mb-1">AkkuTurva alkaen</p>
-                <p className="text-3xl font-black text-secondary">{tiers[0].price} €</p>
+                <p className="text-3xl font-black text-secondary">{tiers[0].monthlyPrice} € / kk</p>
               </div>
             </div>
           </div>
