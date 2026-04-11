@@ -449,7 +449,7 @@ const PriceCalculatorModal = ({ open, onComplete, onClose }: Props) => {
                 </div>
 
                 {/* Price hero */}
-                <div className="text-center py-4">
+                <div className="text-center py-3">
                   <p className="text-sm text-white/50 mb-1">Akkuturva tälle autolle</p>
                   <div className="flex items-baseline justify-center gap-1">
                     <span className="text-4xl font-black text-white">{lowestMonthly}</span>
@@ -460,8 +460,36 @@ const PriceCalculatorModal = ({ open, onComplete, onClose }: Props) => {
                   </p>
                 </div>
 
+                {/* Risk comparison */}
+                <div className="my-4 p-4 rounded-xl bg-white/5 border border-white/10">
+                  <p className="text-xs font-bold uppercase tracking-wider text-white/40 mb-2">Tämä on pieni hinta verrattuna riskiin</p>
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="text-sm text-white/60">Akun korjaus</span>
+                    <span className="text-sm font-black text-red-400">5 000 – 20 000 €</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-white/60">AkkuTurva</span>
+                    <span className="text-sm font-black text-emerald-400">alk. {lowestMonthly} € / kk</span>
+                  </div>
+                </div>
+
+                {/* Decision simplifier */}
+                <p className="text-sm text-white/70 text-center mb-3 leading-relaxed">
+                  Käytännössä maksat muutaman kympin kuussa, jotta vältät tuhansien eurojen riskin.
+                </p>
+
+                {/* Social proof */}
+                <p className="text-xs text-center text-white/40 mb-2">
+                  Suurin osa asiakkaista ottaa turvan ennen kuin ongelmia ilmenee.
+                </p>
+
+                {/* Loss aversion */}
+                <p className="text-xs text-center text-red-400/60 mb-4">
+                  Ilman turvaa kaikki kustannukset jäävät sinulle.
+                </p>
+
                 {/* Trust points */}
-                <div className="flex flex-col gap-1.5 my-4">
+                <div className="flex flex-col gap-1.5 mb-4">
                   {["Ei piilokuluja", "Voimassa heti", "14 päivän peruutusoikeus"].map((t) => (
                     <div key={t} className="flex items-center gap-2 text-xs text-white/60">
                       <Check className="w-3.5 h-3.5 text-emerald-400" />
@@ -470,9 +498,9 @@ const PriceCalculatorModal = ({ open, onComplete, onClose }: Props) => {
                   ))}
                 </div>
 
-                {/* Soft push */}
+                {/* Micro-urgency */}
                 <p className="text-xs text-center text-white/30 italic mb-4">
-                  "Useimmat valitsevat kuukausimaksun – helpoin tapa suojata autosi"
+                  Tämän voi hoitaa nyt – suoja alkaa heti maksun jälkeen.
                 </p>
 
                 {/* Actions */}
