@@ -335,9 +335,41 @@ const PricingResult = ({ data, onBack }: Props) => {
           ))}
         </div>
 
-        <p className="text-center text-xs text-muted-foreground mb-8">
+        <p className="text-center text-xs text-muted-foreground mb-6">
           Lopullinen hinta määräytyy auton iän, kilometrien ja kunnon mukaan · Perustuu Fraguksen virallisiin sopimusehtoihin
         </p>
+
+        {/* Persuasion block */}
+        <div className="mb-8 bg-card rounded-xl border border-border p-6 space-y-5">
+          <h3 className="text-lg font-black text-foreground text-center">
+            Tämä on pieni hinta verrattuna mahdolliseen riskiin
+          </h3>
+          <div className="flex items-center justify-between p-3 rounded-lg bg-destructive/5 border border-destructive/10">
+            <span className="text-sm text-muted-foreground">Akun korjaus</span>
+            <span className="text-sm font-black text-destructive">5 000 – 20 000 €</span>
+          </div>
+          <div className="flex items-center justify-between p-3 rounded-lg bg-secondary/5 border border-secondary/10">
+            <span className="text-sm text-muted-foreground">AkkuTurva</span>
+            <span className="text-sm font-black text-secondary">alk. {selected?.monthlyPrice ?? tiers[0].monthlyPrice} € / kk</span>
+          </div>
+          <p className="text-sm text-muted-foreground text-center leading-relaxed">
+            Käytännössä maksat muutaman kympin kuussa, jotta vältät tuhansien eurojen riskin.
+          </p>
+          <p className="text-xs text-muted-foreground/70 text-center">
+            Suurin osa asiakkaista ottaa turvan ennen kuin ongelmia ilmenee.
+          </p>
+          <p className="text-xs text-destructive/60 text-center">
+            Ilman turvaa kaikki kustannukset jäävät sinulle.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4 text-xs text-muted-foreground pt-2 border-t border-border">
+            <span className="flex items-center gap-1.5"><Check className="w-3.5 h-3.5 text-secondary" /> Turvallinen maksu</span>
+            <span className="flex items-center gap-1.5"><Check className="w-3.5 h-3.5 text-secondary" /> 14 pv peruutusoikeus</span>
+            <span className="flex items-center gap-1.5"><Check className="w-3.5 h-3.5 text-secondary" /> Ei piilokuluja</span>
+          </div>
+          <p className="text-xs text-center text-muted-foreground/50">
+            Tämän voi hoitaa nyt – suoja alkaa heti maksun jälkeen.
+          </p>
+        </div>
       </div>
 
       {/* Sticky CTA */}
