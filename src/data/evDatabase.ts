@@ -64,6 +64,70 @@ export const getEVData = (brand: string, model: string): EVModel | undefined => 
   return evDatabase.find(ev => ev.brand === brand && ev.model === model);
 };
 
+// Eligibility types based on Fragus GoSafe Electric
+export type EligibilityResult = 
+  | { status: "full"; maxAge: number; maxKm: number }
+  | { status: "limited"; maxAge: number; maxKm: number }
+  | { status: "rejected"; reason: string };
+
+export const checkEligibility = (year: number, mileage: number): EligibilityResult => {
+  const currentYear = new Date().getFullYear();
+  const age = currentYear - year;
+
+  if (age > 20 || mileage > 300000) {
+    return { status: "rejected", reason: "Auto on yli 20 vuotta vanha tai ajokilometrit ylittävät 300 000 km." };
+  }
+  if (age > 10 || mileage > 200000) {
+    return { status: "limited", maxAge: 20, maxKm: 300000 };
+  }
+  return { status: "full", maxAge: 10, maxKm: 200000 };
+};
+
+// Repair limits based on Fragus GoSafe Electric
+export interface RepairLimit {
+  months: number;
+  label: string;
+  fullLimit: number;
+  limitedLimit: number;
+}
+
+export const repairLimits: RepairLimit[] = [
+  { months: 12, label: "12 kk", fullLimit: 6000, limitedLimit: 3000 },
+  { months: 24, label: "24 kk", fullLimit: 10000, limitedLimit: 4000 },
+  { months: 36, label: "36 kk", fullLimit: 15000, limitedLimit: 5000 },
+];
+
+// Coverage categories based on Fragus GoSafe Electric (sales-friendly names)
+export const coverageCategories = [
+  { id: "motor", icon: "Zap", title: "Sähköajomoottori", description: "Auton sydän – sähkömoottori ja sen komponentit turvattu" },
+  { id: "controller", icon: "Cpu", title: "Moottorin ohjainlaitteet", description: "Moottorin ohjauselektroniikka ja invertteri suojattu" },
+  { id: "drivetrain", icon: "Cog", title: "Voimansiirto", description: "Vaihteisto ja voimansiirron kriittiset osat katettu" },
+  { id: "brakes", icon: "Shield", title: "Jarru- ja ohjausjärjestelmä", description: "Keskeiset jarru- ja ohjauskomponentit suojattu" },
+  { id: "battery", icon: "Battery", title: "Korkeajänniteakku (HV)", description: "Sähköauton kallein osa – koko HV-akkujärjestelmä turvattu" },
+  { id: "charging", icon: "PlugZap", title: "Latausjärjestelmä", description: "Sisäinen laturi, DC/DC-muunnin ja latauskomponentit" },
+  { id: "cooling", icon: "Thermometer", title: "Akun jäähdytysjärjestelmä", description: "Akun lämpötilanhallinta ja jäähdytyspiiri suojattu" },
+  { id: "safety", icon: "ShieldCheck", title: "Turvalaitteet", description: "Airbag-järjestelmä, törmäyssensorit ja turvajärjestelmät" },
+  { id: "hvac", icon: "Wind", title: "Lämmitys ja jäähdytys", description: "Ilmastointijärjestelmä ja matkustamon lämpöhallinta" },
+  { id: "comfort", icon: "Sparkles", title: "Sähköiset mukavuustoiminnot", description: "Ikkunannostimet, peilit, istuinlämmittimet ja muut sähkötoiminnot" },
+];
+
+// Exclusions (simplified for trust)
+export const exclusions = [
+  "Normaali kuluminen ja huolto",
+  "Ulkoiset vauriot (onnettomuudet, vesivahingot)",
+  "Muokatut tai viritetyt autot",
+  "Viat ennen sopimuksen alkua",
+  "Epäsuorat kulut (hinaus, sijaisauto ilman lisäpalvelua)",
+];
+
+// Vehicle condition requirements (hidden logic, tooltip info)
+export const vehicleRequirements = [
+  "Huollettu valmistajan ohjeiden mukaan",
+  "Ei aiempia tunnettuja vikoja",
+  "Ei ohjelmisto- tai rakennemuutoksia",
+  "Ei vakuutusyhtiön lunastama",
+];
+
 export interface CoverageTier {
   id: string;
   name: string;
@@ -73,6 +137,7 @@ export interface CoverageTier {
   highlighted?: boolean;
   coverage: string;
   duration: string;
+  repairLimit: number;
 }
 
 export const calculatePricing = (
@@ -84,67 +149,75 @@ export const calculatePricing = (
   const ev = getEVData(brand, model);
   if (!ev) return null;
 
+  const eligibility = checkEligibility(year, mileage);
+  if (eligibility.status === "rejected") return null;
+
   const currentYear = new Date().getFullYear();
   const age = currentYear - year;
-
-  // Decline if too old or too many km
-  if (age > 8 || mileage > 150000) return null;
+  const isLimited = eligibility.status === "limited";
 
   // Base price factors
-  const ageFactor = 1 + (age * 0.12);
-  const mileageFactor = 1 + (mileage / 200000);
+  const ageFactor = 1 + (age * 0.08);
+  const mileageFactor = 1 + (mileage / 300000);
   const capacityFactor = ev.batteryCapacity / 60;
+  const limitedSurcharge = isLimited ? 1.3 : 1;
 
-  const basePrice = 490 * ageFactor * mileageFactor * capacityFactor;
+  const basePrice = 490 * ageFactor * mileageFactor * capacityFactor * limitedSurcharge;
+
+  const limits = isLimited ? repairLimits.map(r => r.limitedLimit) : repairLimits.map(r => r.fullLimit);
 
   return [
     {
-      id: "basic",
-      name: "Perus",
+      id: "12kk",
+      name: "12 kuukautta",
       price: Math.round(basePrice),
-      monthlyPrice: Math.round(basePrice / 24),
-      coverage: "Akun perustoiminnot",
-      duration: "3 vuotta",
+      monthlyPrice: Math.round(basePrice / 12),
+      coverage: isLimited ? "Rajoitettu turva" : "Täysi GoSafe-turva",
+      duration: "12 kk",
+      repairLimit: limits[0],
       features: [
-        "Akun kapasiteetin lasku alle 70%",
-        "Akkumoduulin vika",
-        "Akun hallintajärjestelmä (BMS)",
-        "Enintään 5 000 € korvaus",
+        `Korkeajänniteakku (HV) turvattu`,
+        `Akun kapasiteetin heikkeneminen (< 70 %)`,
+        "Sähköajomoottori ja ohjainlaitteet",
+        "Latausjärjestelmä ja muuntimet",
+        "Akun jäähdytysjärjestelmä",
+        `Korvausraja: ${limits[0].toLocaleString("fi-FI")} €`,
       ],
     },
     {
-      id: "premium",
-      name: "Premium",
-      price: Math.round(basePrice * 1.6),
-      monthlyPrice: Math.round((basePrice * 1.6) / 24),
-      coverage: "Laaja akkuturva",
-      duration: "5 vuotta",
+      id: "24kk",
+      name: "24 kuukautta",
+      price: Math.round(basePrice * 1.7),
+      monthlyPrice: Math.round((basePrice * 1.7) / 24),
+      coverage: isLimited ? "Rajoitettu turva" : "Täysi GoSafe-turva",
+      duration: "24 kk",
+      repairLimit: limits[1],
       highlighted: true,
       features: [
-        "Kaikki Perus-tason edut",
-        "Akun kapasiteetin lasku alle 80%",
-        "Lämpötilanhallintajärjestelmä",
-        "Latausjärjestelmän viat",
-        "Enintään 15 000 € korvaus",
-        "Hinauspalvelu",
+        "Kaikki 12 kk:n turvan edut",
+        "Voimansiirto ja vaihteisto",
+        "Jarru- ja ohjausjärjestelmä",
+        "Turvalaitteet (airbag, sensorit)",
+        "Lämmitys- ja jäähdytysjärjestelmä",
+        `Korvausraja: ${limits[1].toLocaleString("fi-FI")} €`,
       ],
     },
     {
-      id: "extended",
-      name: "Laajennettu",
-      price: Math.round(basePrice * 2.2),
-      monthlyPrice: Math.round((basePrice * 2.2) / 24),
-      coverage: "Täysi akkuturva",
-      duration: "8 vuotta",
+      id: "36kk",
+      name: "36 kuukautta",
+      price: Math.round(basePrice * 2.3),
+      monthlyPrice: Math.round((basePrice * 2.3) / 36),
+      coverage: isLimited ? "Rajoitettu turva" : "Täysi GoSafe-turva",
+      duration: "36 kk",
+      repairLimit: limits[2],
       features: [
-        "Kaikki Premium-tason edut",
-        "Täysi akun vaihto tarvittaessa",
-        "Sähkömoottorin suoja",
-        "Tehoelektroniikka",
-        "Rajaton korvaus",
-        "Sijaisauto akun vaihdon ajaksi",
-        "24/7 hätäpalvelu",
-      ],
+        "Kaikki 24 kk:n turvan edut",
+        "Sähköiset mukavuustoiminnot",
+        "Pisin turva-aika",
+        "Paras hinta/kuukausi-suhde",
+        `Korvausraja: ${limits[2].toLocaleString("fi-FI")} €`,
+        isLimited ? "" : "Kattavin mahdollinen suoja",
+      ].filter(Boolean),
     },
   ];
 };
