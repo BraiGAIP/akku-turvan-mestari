@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Shield, Settings, X } from "lucide-react";
-import { Link } from "react-router-dom";
 
 interface CookiePreferences {
   necessary: boolean;
@@ -59,7 +58,7 @@ const CookieConsent = () => {
 
           <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
             Käytämme evästeitä parantaaksemme käyttökokemustasi.{" "}
-            <Link to="/tietosuoja" className="text-primary hover:underline">Lue lisää.</Link>
+            <a href="/tietosuoja" className="text-primary hover:underline">Lue lisää.</a>
           </p>
 
           {showCustomize && (
