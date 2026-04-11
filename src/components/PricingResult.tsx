@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { CoverageTier, calculatePricing, getEVData } from "@/data/evDatabase";
-import { QualificationData } from "@/components/QualificationFlow";
+import type { QualificationData } from "@/components/QualificationFlow";
 import { Shield, Check, AlertTriangle, Clock, ArrowRight, Zap, Star, ArrowLeft } from "lucide-react";
 
 interface Props {
