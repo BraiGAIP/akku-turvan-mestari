@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import QualificationFlow, { QualificationData } from "@/components/QualificationFlow";
 import PricingResult from "@/components/PricingResult";
@@ -89,7 +90,8 @@ const Index = () => {
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
             <a href="#miten" className="hover:text-foreground transition-colors duration-300">Miten toimii</a>
             <a href="#turva" className="hover:text-foreground transition-colors duration-300">Turvatasot</a>
-            <a href="#kokemukset" className="hover:text-foreground transition-colors duration-300">Kokemukset</a>
+            <Link to="/akkuturva" className="hover:text-foreground transition-colors duration-300">Mallit</Link>
+            <Link to="/blogi" className="hover:text-foreground transition-colors duration-300">Blogi</Link>
             <a href="#faq" className="hover:text-foreground transition-colors duration-300">UKK</a>
           </div>
           <Button variant="hero" size="sm" className="rounded-full" onClick={() => setShowFlow(true)}>
