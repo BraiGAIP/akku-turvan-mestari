@@ -178,8 +178,8 @@ const Index = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
               { value: "10 000+", label: "Suojattua autoa", icon: Car },
-              { value: "5–15k €", label: "Akun vaihtohinta", icon: Battery },
-              { value: "3–8 v", label: "Turva-aika", icon: Clock },
+              { value: "15 000 €", label: "Korvausraja jopa", icon: Battery },
+              { value: "12–36 kk", label: "Turva-aika", icon: Clock },
               { value: "< 3 min", label: "Tarjous valmiina", icon: Zap },
             ].map((s, i) => (
               <div key={s.label} className="glass rounded-2xl p-6 text-center shadow-premium hover:shadow-premium-lg transition-all duration-500 hover:-translate-y-1">
@@ -287,20 +287,83 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Coverage tiers */}
+      {/* What's covered – Fragus GoSafe Electric */}
+      <section className="py-24 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-secondary bg-secondary/10 mb-4">GoSafe Electric</span>
+            <h2 className="text-4xl md:text-5xl font-black text-foreground tracking-tight mb-4">Mitä akkuturva kattaa?</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">Kattava turva sähköauton kaikille kriittisille komponenteille. Perustuu Fraguksen virallisiin ehtoihin.</p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              { icon: Zap, title: "Sähköajomoottori", desc: "Auton sydän – sähkömoottori ja sen komponentit turvattu" },
+              { icon: Car, title: "Moottorin ohjainlaitteet", desc: "Moottorin ohjauselektroniikka ja invertteri suojattu" },
+              { icon: Car, title: "Voimansiirto", desc: "Vaihteisto ja voimansiirron kriittiset osat katettu" },
+              { icon: Shield, title: "Jarru- ja ohjausjärjestelmä", desc: "Keskeiset jarru- ja ohjauskomponentit suojattu" },
+              { icon: Battery, title: "Korkeajänniteakku (HV)", desc: "Sähköauton kallein osa – koko HV-akkujärjestelmä turvattu" },
+              { icon: Zap, title: "Latausjärjestelmä", desc: "Sisäinen laturi, muuntimet ja latauskomponentit" },
+              { icon: Sparkles, title: "Akun jäähdytysjärjestelmä", desc: "Akun lämpötilanhallinta ja jäähdytyspiiri suojattu" },
+              { icon: Shield, title: "Turvalaitteet", desc: "Airbag-järjestelmä, törmäyssensorit ja turvajärjestelmät" },
+              { icon: Clock, title: "Lämmitys ja jäähdytys", desc: "Ilmastointijärjestelmä ja matkustamon lämpöhallinta" },
+              { icon: Sparkles, title: "Sähköiset mukavuustoiminnot", desc: "Ikkunannostimet, peilit, istuinlämmittimet ja muut" },
+            ].map(c => (
+              <div key={c.title} className="glass rounded-2xl p-5 shadow-premium hover:shadow-premium-lg transition-all duration-300 hover:-translate-y-1">
+                <c.icon className="w-5 h-5 text-primary mb-3" />
+                <h3 className="font-bold text-foreground text-sm mb-1">{c.title}</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">{c.desc}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-center text-xs text-muted-foreground mt-6">Korvaa tekniset viat ja rikkoutumiset – ei normaalia kulumista · Läpinäkyvä ja selkeä turva · Ei piilokuluja</p>
+        </div>
+      </section>
+
+      {/* Battery capacity highlight */}
+      <section className="py-16 px-6">
+        <div className="max-w-4xl mx-auto rounded-3xl p-8 md:p-10 border-2 border-secondary/30 bg-secondary/5 shadow-premium-lg">
+          <div className="flex flex-col md:flex-row items-start gap-6">
+            <div className="w-16 h-16 rounded-2xl bg-secondary/20 flex items-center justify-center flex-shrink-0">
+              <Battery className="w-8 h-8 text-secondary" />
+            </div>
+            <div>
+              <h2 className="text-2xl md:text-3xl font-black text-foreground mb-3">Kattaa myös akun kapasiteetin heikkenemisen</h2>
+              <p className="text-muted-foreground leading-relaxed mb-6">Sähköauton akun kapasiteetti laskee ajan myötä. AkkuTurva korvaa, jos akun kapasiteetti laskee merkittävästi – toisin kuin useimmat valmistajatakuut.</p>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="flex items-start gap-3 glass rounded-xl p-4">
+                  <Check className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-bold text-foreground text-sm">Kapasiteetti alle 70 %</p>
+                    <p className="text-xs text-muted-foreground">Korvaa, jos akun kapasiteetti laskee alle 70 % alkuperäisestä</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3 glass rounded-xl p-4">
+                  <Check className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-bold text-foreground text-sm">Alenema yli 6 % / 12 kk</p>
+                    <p className="text-xs text-muted-foreground">Seuranta: kapasiteetin alenema yli 6 % 12 kuukauden aikana</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Repair limits */}
       <section id="turva" className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-primary bg-primary/10 mb-4">Turvatasot</span>
-            <h2 className="text-4xl md:text-5xl font-black text-foreground tracking-tight mb-4">Valitse sinulle sopiva turva</h2>
-            <p className="text-muted-foreground max-w-xl mx-auto text-lg">Kaikki suunnitelmat sisältävät Fragus-kumppanin varmuuden ja 14 päivän peruutusoikeuden.</p>
+            <h2 className="text-4xl md:text-5xl font-black text-foreground tracking-tight mb-4">Valitse turva-aika</h2>
+            <p className="text-muted-foreground max-w-xl mx-auto text-lg">Pidempi sopimus = suurempi korvausraja ja parempi hinta per kuukausi. 14 päivän peruutusoikeus.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { name: "Perus", price: "alk. 490 €", duration: "3 vuotta", features: ["Kapasiteetin lasku alle 70%", "Akkumoduulin vika", "BMS-viat", "Enintään 5 000 € korvaus"] },
-              { name: "Premium", price: "alk. 790 €", duration: "5 vuotta", features: ["Kaikki Perus-edut", "Kapasiteetin lasku alle 80%", "Lämpötilanhallinta", "Latausjärjestelmä", "Enintään 15 000 € korvaus", "Hinauspalvelu"], highlighted: true },
-              { name: "Laajennettu", price: "alk. 1 090 €", duration: "8 vuotta", features: ["Kaikki Premium-edut", "Täysi akun vaihto", "Sähkömoottori", "Tehoelektroniikka", "Rajaton korvaus", "Sijaisauto", "24/7 hätäpalvelu"] },
-            ].map((tier) => (
+              { name: "12 kuukautta", price: "alk. 490 €", limit: "6 000 €", limitLimited: "3 000 €", features: ["HV-akku turvattu", "Kapasiteetin heikkeneminen", "Sähkömoottori", "Latausjärjestelmä", "Akun jäähdytys"] },
+              { name: "24 kuukautta", price: "alk. 830 €", limit: "10 000 €", limitLimited: "4 000 €", features: ["Kaikki 12 kk:n edut", "Voimansiirto", "Jarru- ja ohjausjärjestelmä", "Turvalaitteet", "Lämmitys ja jäähdytys"], highlighted: true },
+              { name: "36 kuukautta", price: "alk. 1 130 €", limit: "15 000 €", limitLimited: "5 000 €", features: ["Kaikki 24 kk:n edut", "Mukavuustoiminnot", "Paras hinta/kk", "Kattavin suoja", "Pisin turva-aika"] },
+            ].map(tier => (
               <div key={tier.name} className={`relative glass-strong rounded-3xl p-8 transition-all duration-500 hover:-translate-y-2 ${tier.highlighted ? "ring-2 ring-primary shadow-premium-lg scale-[1.02]" : "shadow-premium hover:shadow-premium-lg"}`}>
                 {tier.highlighted && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 gradient-hero text-primary-foreground text-xs font-bold px-5 py-1.5 rounded-full flex items-center gap-1.5">
@@ -309,7 +372,8 @@ const Index = () => {
                 )}
                 <h3 className="text-2xl font-bold text-foreground">{tier.name}</h3>
                 <p className="text-3xl font-black text-foreground mt-3">{tier.price}</p>
-                <p className="text-sm text-muted-foreground mb-6">{tier.duration}</p>
+                <p className="text-sm text-muted-foreground mb-1">Korvausraja jopa {tier.limit}</p>
+                <p className="text-xs text-muted-foreground mb-6">Vanhemmille: {tier.limitLimited}</p>
                 <ul className="space-y-3 mb-8">
                   {tier.features.map(f => (
                     <li key={f} className="flex items-start gap-2.5 text-sm text-foreground">
@@ -357,11 +421,14 @@ const Index = () => {
           </div>
           <div className="space-y-3">
             {[
-              { q: "Kannattaako akkuturva?", a: "Sähköauton akun vaihto maksaa tyypillisesti 5 000–20 000 €. AkkuTurva suojaa sinua tältä riskiltä murto-osalla kustannuksista." },
-              { q: "Mitä jos akku hajoaa?", a: "Ilmoita vahingosta meille, ja hoidamme korjauksen tai vaihdon kumppaniverkostomme kautta. Sinulle ei koidu lisäkuluja turvatason mukaisesti." },
-              { q: "Voinko peruuttaa?", a: "Kyllä! Sinulla on 14 päivän peruutusoikeus ilman kuluja." },
-              { q: "Sopiiko käytetyille autoille?", a: "Kyllä, kunhan auto on enintään 8 vuotta vanha ja ajokilometrit alle 150 000 km." },
-              { q: "Kuka on Fragus?", a: "Fragus on johtava eurooppalainen ajoneuvojen suojatuotteiden tarjoaja, jolla on yli 20 vuoden kokemus." },
+              { q: "Kannattaako akkuturva?", a: "Sähköauton akun vaihto maksaa tyypillisesti 5 000–20 000 €. AkkuTurva suojaa sinua tältä riskiltä murto-osalla kustannuksista. Korvausraja jopa 15 000 € sopimuskauden aikana." },
+              { q: "Mitä akkuturva kattaa?", a: "GoSafe Electric kattaa sähköajomoottorin, ohjainlaitteet, voimansiirron, jarru- ja ohjausjärjestelmän, korkeajänniteakun, latausjärjestelmän, akun jäähdytyksen, turvalaitteet, lämmitys- ja jäähdytysjärjestelmän sekä sähköiset mukavuustoiminnot." },
+              { q: "Kattaako turva akun kapasiteetin laskun?", a: "Kyllä! Turva korvaa, jos akun kapasiteetti laskee alle 70 % alkuperäisestä tai alenema ylittää 6 % 12 kuukauden aikana." },
+              { q: "Miten korjaus toimii?", a: "Ilmoita viasta meille, saat ohjeet korjaamolle, Fragus hyväksyy korjauksen ja maksu menee suoraan korjaamolle. Sinun ei tarvitse maksaa itse." },
+              { q: "Sopiiko käytetyille autoille?", a: "Kyllä! Täysi turva alle 10v/200 000 km autoille. Rajoitettu turva (alhaisemmat korvausrajat) 10–20v/200 000–300 000 km autoille. Yli 20v tai 300 000 km autoja ei hyväksytä." },
+              { q: "Voinko peruuttaa?", a: "Kyllä, sinulla on 14 päivän peruutusoikeus ilman kuluja ja ilman syytä." },
+              { q: "Milloin sopimus alkaa?", a: "Sopimus alkaa tehdastakuun jälkeen. Se ei ole takautuva. Sopimus päättyy kun auto täyttää 20 vuotta tai saavuttaa 300 000 km." },
+              { q: "Kuka on Fragus?", a: "Fragus Group on Euroopan johtava ajoneuvojen suojatuotteiden tarjoaja yli 20 vuoden kokemuksella. AkkuTurva perustuu Fraguksen virallisiin GoSafe Electric -ehtoihin." },
             ].map(({ q, a }) => (
               <details key={q} className="group glass-strong rounded-2xl p-5 cursor-pointer shadow-premium hover:shadow-premium-lg transition-all duration-300">
                 <summary className="flex items-center justify-between font-semibold text-foreground list-none text-lg">
