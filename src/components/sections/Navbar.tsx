@@ -29,8 +29,8 @@ const Navbar = ({ onStartFlow }: NavbarProps) => {
         </div>
 
         <div className="flex items-center gap-3">
-          <Button size="sm" className="rounded-full hidden sm:inline-flex bg-gradient-to-r from-primary to-primary/80 btn-glow" onClick={onStartFlow}>
-            Tarkista turva
+          <Button size="sm" className="rounded-full hidden sm:inline-flex bg-gradient-to-r from-primary to-primary/80 btn-glow font-bold" onClick={onStartFlow}>
+            Laske hinta heti
           </Button>
           <button
             className="md:hidden w-9 h-9 flex items-center justify-center text-muted-foreground"
@@ -48,8 +48,8 @@ const Navbar = ({ onStartFlow }: NavbarProps) => {
           <Link to="/akkuturva" className="block text-sm font-medium text-muted-foreground hover:text-foreground">Mallit</Link>
           <Link to="/blogi" className="block text-sm font-medium text-muted-foreground hover:text-foreground">Blogi</Link>
           <a href="#faq" className="block text-sm font-medium text-muted-foreground hover:text-foreground" onClick={() => setMobileOpen(false)}>UKK</a>
-          <Button size="sm" className="w-full rounded-full mt-2 bg-gradient-to-r from-primary to-primary/80" onClick={() => { onStartFlow(); setMobileOpen(false); }}>
-            Tarkista turva
+          <Button size="sm" className="w-full rounded-full mt-2 bg-gradient-to-r from-primary to-primary/80 btn-glow font-bold" onClick={() => { onStartFlow(); setMobileOpen(false); }}>
+            Laske hinta heti
           </Button>
         </div>
       )}

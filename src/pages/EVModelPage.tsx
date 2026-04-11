@@ -58,7 +58,7 @@ const EVModelPage = () => {
             </div>
             <span className="text-xl font-extrabold text-foreground">AkkuTurva</span>
           </Link>
-          <Button size="sm" className="rounded-full" onClick={() => navigate("/")}>Tarkista turva</Button>
+          <Button size="sm" className="rounded-full bg-gradient-to-r from-primary to-primary/80 btn-glow font-bold" onClick={() => navigate("/")}>Laske hinta heti</Button>
         </div>
       </nav>
 

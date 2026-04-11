@@ -25,7 +25,7 @@ const EVDirectoryPage = () => {
             </div>
             <span className="text-xl font-extrabold text-foreground">AkkuTurva</span>
           </Link>
-          <Link to="/"><Button size="sm" className="rounded-full">Tarkista turva</Button></Link>
+          <Link to="/"><Button size="sm" className="rounded-full bg-gradient-to-r from-primary to-primary/80 btn-glow font-bold">Laske hinta heti</Button></Link>
         </div>
       </nav>
 
