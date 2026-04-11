@@ -31,6 +31,7 @@ const App = () => (
           <Route path="/blogi/:slug" element={<BlogPostPage />} />
           <Route path="/tietosuoja" element={<PrivacyPolicyPage />} />
           <Route path="/kayttoehdot" element={<TermsPage />} />
+          <Route path="/kiitos" element={<ThankYouPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
