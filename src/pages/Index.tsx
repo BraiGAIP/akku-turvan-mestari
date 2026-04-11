@@ -420,9 +420,9 @@ const Index = () => {
             <span className="font-bold text-foreground">AkkuTurva</span>
           </div>
           <div className="flex gap-8 text-sm text-muted-foreground">
-            <a href="#" className="hover:text-foreground transition-colors duration-300">Tietosuoja</a>
-            <a href="#" className="hover:text-foreground transition-colors duration-300">Käyttöehdot</a>
-            <a href="#" className="hover:text-foreground transition-colors duration-300">Evästeet</a>
+            <Link to="/tietosuoja" className="hover:text-foreground transition-colors duration-300">Tietosuoja</Link>
+            <Link to="/kayttoehdot" className="hover:text-foreground transition-colors duration-300">Käyttöehdot</Link>
+            <button onClick={() => { localStorage.removeItem("akkuturva_cookie_consent"); window.location.reload(); }} className="hover:text-foreground transition-colors duration-300">Evästeet</button>
           </div>
           <p className="text-xs text-muted-foreground">© 2026 AkkuTurva. Yhteistyössä Fragus.</p>
         </div>
