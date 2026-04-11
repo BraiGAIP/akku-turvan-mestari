@@ -70,14 +70,14 @@ const HeroSection = ({ onStartFlow }: HeroSectionProps) => (
             Akun vaihto maksaa 5 000–20 000 €
           </p>
           <p className="text-sm text-secondary font-bold mt-1">
-            AkkuTurva alkaen vain 41 €/kk
+            Akkuturva alkaen vain 41 €/kk
           </p>
         </div>
 
         {/* Value stack */}
         <div className="grid grid-cols-2 gap-x-6 gap-y-2.5 mb-6">
           {[
-            "Suoja kalleimmalle autonosalle",
+            "Suoja auton kalleimmalle osalle",
             "Ei piilokuluja",
             "Voimassa heti",
             "14 päivän peruutusoikeus",
@@ -116,7 +116,7 @@ const HeroSection = ({ onStartFlow }: HeroSectionProps) => (
               className="h-14 px-10 text-base rounded-full bg-gradient-to-r from-primary to-primary/80 btn-glow hover:scale-[1.03] hover:translate-y-[-1px] transition-all duration-200"
               onClick={onStartFlow}
             >
-              Osta akkuturva
+              Laske hinta heti
               <ArrowRight className="w-5 h-5 ml-1" />
             </Button>
             <div className="flex flex-col items-center sm:items-end gap-0.5">

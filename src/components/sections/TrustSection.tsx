@@ -24,7 +24,7 @@ const TrustSection = () => (
       <div className="glass-card rounded-2xl p-8">
         <h3 className="font-bold text-lg text-foreground mb-4 flex items-center gap-2">
           <Building2 className="w-5 h-5 text-primary" />
-          Tietoja palveluntarjoajasta
+          Kuka on AkkuTurvan takana?
         </h3>
         <div className="grid sm:grid-cols-2 gap-6 text-sm">
           <div className="space-y-3">

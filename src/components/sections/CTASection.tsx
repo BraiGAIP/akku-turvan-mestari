@@ -6,7 +6,7 @@ interface CTASectionProps {
 }
 
 const valuePoints = [
-  "Suoja sähköauton kalleimmalle osalle",
+  "Suoja auton kalleimmalle osalle",
   "Ei yllättäviä kustannuksia",
   "Voimassa heti maksun jälkeen",
   "Voit maksaa kuukausittain",

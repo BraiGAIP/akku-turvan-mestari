@@ -70,7 +70,7 @@ const PricingTiersSection = ({ onStartFlow }: PricingTiersSectionProps) => (
             </p>
             {/* Yearly price – secondary */}
             <p className="text-sm text-muted-foreground mt-1">
-              tai {tier.price} / vuosi
+              tai {tier.price} kertamaksulla
             </p>
             <p className="text-xs text-muted-foreground flex items-center gap-1 mt-1 mb-1">
               <Check className="w-3 h-3 text-secondary" /> maksa kuukausittain tai kerralla

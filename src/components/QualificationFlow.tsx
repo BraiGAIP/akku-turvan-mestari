@@ -90,10 +90,10 @@ const QualificationFlow = ({ onComplete, onClose }: Props) => {
           {!showManual ? (
             <>
               <h2 className="text-2xl sm:text-3xl font-black text-foreground mb-2 tracking-tight">
-                Tarkista hinta autollesi
+                Näe hinta autollesi
               </h2>
               <p className="text-muted-foreground mb-6">
-                Syötä autosi tiedot ja saat tarjouksen heti.
+                Syötä autosi tiedot – näet hinnan heti.
               </p>
 
               <div className="space-y-4">
