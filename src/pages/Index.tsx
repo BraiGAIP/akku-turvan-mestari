@@ -39,8 +39,8 @@ const Index = () => {
 
       {/* Sticky mobile CTA */}
       <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden p-4 bg-background/90 backdrop-blur-md border-t border-border/50">
-        <Button className="w-full h-12 rounded-full text-base" onClick={() => setShowFlow(true)}>
-          Osta akkuturva nyt <Shield className="w-4 h-4 ml-1" />
+        <Button className="w-full h-12 rounded-full text-base shadow-lg shadow-primary/25" onClick={() => setShowFlow(true)}>
+          Selvitä hintasi 30 sekunnissa <Shield className="w-4 h-4 ml-1" />
         </Button>
       </div>
 
