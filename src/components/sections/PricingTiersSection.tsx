@@ -66,7 +66,7 @@ const PricingTiersSection = ({ onStartFlow }: PricingTiersSectionProps) => (
 
             {/* Monthly price – PRIMARY emphasis */}
             <p className="text-4xl font-black text-secondary mt-3">
-              {tier.monthly} €<span className="text-lg font-bold text-secondary/80"> / kk</span>
+              {tier.monthly}<span className="text-lg font-bold text-secondary/80"> / kk</span>
             </p>
             {/* Yearly price – secondary */}
             <p className="text-sm text-muted-foreground mt-1">
