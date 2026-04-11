@@ -47,8 +47,8 @@ const PricingTiersSection = ({ onStartFlow }: PricingTiersSectionProps) => (
         {tiers.map((tier) => (
           <div
             key={tier.name}
-            className={`relative bg-card rounded-2xl border p-8 transition-all duration-300 hover:shadow-md ${
-              tier.highlighted ? "border-primary ring-1 ring-primary shadow-sm scale-[1.02]" : "border-border hover:border-primary/30"
+            className={`relative bg-card rounded-2xl border p-8 transition-all duration-300 hover:shadow-lg ${
+              tier.highlighted ? "border-primary ring-1 ring-primary shadow-md scale-[1.02]" : "border-border shadow-sm hover:border-primary/30"
             }`}
           >
             {tier.highlighted && (
@@ -69,11 +69,12 @@ const PricingTiersSection = ({ onStartFlow }: PricingTiersSectionProps) => (
             </ul>
             <Button
               variant={tier.highlighted ? "default" : "outline"}
-              className="w-full h-11 rounded-xl"
+              className={`w-full h-11 rounded-xl ${tier.highlighted ? "shadow-lg shadow-primary/20" : ""}`}
               onClick={onStartFlow}
             >
-              Valitse {tier.name}
+              Selvitä hinta
             </Button>
+            <p className="text-xs text-center text-muted-foreground mt-2">Et sitoudu ostamaan</p>
           </div>
         ))}
       </div>

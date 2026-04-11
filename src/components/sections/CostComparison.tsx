@@ -45,7 +45,7 @@ const CostComparison = ({ onStartFlow }: CostComparisonProps) => (
           Sähköauton akku on auton kallein yksittäinen osa. Ilman suojaa korjauslasku voi yllättää.
         </p>
       </div>
-      <div className="bg-card rounded-2xl border border-border p-8 md:p-10 shadow-sm">
+      <div className="bg-card rounded-2xl border border-border p-8 md:p-10 shadow-md">
         <div className="space-y-6">
           <CostBar label="Tesla Model 3 – akun vaihto" value={12000} max={20000} variant="danger" />
           <CostBar label="BMW iX – akun vaihto" value={20000} max={20000} variant="danger" />
@@ -64,9 +64,10 @@ const CostComparison = ({ onStartFlow }: CostComparisonProps) => (
           </div>
         </div>
         <div className="text-center mt-8">
-          <Button size="lg" className="h-13 px-10 rounded-full text-base" onClick={onStartFlow}>
-            Tarkista hinta autollesi <ArrowRight className="w-5 h-5 ml-1" />
+          <Button size="lg" className="h-13 px-10 rounded-full text-base shadow-lg shadow-primary/20" onClick={onStartFlow}>
+            Selvitä hintasi 30 sekunnissa <ArrowRight className="w-5 h-5 ml-1" />
           </Button>
+          <p className="text-sm text-muted-foreground mt-3">Et sitoudu ostamaan – näet hinnan ensin</p>
         </div>
       </div>
     </div>
