@@ -28,32 +28,37 @@ const steps = [
 ];
 
 const HeroSection = ({ onStartFlow }: HeroSectionProps) => (
-  <section className="relative min-h-[90vh] flex items-center pt-16 noise-bg">
-    {/* Background image with dark overlay */}
-    <div className="absolute inset-0 overflow-hidden">
+  <section className="relative min-h-[92vh] flex items-center pt-16 noise-bg overflow-hidden">
+    {/* Background image with heavy dark overlay */}
+    <div className="absolute inset-0">
       <img
         src={evHeroImg}
         alt="Moderni sähköauto"
-        className="w-full h-full object-cover object-center opacity-30"
+        className="w-full h-full object-cover object-center opacity-20"
         width={1920}
         height={1024}
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/60" />
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/80" />
+      <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/50" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/90" />
       {/* Radial glow behind headline */}
-      <div className="absolute top-1/4 left-1/4 w-[600px] h-[400px] rounded-full bg-primary/10 blur-[120px] animate-glow" />
+      <div className="absolute top-[20%] left-[15%] w-[700px] h-[500px] rounded-full bg-primary/8 blur-[150px] animate-glow" />
+      {/* Secondary glow */}
+      <div className="absolute bottom-[20%] right-[10%] w-[400px] h-[300px] rounded-full bg-secondary/5 blur-[120px] animate-glow" style={{ animationDelay: "1.5s" }} />
     </div>
 
     <div className="relative z-10 max-w-7xl mx-auto px-6 py-16 md:py-24 w-full">
       <div className="max-w-2xl mb-14">
-        {/* Trust badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
-          <Zap className="w-4 h-4 text-secondary" />
-          <span className="text-sm font-semibold text-foreground">Virallinen Fragus-kumppani Suomessa</span>
+        {/* Trust badge with gold accent */}
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-6">
+          <Zap className="w-4 h-4 text-accent" />
+          <span className="text-sm font-semibold text-accent">Virallinen Fragus-kumppani Suomessa</span>
         </div>
 
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-foreground leading-[1.1] tracking-tight mb-3">
-          Sähköauton akku voi hajota yllättäen
+        <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-black text-foreground leading-[1.08] tracking-tight mb-3">
+          Sähköauton akku voi{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-foreground to-foreground/70">
+            hajota yllättäen
+          </span>
         </h1>
         <p className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-secondary leading-tight mb-6">
           Suojaa itsesi jopa 20 000 € kustannuksilta
@@ -62,19 +67,22 @@ const HeroSection = ({ onStartFlow }: HeroSectionProps) => (
         {/* Pain amplifier */}
         <div className="bg-destructive/10 border border-destructive/20 rounded-xl px-5 py-3 mb-8 inline-block">
           <p className="text-base md:text-lg font-bold text-destructive">
-            Akun vaihto maksaa 5 000–20 000 € — AkkuTurva alkaen 490 €/vuosi
+            Akun vaihto maksaa 5 000–20 000 €
+          </p>
+          <p className="text-sm text-secondary font-bold mt-1">
+            AkkuTurva alkaen vain 41 €/kk
           </p>
         </div>
 
         {/* Value stack */}
-        <div className="grid grid-cols-2 gap-x-6 gap-y-2 mb-6">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-2.5 mb-6">
           {[
             "Suoja kalleimmalle autonosalle",
             "Ei piilokuluja",
             "Voimassa heti",
             "14 päivän peruutusoikeus",
           ].map((item) => (
-            <div key={item} className="flex items-center gap-2 text-sm text-foreground">
+            <div key={item} className="flex items-center gap-2 text-sm text-foreground/90">
               <Check className="w-4 h-4 text-secondary flex-shrink-0" />
               <span>{item}</span>
             </div>
@@ -86,9 +94,9 @@ const HeroSection = ({ onStartFlow }: HeroSectionProps) => (
       <div id="miten" className="glass-card rounded-2xl p-6 md:p-8">
         <div className="grid md:grid-cols-3 gap-5 mb-6">
           {steps.map(({ icon: Icon, step, title, desc }) => (
-            <div key={title} className="relative bg-muted/50 rounded-xl border border-border p-6 hover:border-primary/40 hover:translate-y-[-2px] transition-all duration-300">
-              <span className="text-5xl font-black text-primary/10 absolute top-3 right-5">{step}</span>
-              <div className="w-11 h-11 rounded-lg bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center mb-4 shadow-lg shadow-primary/20">
+            <div key={title} className="relative bg-muted/40 rounded-xl border border-border/50 p-6 hover:border-secondary/30 hover:translate-y-[-2px] transition-all duration-300 group">
+              <span className="text-5xl font-black text-primary/8 absolute top-3 right-5">{step}</span>
+              <div className="w-11 h-11 rounded-lg bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center mb-4 shadow-lg shadow-primary/20 group-hover:shadow-primary/30 transition-shadow">
                 <Icon className="w-5 h-5 text-primary-foreground" />
               </div>
               <h3 className="text-base font-bold text-foreground mb-1">{title}</h3>
@@ -102,23 +110,28 @@ const HeroSection = ({ onStartFlow }: HeroSectionProps) => (
             <Clock className="w-4 h-4 text-secondary" />
             <span>Koko prosessi vie alle 2 minuuttia</span>
           </div>
-          <div className="flex flex-col items-center sm:items-end gap-1">
+          <div className="flex flex-col items-center sm:items-end gap-2">
             <Button
               size="lg"
-              className="h-14 px-10 text-base rounded-full bg-gradient-to-r from-primary to-primary/80 btn-glow hover:translate-y-[-1px] transition-all"
+              className="h-14 px-10 text-base rounded-full bg-gradient-to-r from-primary to-primary/80 btn-glow hover:scale-[1.03] hover:translate-y-[-1px] transition-all duration-200"
               onClick={onStartFlow}
             >
-              Näe hinta autollesi
+              Osta akkuturva
               <ArrowRight className="w-5 h-5 ml-1" />
             </Button>
-            <p className="text-xs text-muted-foreground">
-              Et sitoudu ostamaan – näet hinnan ensin
-            </p>
+            <div className="flex flex-col items-center sm:items-end gap-0.5">
+              <p className="text-xs text-muted-foreground">
+                ✔ Ei sitoutumista ennen ostoa
+              </p>
+              <p className="text-xs text-muted-foreground">
+                ✔ Maksa kuukausittain tai kerralla
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
-      <p className="mt-6 text-sm font-medium text-destructive/80 text-center md:text-left">
+      <p className="mt-6 text-sm font-medium text-destructive/70 text-center md:text-left">
         Ilman suojaa yksi vika voi maksaa tuhansia euroja
       </p>
     </div>

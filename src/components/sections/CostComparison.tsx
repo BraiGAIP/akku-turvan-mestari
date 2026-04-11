@@ -19,7 +19,7 @@ const CostBar = ({ label, value, max, variant }: CostBarProps) => (
     <div className="h-3 rounded-full bg-muted overflow-hidden">
       <div
         className={`h-full rounded-full transition-all duration-1000 ease-out ${
-          variant === "danger" ? "bg-destructive/70" : "bg-secondary"
+          variant === "danger" ? "bg-destructive/60" : "bg-gradient-to-r from-secondary to-secondary/70"
         }`}
         style={{ width: `${(value / max) * 100}%` }}
       />
@@ -33,8 +33,7 @@ interface CostComparisonProps {
 
 const CostComparison = ({ onStartFlow }: CostComparisonProps) => (
   <section className="py-20 px-6 relative">
-    {/* Radial glow */}
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] rounded-full bg-primary/5 blur-[100px]" />
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] rounded-full bg-destructive/3 blur-[100px]" />
     <div className="max-w-4xl mx-auto relative">
       <div className="text-center mb-12">
         <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-destructive bg-destructive/10 mb-4">
@@ -54,6 +53,7 @@ const CostComparison = ({ onStartFlow }: CostComparisonProps) => (
           <CostBar label="VW ID.4 – akun vaihto" value={13000} max={20000} variant="danger" />
           <div className="border-t border-border pt-6">
             <CostBar label="AkkuTurva – suoja alkaen" value={490} max={20000} variant="success" />
+            <p className="text-secondary font-bold text-sm mt-2">tai vain 41 € / kk</p>
           </div>
         </div>
         <div className="mt-8 p-4 rounded-xl bg-secondary/5 border border-secondary/20 flex items-start gap-3">
@@ -61,15 +61,22 @@ const CostComparison = ({ onStartFlow }: CostComparisonProps) => (
           <div>
             <p className="font-semibold text-foreground">Murto-osa akun vaihtokustannuksista</p>
             <p className="text-sm text-muted-foreground mt-1">
-              AkkuTurva suojaa sähköautosi kriittisimmät osat ilman riskiä – 14 päivän peruutusoikeus.
+              AkkuTurva suojaa sähköautosi kriittisimmät osat – 14 päivän peruutusoikeus.
             </p>
           </div>
         </div>
         <div className="text-center mt-8">
-          <Button size="lg" className="h-13 px-10 rounded-full text-base bg-gradient-to-r from-primary to-primary/80 btn-glow" onClick={onStartFlow}>
-            Selvitä hintasi 30 sekunnissa <ArrowRight className="w-5 h-5 ml-1" />
+          <Button
+            size="lg"
+            className="h-14 px-10 rounded-full text-base font-bold bg-gradient-to-r from-primary to-primary/80 btn-glow hover:scale-[1.03] transition-all duration-200"
+            onClick={onStartFlow}
+          >
+            Näe hinta autollesi <ArrowRight className="w-5 h-5 ml-1" />
           </Button>
-          <p className="text-sm text-muted-foreground mt-3">Et sitoudu ostamaan – näet hinnan ensin</p>
+          <div className="mt-3 space-y-0.5">
+            <p className="text-xs text-muted-foreground">✔ Ei sitoutumista ennen ostoa</p>
+            <p className="text-xs text-muted-foreground">✔ Voit maksaa kuukausittain</p>
+          </div>
         </div>
       </div>
     </div>
