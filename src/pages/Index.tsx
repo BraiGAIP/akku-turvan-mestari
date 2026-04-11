@@ -29,7 +29,6 @@ const Index = () => {
       <HeroSection onStartFlow={() => setShowFlow(true)} />
       <PartnerBanner />
       <CostComparison onStartFlow={() => setShowFlow(true)} />
-      <HowItWorks />
       <CoverageSection />
       <PricingTiersSection onStartFlow={() => setShowFlow(true)} />
       <TrustSection />

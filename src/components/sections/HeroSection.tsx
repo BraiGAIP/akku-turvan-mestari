@@ -1,10 +1,31 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ChevronDown, Shield, Check, Zap } from "lucide-react";
+import { ArrowRight, Check, Zap, Car, Shield, BadgeEuro, Clock } from "lucide-react";
 import evHeroImg from "@/assets/ev-hero.jpg";
 
 interface HeroSectionProps {
   onStartFlow: () => void;
 }
+
+const steps = [
+  {
+    icon: Car,
+    step: "01",
+    title: "Syötä rekisterinumero",
+    desc: "Syötä tiedot ja näe hinta heti.",
+  },
+  {
+    icon: Shield,
+    step: "02",
+    title: "Valitse sopiva turva",
+    desc: "Vertaile vaihtoehdot ja valitse sinulle sopiva.",
+  },
+  {
+    icon: BadgeEuro,
+    step: "03",
+    title: "Osta – suoja alkaa heti",
+    desc: "Maksa turvallisesti. Turva voimassa välittömästi.",
+  },
+];
 
 const HeroSection = ({ onStartFlow }: HeroSectionProps) => (
   <section className="relative min-h-[90vh] flex items-center pt-16">
@@ -21,8 +42,9 @@ const HeroSection = ({ onStartFlow }: HeroSectionProps) => (
       <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
     </div>
 
-    <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 md:py-28 w-full">
-      <div className="max-w-2xl">
+    <div className="relative z-10 max-w-7xl mx-auto px-6 py-16 md:py-24 w-full">
+      {/* Top: headline + CTA */}
+      <div className="max-w-2xl mb-14">
         {/* Trust badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
           <Zap className="w-4 h-4 text-primary" />
@@ -33,7 +55,7 @@ const HeroSection = ({ onStartFlow }: HeroSectionProps) => (
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-foreground leading-[1.1] tracking-tight mb-3">
           Sähköauton akku voi hajota yllättäen
         </h1>
-        {/* Solution line – primary color, bigger impact */}
+        {/* Solution line */}
         <p className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-primary leading-tight mb-6">
           Suojaa itsesi jopa 20 000 € kustannuksilta
         </p>
@@ -45,30 +67,8 @@ const HeroSection = ({ onStartFlow }: HeroSectionProps) => (
           </p>
         </div>
 
-        {/* CTA buttons */}
-        <div className="flex flex-col sm:flex-row gap-3 mb-4">
-          <Button size="lg" className="h-14 px-10 text-base rounded-full shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all" onClick={onStartFlow}>
-            Selvitä hintasi 30 sekunnissa
-            <ArrowRight className="w-5 h-5 ml-1" />
-          </Button>
-          <Button
-            variant="outline"
-            size="lg"
-            className="h-14 px-8 rounded-full"
-            onClick={() => document.getElementById("miten")?.scrollIntoView({ behavior: "smooth" })}
-          >
-            Miten se toimii
-            <ChevronDown className="w-4 h-4 ml-1" />
-          </Button>
-        </div>
-
-        {/* Microcopy – remove hesitation */}
-        <p className="text-sm text-muted-foreground mb-6">
-          Et sitoudu ostamaan – näet hinnan ensin
-        </p>
-
         {/* Value stack */}
-        <div className="grid grid-cols-2 gap-x-6 gap-y-2">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-2 mb-6">
           {[
             "Suoja kalleimmalle autonosalle",
             "Ei piilokuluja",
@@ -81,12 +81,49 @@ const HeroSection = ({ onStartFlow }: HeroSectionProps) => (
             </div>
           ))}
         </div>
-
-        {/* Urgency line */}
-        <p className="mt-6 text-sm font-medium text-destructive/80">
-          Ilman suojaa yksi vika voi maksaa tuhansia euroja
-        </p>
       </div>
+
+      {/* 3-step process – integrated into hero */}
+      <div id="miten" className="bg-card/80 backdrop-blur-sm border border-border rounded-2xl p-6 md:p-8 shadow-xl shadow-primary/5">
+        <div className="grid md:grid-cols-3 gap-5 mb-6">
+          {steps.map(({ icon: Icon, step, title, desc }) => (
+            <div key={title} className="relative bg-background rounded-xl border border-border p-6 hover:border-primary/40 hover:shadow-lg transition-all duration-300">
+              <span className="text-5xl font-black text-primary/10 absolute top-3 right-5">{step}</span>
+              <div className="w-11 h-11 rounded-lg bg-primary flex items-center justify-center mb-4">
+                <Icon className="w-5 h-5 text-primary-foreground" />
+              </div>
+              <h3 className="text-base font-bold text-foreground mb-1">{title}</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">{desc}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Micro-confidence + CTA */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+            <Clock className="w-4 h-4 text-primary" />
+            <span>Koko prosessi vie alle 2 minuuttia</span>
+          </div>
+          <div className="flex flex-col items-center sm:items-end gap-1">
+            <Button
+              size="lg"
+              className="h-14 px-10 text-base rounded-full shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all"
+              onClick={onStartFlow}
+            >
+              Näe hinta autollesi
+              <ArrowRight className="w-5 h-5 ml-1" />
+            </Button>
+            <p className="text-xs text-muted-foreground">
+              Et sitoudu ostamaan – näet hinnan ensin
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Urgency line */}
+      <p className="mt-6 text-sm font-medium text-destructive/80 text-center md:text-left">
+        Ilman suojaa yksi vika voi maksaa tuhansia euroja
+      </p>
     </div>
   </section>
 );
