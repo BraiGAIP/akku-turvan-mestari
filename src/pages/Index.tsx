@@ -421,11 +421,14 @@ const Index = () => {
           </div>
           <div className="space-y-3">
             {[
-              { q: "Kannattaako akkuturva?", a: "Sähköauton akun vaihto maksaa tyypillisesti 5 000–20 000 €. AkkuTurva suojaa sinua tältä riskiltä murto-osalla kustannuksista." },
-              { q: "Mitä jos akku hajoaa?", a: "Ilmoita vahingosta meille, ja hoidamme korjauksen tai vaihdon kumppaniverkostomme kautta. Sinulle ei koidu lisäkuluja turvatason mukaisesti." },
-              { q: "Voinko peruuttaa?", a: "Kyllä! Sinulla on 14 päivän peruutusoikeus ilman kuluja." },
-              { q: "Sopiiko käytetyille autoille?", a: "Kyllä, kunhan auto on enintään 8 vuotta vanha ja ajokilometrit alle 150 000 km." },
-              { q: "Kuka on Fragus?", a: "Fragus on johtava eurooppalainen ajoneuvojen suojatuotteiden tarjoaja, jolla on yli 20 vuoden kokemus." },
+              { q: "Kannattaako akkuturva?", a: "Sähköauton akun vaihto maksaa tyypillisesti 5 000–20 000 €. AkkuTurva suojaa sinua tältä riskiltä murto-osalla kustannuksista. Korvausraja jopa 15 000 € sopimuskauden aikana." },
+              { q: "Mitä akkuturva kattaa?", a: "GoSafe Electric kattaa sähköajomoottorin, ohjainlaitteet, voimansiirron, jarru- ja ohjausjärjestelmän, korkeajänniteakun, latausjärjestelmän, akun jäähdytyksen, turvalaitteet, lämmitys- ja jäähdytysjärjestelmän sekä sähköiset mukavuustoiminnot." },
+              { q: "Kattaako turva akun kapasiteetin laskun?", a: "Kyllä! Turva korvaa, jos akun kapasiteetti laskee alle 70 % alkuperäisestä tai alenema ylittää 6 % 12 kuukauden aikana." },
+              { q: "Miten korjaus toimii?", a: "Ilmoita viasta meille, saat ohjeet korjaamolle, Fragus hyväksyy korjauksen ja maksu menee suoraan korjaamolle. Sinun ei tarvitse maksaa itse." },
+              { q: "Sopiiko käytetyille autoille?", a: "Kyllä! Täysi turva alle 10v/200 000 km autoille. Rajoitettu turva (alhaisemmat korvausrajat) 10–20v/200 000–300 000 km autoille. Yli 20v tai 300 000 km autoja ei hyväksytä." },
+              { q: "Voinko peruuttaa?", a: "Kyllä, sinulla on 14 päivän peruutusoikeus ilman kuluja ja ilman syytä." },
+              { q: "Milloin sopimus alkaa?", a: "Sopimus alkaa tehdastakuun jälkeen. Se ei ole takautuva. Sopimus päättyy kun auto täyttää 20 vuotta tai saavuttaa 300 000 km." },
+              { q: "Kuka on Fragus?", a: "Fragus Group on Euroopan johtava ajoneuvojen suojatuotteiden tarjoaja yli 20 vuoden kokemuksella. AkkuTurva perustuu Fraguksen virallisiin GoSafe Electric -ehtoihin." },
             ].map(({ q, a }) => (
               <details key={q} className="group glass-strong rounded-2xl p-5 cursor-pointer shadow-premium hover:shadow-premium-lg transition-all duration-300">
                 <summary className="flex items-center justify-between font-semibold text-foreground list-none text-lg">
