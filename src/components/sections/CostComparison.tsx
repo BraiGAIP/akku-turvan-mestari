@@ -74,8 +74,9 @@ const CostComparison = ({ onStartFlow }: CostComparisonProps) => (
             Näe hinta autollesi <ArrowRight className="w-5 h-5 ml-1" />
           </Button>
           <div className="mt-3 space-y-0.5">
-            <p className="text-xs text-muted-foreground">✔ Ei sitoutumista ennen ostoa</p>
+            <p className="text-xs text-muted-foreground">✔ Et sitoudu ennen maksua</p>
             <p className="text-xs text-muted-foreground">✔ Voit maksaa kuukausittain</p>
+            <p className="text-xs text-muted-foreground">✔ Vie alle 2 minuuttia</p>
           </div>
         </div>
       </div>

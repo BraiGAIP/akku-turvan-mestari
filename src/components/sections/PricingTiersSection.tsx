@@ -98,7 +98,7 @@ const PricingTiersSection = ({ onStartFlow }: PricingTiersSectionProps) => (
             >
               Osta akkuturva <ArrowRight className="w-4 h-4 ml-1" />
             </Button>
-            <p className="text-xs text-center text-muted-foreground mt-2">Ei sitoutumista ennen ostoa</p>
+            <p className="text-xs text-center text-muted-foreground mt-2">Et sitoudu ennen maksua · Turva alkaa heti</p>
           </div>
         ))}
       </div>
