@@ -48,8 +48,9 @@ const Index = () => {
       {/* Sticky mobile CTA */}
       <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden p-4 bg-background/95 backdrop-blur-xl border-t border-border/30">
         <Button className="w-full h-12 rounded-full text-base font-bold bg-gradient-to-r from-primary to-primary/80 btn-glow" onClick={startFlow}>
-          Osta akkuturva <Shield className="w-4 h-4 ml-1" />
+          Laske hinta heti <ArrowRight className="w-4 h-4 ml-1" />
         </Button>
+        <p className="text-center text-[10px] text-muted-foreground mt-1.5">Et sitoudu · Vie alle 2 min · Turva alkaa heti</p>
       </div>
 
       {/* Price Calculator Modal */}

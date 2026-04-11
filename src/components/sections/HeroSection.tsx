@@ -121,10 +121,13 @@ const HeroSection = ({ onStartFlow }: HeroSectionProps) => (
             </Button>
             <div className="flex flex-col items-center sm:items-end gap-0.5">
               <p className="text-xs text-muted-foreground">
-                ✔ Ei sitoutumista ennen ostoa
+                ✔ Et sitoudu ennen maksua
               </p>
               <p className="text-xs text-muted-foreground">
-                ✔ Maksa kuukausittain tai kerralla
+                ✔ Voit maksaa kuukausittain
+              </p>
+              <p className="text-xs text-muted-foreground">
+                ✔ Turva alkaa heti
               </p>
             </div>
           </div>

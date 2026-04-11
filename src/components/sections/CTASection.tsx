@@ -81,9 +81,11 @@ const CTASection = ({ onStartFlow }: CTASectionProps) => (
           >
             Osta akkuturva <ArrowRight className="w-5 h-5 ml-1" />
           </Button>
-          <p className="text-muted-foreground text-xs mt-4">
-            Ilman suojaa yksi vika voi maksaa tuhansia euroja
-          </p>
+          <div className="mt-3 space-y-0.5">
+            <p className="text-xs text-muted-foreground">✔ Et sitoudu ennen maksua</p>
+            <p className="text-xs text-muted-foreground">✔ Voit maksaa kuukausittain</p>
+            <p className="text-xs text-muted-foreground">✔ Turva alkaa heti</p>
+          </div>
         </div>
       </div>
     </div>
