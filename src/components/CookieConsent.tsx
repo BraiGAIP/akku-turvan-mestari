@@ -16,9 +16,7 @@ const getStoredConsent = (): CookiePreferences | null => {
   try {
     const stored = localStorage.getItem(CONSENT_KEY);
     return stored ? JSON.parse(stored) : null;
-  } catch {
-    return null;
-  }
+  } catch { return null; }
 };
 
 const saveConsent = (prefs: CookiePreferences) => {
@@ -39,45 +37,16 @@ const CookieConsent = () => {
     }
   }, []);
 
-  const handleAcceptAll = () => {
-    const prefs: CookiePreferences = {
-      necessary: true,
-      analytics: true,
-      marketing: true,
-      timestamp: new Date().toISOString(),
-    };
-    saveConsent(prefs);
-    setVisible(false);
-  };
-
-  const handleRejectAll = () => {
-    const prefs: CookiePreferences = {
-      necessary: true,
-      analytics: false,
-      marketing: false,
-      timestamp: new Date().toISOString(),
-    };
-    saveConsent(prefs);
-    setVisible(false);
-  };
-
-  const handleSaveCustom = () => {
-    const prefs: CookiePreferences = {
-      necessary: true,
-      analytics,
-      marketing,
-      timestamp: new Date().toISOString(),
-    };
-    saveConsent(prefs);
-    setVisible(false);
-  };
+  const handleAcceptAll = () => { saveConsent({ necessary: true, analytics: true, marketing: true, timestamp: new Date().toISOString() }); setVisible(false); };
+  const handleRejectAll = () => { saveConsent({ necessary: true, analytics: false, marketing: false, timestamp: new Date().toISOString() }); setVisible(false); };
+  const handleSaveCustom = () => { saveConsent({ necessary: true, analytics, marketing, timestamp: new Date().toISOString() }); setVisible(false); };
 
   if (!visible) return null;
 
   return (
     <div className="fixed inset-0 z-[100] flex items-end justify-center p-4 pointer-events-none">
       <div className="w-full max-w-2xl pointer-events-auto animate-fade-up">
-        <div className="glass-strong rounded-2xl shadow-premium-lg border border-border/50 p-6">
+        <div className="bg-card rounded-2xl border border-border shadow-lg p-6">
           <div className="flex items-start justify-between mb-4">
             <div className="flex items-center gap-2">
               <Shield className="w-5 h-5 text-primary" />
@@ -89,61 +58,35 @@ const CookieConsent = () => {
           </div>
 
           <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-            Käytämme evästeitä parantaaksemme käyttökokemustasi. Välttämättömät evästeet ovat aina käytössä.
-            Voit valita, hyväksytkö analytiikka- ja markkinointievästeet.{" "}
-            <Link to="/tietosuoja" className="text-primary hover:underline">Lue lisää tietosuojaselosteestamme.</Link>
+            Käytämme evästeitä parantaaksemme käyttökokemustasi.{" "}
+            <Link to="/tietosuoja" className="text-primary hover:underline">Lue lisää.</Link>
           </p>
 
           {showCustomize && (
-            <div className="space-y-3 mb-5 p-4 rounded-xl bg-muted/50">
+            <div className="space-y-3 mb-5 p-4 rounded-lg bg-muted/50">
               <label className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm font-medium text-foreground">Välttämättömät</p>
-                  <p className="text-xs text-muted-foreground">Sivuston perustoiminnot</p>
-                </div>
-                <div className="w-10 h-5 rounded-full bg-primary flex items-center justify-end px-0.5">
-                  <div className="w-4 h-4 rounded-full bg-primary-foreground" />
-                </div>
+                <div><p className="text-sm font-medium text-foreground">Välttämättömät</p><p className="text-xs text-muted-foreground">Sivuston perustoiminnot</p></div>
+                <div className="w-10 h-5 rounded-full bg-primary flex items-center justify-end px-0.5"><div className="w-4 h-4 rounded-full bg-primary-foreground" /></div>
               </label>
-
               <label className="flex items-center justify-between cursor-pointer" onClick={() => setAnalytics(!analytics)}>
-                <div>
-                  <p className="text-sm font-medium text-foreground">Analytiikka</p>
-                  <p className="text-xs text-muted-foreground">Sivuston käytön seuranta ja parantaminen</p>
-                </div>
-                <div className={`w-10 h-5 rounded-full flex items-center px-0.5 transition-colors ${analytics ? "bg-primary justify-end" : "bg-muted-foreground/30 justify-start"}`}>
-                  <div className="w-4 h-4 rounded-full bg-primary-foreground" />
-                </div>
+                <div><p className="text-sm font-medium text-foreground">Analytiikka</p><p className="text-xs text-muted-foreground">Käytön seuranta</p></div>
+                <div className={`w-10 h-5 rounded-full flex items-center px-0.5 transition-colors ${analytics ? "bg-primary justify-end" : "bg-muted-foreground/30 justify-start"}`}><div className="w-4 h-4 rounded-full bg-primary-foreground" /></div>
               </label>
-
               <label className="flex items-center justify-between cursor-pointer" onClick={() => setMarketing(!marketing)}>
-                <div>
-                  <p className="text-sm font-medium text-foreground">Markkinointi</p>
-                  <p className="text-xs text-muted-foreground">Kohdennettu mainonta ja uudelleenmarkkinointi</p>
-                </div>
-                <div className={`w-10 h-5 rounded-full flex items-center px-0.5 transition-colors ${marketing ? "bg-primary justify-end" : "bg-muted-foreground/30 justify-start"}`}>
-                  <div className="w-4 h-4 rounded-full bg-primary-foreground" />
-                </div>
+                <div><p className="text-sm font-medium text-foreground">Markkinointi</p><p className="text-xs text-muted-foreground">Kohdennettu mainonta</p></div>
+                <div className={`w-10 h-5 rounded-full flex items-center px-0.5 transition-colors ${marketing ? "bg-primary justify-end" : "bg-muted-foreground/30 justify-start"}`}><div className="w-4 h-4 rounded-full bg-primary-foreground" /></div>
               </label>
             </div>
           )}
 
           <div className="flex flex-col sm:flex-row gap-2">
             {showCustomize ? (
-              <Button onClick={handleSaveCustom} variant="default" className="rounded-full flex-1">
-                Tallenna valinnat
-              </Button>
+              <Button onClick={handleSaveCustom} className="rounded-full flex-1">Tallenna valinnat</Button>
             ) : (
               <>
-                <Button onClick={handleAcceptAll} variant="default" className="rounded-full flex-1">
-                  Hyväksy kaikki
-                </Button>
-                <Button onClick={handleRejectAll} variant="outline" className="rounded-full flex-1">
-                  Hylkää valinnaiset
-                </Button>
-                <Button onClick={() => setShowCustomize(true)} variant="ghost" className="rounded-full gap-1.5">
-                  <Settings className="w-4 h-4" /> Muokkaa
-                </Button>
+                <Button onClick={handleAcceptAll} className="rounded-full flex-1">Hyväksy kaikki</Button>
+                <Button onClick={handleRejectAll} variant="outline" className="rounded-full flex-1">Hylkää valinnaiset</Button>
+                <Button onClick={() => setShowCustomize(true)} variant="ghost" className="rounded-full gap-1.5"><Settings className="w-4 h-4" /> Muokkaa</Button>
               </>
             )}
           </div>

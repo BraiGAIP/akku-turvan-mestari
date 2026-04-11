@@ -3,7 +3,7 @@ import { getAllEVSlugs } from "@/data/seoData";
 import { evDatabase, getBrands } from "@/data/evDatabase";
 import { Button } from "@/components/ui/button";
 import SeoHead from "@/components/SeoHead";
-import { Shield, ArrowRight, Battery, Car } from "lucide-react";
+import { Shield, ArrowRight, Battery } from "lucide-react";
 
 const EVDirectoryPage = () => {
   const brands = getBrands();
@@ -17,24 +17,24 @@ const EVDirectoryPage = () => {
         canonical="https://akkuturva.fi/akkuturva"
       />
 
-      <nav className="fixed top-0 left-0 right-0 z-40 glass">
+      <nav className="fixed top-0 left-0 right-0 z-40 bg-background/90 backdrop-blur-md border-b border-border/50">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-xl gradient-hero flex items-center justify-center">
+            <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center">
               <Shield className="w-5 h-5 text-primary-foreground" />
             </div>
-            <span className="text-xl font-extrabold text-gradient">AkkuTurva</span>
+            <span className="text-xl font-extrabold text-foreground">AkkuTurva</span>
           </Link>
-          <Link to="/"><Button variant="default" size="sm" className="rounded-full">Tarkista turva</Button></Link>
+          <Link to="/"><Button size="sm" className="rounded-full">Tarkista turva</Button></Link>
         </div>
       </nav>
 
       <div className="pt-28 pb-20 px-6">
         <div className="max-w-5xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-black text-foreground tracking-tight mb-4 animate-fade-up">
-            Sähköautojen <span className="text-gradient">akkuturva</span>
+          <h1 className="text-4xl md:text-5xl font-black text-foreground tracking-tight mb-4">
+            Sähköautojen <span className="text-primary">akkuturva</span>
           </h1>
-          <p className="text-lg text-muted-foreground mb-12 max-w-2xl animate-fade-up-delay">
+          <p className="text-lg text-muted-foreground mb-12 max-w-2xl">
             Selaa kaikki sähköautomallit ja löydä omalle autollesi räätälöity akkuturva. Hinnat alkaen 490 €.
           </p>
 
@@ -48,7 +48,7 @@ const EVDirectoryPage = () => {
                     const slug = allSlugs.find(s => s.brand === ev.brand && s.model === ev.model)?.slug;
                     const basePrice = Math.round(490 * (ev.batteryCapacity / 60));
                     return (
-                      <Link key={slug} to={`/akkuturva/${slug}`} className="glass-strong rounded-2xl p-5 shadow-premium hover:shadow-premium-lg transition-all duration-300 hover:-translate-y-1 group">
+                      <Link key={slug} to={`/akkuturva/${slug}`} className="bg-card rounded-xl border border-border p-5 hover:border-primary/30 transition-colors group">
                         <div className="flex items-start justify-between mb-3">
                           <div>
                             <h3 className="font-bold text-foreground group-hover:text-primary transition-colors">{ev.model}</h3>
@@ -73,10 +73,10 @@ const EVDirectoryPage = () => {
       <footer className="py-10 px-6 border-t border-border">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg gradient-hero flex items-center justify-center"><Shield className="w-4 h-4 text-primary-foreground" /></div>
+            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center"><Shield className="w-4 h-4 text-primary-foreground" /></div>
             <span className="font-bold text-foreground">AkkuTurva</span>
           </Link>
-          <p className="text-xs text-muted-foreground">© 2026 AkkuTurva</p>
+          <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} AkkuTurva</p>
         </div>
       </footer>
     </div>

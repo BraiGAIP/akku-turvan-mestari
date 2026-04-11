@@ -12,10 +12,10 @@ const BlogPostPage = () => {
   if (!post) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center p-6">
-        <div className="text-center glass-strong rounded-3xl p-10 shadow-premium-lg max-w-md">
-          <BookOpen className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
+        <div className="text-center bg-card rounded-2xl border border-border p-10 max-w-md">
+          <BookOpen className="w-14 h-14 text-muted-foreground mx-auto mb-4" />
           <h1 className="text-2xl font-black text-foreground mb-2">Artikkelia ei löytynyt</h1>
-          <Link to="/blogi"><Button variant="default" className="rounded-full mt-4">Selaa artikkeleita</Button></Link>
+          <Link to="/blogi"><Button className="rounded-full mt-4">Selaa artikkeleita</Button></Link>
         </div>
       </div>
     );
@@ -31,15 +31,10 @@ const BlogPostPage = () => {
     publisher: { "@type": "Organization", name: "AkkuTurva" },
   };
 
-  // Simple markdown-like rendering
   const renderContent = (content: string) => {
     return content.split("\n\n").map((block, i) => {
-      if (block.startsWith("## ")) {
-        return <h2 key={i} className="text-2xl font-bold text-foreground mt-8 mb-4">{block.slice(3)}</h2>;
-      }
-      if (block.startsWith("### ")) {
-        return <h3 key={i} className="text-xl font-bold text-foreground mt-6 mb-3">{block.slice(4)}</h3>;
-      }
+      if (block.startsWith("## ")) return <h2 key={i} className="text-2xl font-bold text-foreground mt-8 mb-4">{block.slice(3)}</h2>;
+      if (block.startsWith("### ")) return <h3 key={i} className="text-xl font-bold text-foreground mt-6 mb-3">{block.slice(4)}</h3>;
       if (block.startsWith("|")) {
         const rows = block.split("\n").filter(r => !r.match(/^\|[-|]+\|$/));
         const headers = rows[0]?.split("|").filter(Boolean).map(h => h.trim());
@@ -47,20 +42,14 @@ const BlogPostPage = () => {
         return (
           <div key={i} className="overflow-x-auto my-4">
             <table className="w-full text-sm border-collapse">
-              <thead>
-                <tr>{headers?.map((h, j) => <th key={j} className="text-left p-3 border-b border-border font-semibold text-foreground bg-muted/50">{h}</th>)}</tr>
-              </thead>
-              <tbody>
-                {data.map((row, ri) => (
-                  <tr key={ri}>{row.map((cell, ci) => <td key={ci} className="p-3 border-b border-border/50 text-muted-foreground">{cell}</td>)}</tr>
-                ))}
-              </tbody>
+              <thead><tr>{headers?.map((h, j) => <th key={j} className="text-left p-3 border-b border-border font-semibold text-foreground bg-muted/50">{h}</th>)}</tr></thead>
+              <tbody>{data.map((row, ri) => <tr key={ri}>{row.map((cell, ci) => <td key={ci} className="p-3 border-b border-border/50 text-muted-foreground">{cell}</td>)}</tr>)}</tbody>
             </table>
           </div>
         );
       }
       if (block.match(/^(\d+\.|-) /m)) {
-        const items = block.split("\n").map(l => l.replace(/^(\d+\.\s|-\s|\*\*|\*\*)/, "").trim());
+        const items = block.split("\n").map(l => l.replace(/^(\d+\.\s|-\s)/, "").trim());
         return (
           <ul key={i} className="space-y-2 my-4">
             {items.filter(Boolean).map((item, j) => (
@@ -82,15 +71,15 @@ const BlogPostPage = () => {
     <div className="min-h-screen bg-background">
       <SeoHead title={`${post.title} | AkkuTurva`} description={post.metaDescription} canonical={`https://akkuturva.fi/blogi/${slug}`} jsonLd={jsonLd} />
 
-      <nav className="fixed top-0 left-0 right-0 z-40 glass">
+      <nav className="fixed top-0 left-0 right-0 z-40 bg-background/90 backdrop-blur-md border-b border-border/50">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-xl gradient-hero flex items-center justify-center">
+            <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center">
               <Shield className="w-5 h-5 text-primary-foreground" />
             </div>
-            <span className="text-xl font-extrabold text-gradient">AkkuTurva</span>
+            <span className="text-xl font-extrabold text-foreground">AkkuTurva</span>
           </Link>
-          <Link to="/"><Button variant="default" size="sm" className="rounded-full">Tarkista turva</Button></Link>
+          <Link to="/"><Button size="sm" className="rounded-full">Tarkista turva</Button></Link>
         </div>
       </nav>
 
@@ -108,26 +97,22 @@ const BlogPostPage = () => {
 
           <h1 className="text-3xl md:text-4xl font-black text-foreground tracking-tight mb-8 leading-tight">{post.title}</h1>
 
-          <div className="prose-akkuturva">
-            {renderContent(post.content)}
-          </div>
+          <div>{renderContent(post.content)}</div>
 
-          {/* CTA */}
-          <div className="mt-12 glass-strong rounded-3xl p-8 text-center shadow-premium-lg">
-            <h3 className="text-2xl font-black text-foreground mb-3">Suojaa akkusi nyt</h3>
-            <p className="text-muted-foreground mb-6">Tarkista autosi kelpoisuus ja saat tarjouksen alle 3 minuutissa.</p>
-            <Button variant="default" size="lg" className="h-14 px-10 rounded-full" onClick={() => navigate("/")}>
+          <div className="mt-12 bg-primary rounded-2xl p-8 text-center">
+            <h3 className="text-2xl font-black text-primary-foreground mb-3">Suojaa akkusi nyt</h3>
+            <p className="text-primary-foreground/80 mb-6">Tarkista autosi kelpoisuus ja saat tarjouksen heti.</p>
+            <Button size="lg" className="h-13 px-10 rounded-full bg-primary-foreground text-foreground font-bold hover:bg-primary-foreground/90" onClick={() => navigate("/")}>
               Aloita tästä <ArrowRight className="w-5 h-5 ml-1" />
             </Button>
           </div>
 
-          {/* Related articles */}
           {otherPosts.length > 0 && (
             <div className="mt-16">
               <h3 className="text-xl font-bold text-foreground mb-5">Lue myös</h3>
-              <div className="space-y-3">
+              <div className="space-y-2">
                 {otherPosts.map(p => (
-                  <Link key={p.slug} to={`/blogi/${p.slug}`} className="block glass rounded-2xl p-4 hover:shadow-premium transition-all group">
+                  <Link key={p.slug} to={`/blogi/${p.slug}`} className="block bg-card rounded-xl border border-border p-4 hover:border-primary/30 transition-colors group">
                     <p className="font-semibold text-foreground group-hover:text-primary transition-colors">{p.title}</p>
                     <p className="text-xs text-muted-foreground mt-1">{p.readTime} · {p.category}</p>
                   </Link>
@@ -141,10 +126,10 @@ const BlogPostPage = () => {
       <footer className="py-10 px-6 border-t border-border">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg gradient-hero flex items-center justify-center"><Shield className="w-4 h-4 text-primary-foreground" /></div>
+            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center"><Shield className="w-4 h-4 text-primary-foreground" /></div>
             <span className="font-bold text-foreground">AkkuTurva</span>
           </Link>
-          <p className="text-xs text-muted-foreground">© 2026 AkkuTurva</p>
+          <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} AkkuTurva</p>
         </div>
       </footer>
     </div>
