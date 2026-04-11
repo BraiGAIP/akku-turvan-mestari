@@ -1,10 +1,10 @@
 import { Award, Shield } from "lucide-react";
 
 const PartnerBanner = () => (
-  <section className="py-10 px-6 border-y border-border/50 bg-muted/30">
+  <section className="py-10 px-6 border-y border-border/30">
     <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12">
       <div className="flex items-center gap-3">
-        <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center shadow-sm">
+        <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center">
           <Award className="w-6 h-6 text-primary" />
         </div>
         <div>

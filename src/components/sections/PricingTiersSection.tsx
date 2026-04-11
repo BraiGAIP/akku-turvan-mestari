@@ -31,8 +31,9 @@ const tiers = [
 ];
 
 const PricingTiersSection = ({ onStartFlow }: PricingTiersSectionProps) => (
-  <section id="turva" className="py-20 px-6 bg-muted/30">
-    <div className="max-w-6xl mx-auto">
+  <section id="turva" className="py-20 px-6 relative">
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full bg-primary/5 blur-[120px]" />
+    <div className="max-w-6xl mx-auto relative">
       <div className="text-center mb-14">
         <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-primary bg-primary/10 mb-4">
           Turvatasot
@@ -47,12 +48,12 @@ const PricingTiersSection = ({ onStartFlow }: PricingTiersSectionProps) => (
         {tiers.map((tier) => (
           <div
             key={tier.name}
-            className={`relative bg-card rounded-2xl border p-8 transition-all duration-300 hover:shadow-lg ${
-              tier.highlighted ? "border-primary ring-1 ring-primary shadow-md scale-[1.02]" : "border-border shadow-sm hover:border-primary/30"
+            className={`relative glass-card rounded-2xl p-8 transition-all duration-300 hover:translate-y-[-4px] ${
+              tier.highlighted ? "border-primary ring-1 ring-primary/50 scale-[1.02]" : "hover:border-primary/30"
             }`}
           >
             {tier.highlighted && (
-              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-bold px-4 py-1 rounded-full flex items-center gap-1.5">
+              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground text-xs font-bold px-4 py-1 rounded-full flex items-center gap-1.5 shadow-lg shadow-primary/20">
                 <Star className="w-3 h-3" /> Suosituin
               </div>
             )}
@@ -68,8 +69,7 @@ const PricingTiersSection = ({ onStartFlow }: PricingTiersSectionProps) => (
               ))}
             </ul>
             <Button
-              variant={tier.highlighted ? "default" : "outline"}
-              className={`w-full h-11 rounded-xl ${tier.highlighted ? "shadow-lg shadow-primary/20" : ""}`}
+              className={`w-full h-11 rounded-xl ${tier.highlighted ? "bg-gradient-to-r from-primary to-primary/80 btn-glow" : "bg-muted hover:bg-muted/80 text-foreground"}`}
               onClick={onStartFlow}
             >
               Selvitä hinta

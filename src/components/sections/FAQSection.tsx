@@ -24,7 +24,7 @@ const FAQSection = () => (
       </div>
       <div className="space-y-2">
         {faqs.map(({ q, a }) => (
-          <details key={q} className="group bg-card rounded-xl border border-border p-5 cursor-pointer hover:border-primary/30 transition-colors">
+          <details key={q} className="group glass-card rounded-xl p-5 cursor-pointer hover:border-primary/30 transition-all">
             <summary className="flex items-center justify-between font-semibold text-foreground list-none">
               {q}
               <ChevronDown className="w-5 h-5 text-muted-foreground group-open:rotate-180 transition-transform duration-200 flex-shrink-0 ml-4" />

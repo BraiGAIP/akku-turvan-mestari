@@ -11,10 +11,10 @@ const Navbar = ({ onStartFlow }: NavbarProps) => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-40 bg-background/90 backdrop-blur-md border-b border-border/50">
+    <nav className="fixed top-0 left-0 right-0 z-40 bg-background/80 backdrop-blur-xl border-b border-border/50">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2.5">
-          <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center">
+          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center shadow-lg shadow-primary/20">
             <Shield className="w-5 h-5 text-primary-foreground" />
           </div>
           <span className="text-xl font-extrabold text-foreground">AkkuTurva</span>
@@ -29,7 +29,7 @@ const Navbar = ({ onStartFlow }: NavbarProps) => {
         </div>
 
         <div className="flex items-center gap-3">
-          <Button size="sm" className="rounded-full hidden sm:inline-flex" onClick={onStartFlow}>
+          <Button size="sm" className="rounded-full hidden sm:inline-flex bg-gradient-to-r from-primary to-primary/80 btn-glow" onClick={onStartFlow}>
             Tarkista turva
           </Button>
           <button
@@ -42,13 +42,13 @@ const Navbar = ({ onStartFlow }: NavbarProps) => {
       </div>
 
       {mobileOpen && (
-        <div className="md:hidden border-t border-border/50 bg-background px-6 py-4 space-y-3">
+        <div className="md:hidden border-t border-border/50 bg-background/95 backdrop-blur-xl px-6 py-4 space-y-3">
           <a href="#miten" className="block text-sm font-medium text-muted-foreground hover:text-foreground" onClick={() => setMobileOpen(false)}>Miten toimii</a>
           <a href="#turva" className="block text-sm font-medium text-muted-foreground hover:text-foreground" onClick={() => setMobileOpen(false)}>Turvatasot</a>
           <Link to="/akkuturva" className="block text-sm font-medium text-muted-foreground hover:text-foreground">Mallit</Link>
           <Link to="/blogi" className="block text-sm font-medium text-muted-foreground hover:text-foreground">Blogi</Link>
           <a href="#faq" className="block text-sm font-medium text-muted-foreground hover:text-foreground" onClick={() => setMobileOpen(false)}>UKK</a>
-          <Button size="sm" className="w-full rounded-full mt-2" onClick={() => { onStartFlow(); setMobileOpen(false); }}>
+          <Button size="sm" className="w-full rounded-full mt-2 bg-gradient-to-r from-primary to-primary/80" onClick={() => { onStartFlow(); setMobileOpen(false); }}>
             Tarkista turva
           </Button>
         </div>

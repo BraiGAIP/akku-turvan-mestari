@@ -32,8 +32,10 @@ interface CostComparisonProps {
 }
 
 const CostComparison = ({ onStartFlow }: CostComparisonProps) => (
-  <section className="py-20 px-6">
-    <div className="max-w-4xl mx-auto">
+  <section className="py-20 px-6 relative">
+    {/* Radial glow */}
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] rounded-full bg-primary/5 blur-[100px]" />
+    <div className="max-w-4xl mx-auto relative">
       <div className="text-center mb-12">
         <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-destructive bg-destructive/10 mb-4">
           Tiesitkö?
@@ -45,7 +47,7 @@ const CostComparison = ({ onStartFlow }: CostComparisonProps) => (
           Sähköauton akku on auton kallein yksittäinen osa. Ilman suojaa korjauslasku voi yllättää.
         </p>
       </div>
-      <div className="bg-card rounded-2xl border border-border p-8 md:p-10 shadow-md">
+      <div className="glass-card rounded-2xl p-8 md:p-10">
         <div className="space-y-6">
           <CostBar label="Tesla Model 3 – akun vaihto" value={12000} max={20000} variant="danger" />
           <CostBar label="BMW iX – akun vaihto" value={20000} max={20000} variant="danger" />
@@ -54,7 +56,7 @@ const CostComparison = ({ onStartFlow }: CostComparisonProps) => (
             <CostBar label="AkkuTurva – suoja alkaen" value={490} max={20000} variant="success" />
           </div>
         </div>
-        <div className="mt-8 p-4 rounded-xl bg-secondary/10 border border-secondary/20 flex items-start gap-3">
+        <div className="mt-8 p-4 rounded-xl bg-secondary/5 border border-secondary/20 flex items-start gap-3">
           <TrendingUp className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
           <div>
             <p className="font-semibold text-foreground">Murto-osa akun vaihtokustannuksista</p>
@@ -64,7 +66,7 @@ const CostComparison = ({ onStartFlow }: CostComparisonProps) => (
           </div>
         </div>
         <div className="text-center mt-8">
-          <Button size="lg" className="h-13 px-10 rounded-full text-base shadow-lg shadow-primary/20" onClick={onStartFlow}>
+          <Button size="lg" className="h-13 px-10 rounded-full text-base bg-gradient-to-r from-primary to-primary/80 btn-glow" onClick={onStartFlow}>
             Selvitä hintasi 30 sekunnissa <ArrowRight className="w-5 h-5 ml-1" />
           </Button>
           <p className="text-sm text-muted-foreground mt-3">Et sitoudu ostamaan – näet hinnan ensin</p>
