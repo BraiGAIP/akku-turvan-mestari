@@ -46,9 +46,9 @@ const Index = () => {
       <SiteFooter />
 
       {/* Sticky mobile CTA */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden p-4 bg-background/90 backdrop-blur-md border-t border-border/50">
-        <Button className="w-full h-12 rounded-full text-base shadow-lg shadow-primary/25" onClick={() => setShowFlow(true)}>
-          Selvitä hintasi 30 sekunnissa <Shield className="w-4 h-4 ml-1" />
+      <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden p-4 bg-background/95 backdrop-blur-xl border-t border-border/30">
+        <Button className="w-full h-12 rounded-full text-base font-bold bg-gradient-to-r from-primary to-primary/80 btn-glow" onClick={() => setShowFlow(true)}>
+          Osta akkuturva <Shield className="w-4 h-4 ml-1" />
         </Button>
       </div>
 
