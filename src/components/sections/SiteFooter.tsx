@@ -8,7 +8,7 @@ const SiteFooter = () => (
         <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center shadow-lg shadow-primary/20">
           <Shield className="w-4 h-4 text-primary-foreground" />
         </div>
-        <span className="font-bold text-foreground">AkkuTurva</span>
+        <span className="font-bold text-foreground">Jatkoturva</span>
       </div>
       <div className="flex gap-6 text-sm text-muted-foreground">
         <Link to="/tietosuoja" className="hover:text-foreground transition-colors">Tietosuoja</Link>
@@ -21,7 +21,7 @@ const SiteFooter = () => (
         </button>
       </div>
       <p className="text-xs text-muted-foreground">
-        © {new Date().getFullYear()} AkkuTurva · Perustuu Fragus GoSafe Electric -tuotteeseen
+        © {new Date().getFullYear()} Jatkoturva · Perustuu Fragus GoSafe Electric -tuotteeseen
       </p>
     </div>
   </footer>

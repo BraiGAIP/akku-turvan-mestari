@@ -5,8 +5,8 @@ import SeoHead from "@/components/SeoHead";
 const PrivacyPolicyPage = () => (
   <div className="min-h-screen bg-background">
     <SeoHead
-      title="Tietosuojaseloste | AkkuTurva"
-      description="AkkuTurvan tietosuojaseloste. Lue miten käsittelemme henkilötietojasi GDPR:n mukaisesti."
+      title="Tietosuojaseloste | Jatkoturva"
+      description="Jatkoturvan tietosuojaseloste. Lue miten käsittelemme henkilötietojasi GDPR:n mukaisesti."
       canonical="https://akkuturva.fi/tietosuoja"
     />
 
@@ -16,7 +16,7 @@ const PrivacyPolicyPage = () => (
           <div className="w-9 h-9 rounded-xl gradient-hero flex items-center justify-center">
             <Shield className="w-5 h-5 text-primary-foreground" />
           </div>
-          <span className="text-xl font-extrabold text-gradient">AkkuTurva</span>
+          <span className="text-xl font-extrabold text-gradient">Jatkoturva</span>
         </Link>
       </div>
     </nav>
@@ -33,7 +33,7 @@ const PrivacyPolicyPage = () => (
         <div className="space-y-8 text-sm text-muted-foreground leading-relaxed">
           <section>
             <h2 className="text-xl font-bold text-foreground mb-3">1. Rekisterinpitäjä</h2>
-            <p>AkkuTurva (yhteistyössä Fragus Group AB:n kanssa)<br />
+            <p>Jatkoturva (yhteistyössä Fragus Group AB:n kanssa)<br />
             Sähköposti: tietosuoja@akkuturva.fi</p>
           </section>
 
@@ -52,7 +52,7 @@ const PrivacyPolicyPage = () => (
           <section>
             <h2 className="text-xl font-bold text-foreground mb-3">3. Tietojen käyttötarkoitus</h2>
             <ul className="list-disc list-inside space-y-1">
-              <li>Akkuturvapalvelun tarjoaminen ja hallinta</li>
+              <li>Jatkoturvapalvelun tarjoaminen ja hallinta</li>
               <li>Tilausten käsittely ja asiakaspalvelu</li>
               <li>Palvelun kehittäminen ja parantaminen</li>
               <li>Lakisääteisten velvoitteiden täyttäminen</li>
@@ -128,9 +128,9 @@ const PrivacyPolicyPage = () => (
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-lg gradient-hero flex items-center justify-center"><Shield className="w-4 h-4 text-primary-foreground" /></div>
-          <span className="font-bold text-foreground">AkkuTurva</span>
+          <span className="font-bold text-foreground">Jatkoturva</span>
         </Link>
-        <p className="text-xs text-muted-foreground">© 2026 AkkuTurva</p>
+        <p className="text-xs text-muted-foreground">© 2026 Jatkoturva</p>
       </div>
     </footer>
   </div>

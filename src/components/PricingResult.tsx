@@ -58,7 +58,7 @@ const PricingResult = ({ data, onBack }: Props) => {
           <AlertTriangle className="w-14 h-14 text-destructive mx-auto mb-6" />
           <h2 className="text-2xl font-black text-foreground mb-3">Auto ei täytä ehtoja</h2>
           <p className="text-muted-foreground mb-6">
-            Akkuturva on saatavilla alle 20-vuotiaille autoille, joissa on alle 300 000 km.
+            Jatkoturva on saatavilla alle 20-vuotiaille autoille, joissa on alle 300 000 km.
           </p>
           <Button className="h-11 px-8 rounded-xl" onClick={onBack}>Kokeile toista autoa</Button>
         </div>
@@ -252,7 +252,7 @@ const PricingResult = ({ data, onBack }: Props) => {
         {/* Cost comparison */}
         {evData && (
           <div className="mb-8 bg-card rounded-xl border border-border p-6">
-            <h3 className="font-bold text-foreground mb-4">Ilman suojaa vs. AkkuTurva</h3>
+            <h3 className="font-bold text-foreground mb-4">Ilman suojaa vs. Jatkoturva</h3>
             <div className="flex items-center gap-6 flex-wrap">
               <div className="flex-1 min-w-[160px]">
                 <p className="text-sm text-muted-foreground mb-1">Akun vaihto ilman suojaa</p>
@@ -260,7 +260,7 @@ const PricingResult = ({ data, onBack }: Props) => {
               </div>
               <ArrowRight className="w-5 h-5 text-muted-foreground hidden md:block" />
               <div className="flex-1 min-w-[160px]">
-                <p className="text-sm text-muted-foreground mb-1">AkkuTurva alkaen</p>
+                <p className="text-sm text-muted-foreground mb-1">Jatkoturva alkaen</p>
                 <p className="text-3xl font-black text-secondary">{tiers[0].monthlyPrice} € / kk</p>
               </div>
             </div>
@@ -349,7 +349,7 @@ const PricingResult = ({ data, onBack }: Props) => {
             <span className="text-sm font-black text-destructive">5 000 – 20 000 €</span>
           </div>
           <div className="flex items-center justify-between p-3 rounded-lg bg-secondary/5 border border-secondary/10">
-            <span className="text-sm text-muted-foreground">AkkuTurva</span>
+            <span className="text-sm text-muted-foreground">Jatkoturva</span>
             <span className="text-sm font-black text-secondary">alk. {selected?.monthlyPrice ?? tiers[0].monthlyPrice} € / kk</span>
           </div>
           <p className="text-sm text-muted-foreground text-center leading-relaxed">

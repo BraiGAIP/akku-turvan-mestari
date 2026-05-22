@@ -23,21 +23,21 @@ const EVModelPage = () => {
   }
 
   const fullName = `${ev.brand} ${ev.model}`;
-  const title = `${fullName} akkuturva – Suojaa akkusi | AkkuTurva`;
-  const description = `${fullName} akun vaihto maksaa jopa ${ev.avgReplacementCost.toLocaleString("fi-FI")} €. AkkuTurva suojaa akkusi alkaen 490 €. 14 pv peruutusoikeus.`;
+  const title = `${fullName} akkuturva – Suojaa akkusi | Jatkoturva`;
+  const description = `${fullName} akun vaihto maksaa jopa ${ev.avgReplacementCost.toLocaleString("fi-FI")} €. Jatkoturva suojaa akkusi alkaen 490 €. 14 pv peruutusoikeus.`;
   const basePrice = Math.round(490 * (ev.batteryCapacity / 60));
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: `${fullName} AkkuTurva`,
+    name: `${fullName} Jatkoturva`,
     description,
-    brand: { "@type": "Brand", name: "AkkuTurva" },
+    brand: { "@type": "Brand", name: "Jatkoturva" },
     offers: { "@type": "Offer", priceCurrency: "EUR", price: basePrice, availability: "https://schema.org/InStock" },
   };
 
   const faqs = [
-    { q: `Kannattaako ${fullName} akkuturva?`, a: `${fullName} akun vaihto maksaa keskimäärin ${ev.avgReplacementCost.toLocaleString("fi-FI")} €. AkkuTurva suojaa tältä riskiltä alkaen ${basePrice} €.` },
+    { q: `Kannattaako ${fullName} akkuturva?`, a: `${fullName} akun vaihto maksaa keskimäärin ${ev.avgReplacementCost.toLocaleString("fi-FI")} €. Jatkoturva suojaa tältä riskiltä alkaen ${basePrice} €.` },
     { q: `Mitä ${fullName} akkuturva kattaa?`, a: `Turva kattaa akun kapasiteetin laskun, akkumoduulien viat, BMS-järjestelmän ongelmat ja latausjärjestelmän viat turvatasosta riippuen.` },
     { q: `Kuinka kauan ${fullName} akku kestää?`, a: `${fullName} akun kapasiteetti (${ev.batteryCapacity} kWh) säilyy tyypillisesti 80 %:ssa noin 150 000 km tai 8–10 vuoden ajan.` },
     { q: "Voinko peruuttaa turvan?", a: "Kyllä, sinulla on 14 päivän peruutusoikeus ilman syytä." },
@@ -56,7 +56,7 @@ const EVModelPage = () => {
             <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center">
               <Shield className="w-5 h-5 text-primary-foreground" />
             </div>
-            <span className="text-xl font-extrabold text-foreground">AkkuTurva</span>
+            <span className="text-xl font-extrabold text-foreground">Jatkoturva</span>
           </Link>
           <Button size="sm" className="rounded-full bg-gradient-to-r from-primary to-primary/80 btn-glow font-bold" onClick={() => navigate("/")}>Laske hinta heti</Button>
         </div>
@@ -71,7 +71,7 @@ const EVModelPage = () => {
             {fullName} <span className="text-primary">akkuturva</span>
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mb-8">
-            Suojaa {fullName} akku ({ev.batteryCapacity} kWh) odottamattomilta kuluilta. Akun vaihto voi maksaa jopa {ev.avgReplacementCost.toLocaleString("fi-FI")} € – AkkuTurvalla alkaen {basePrice} €.
+            Suojaa {fullName} akku ({ev.batteryCapacity} kWh) odottamattomilta kuluilta. Akun vaihto voi maksaa jopa {ev.avgReplacementCost.toLocaleString("fi-FI")} € – Jatkoturvalla alkaen {basePrice} €.
           </p>
           <Button size="lg" className="h-14 px-10 rounded-full text-base" onClick={() => navigate("/")}>
             Tarkista {fullName} turva <ArrowRight className="w-5 h-5 ml-1" />
@@ -103,7 +103,7 @@ const EVModelPage = () => {
             {[
               { title: "Kallis akun vaihto", desc: `${fullName} akun vaihto maksaa keskimäärin ${ev.avgReplacementCost.toLocaleString("fi-FI")} €.` },
               { title: "Suomen pakkanen rasittaa", desc: `${ev.batteryCapacity} kWh akku kärsii kylmässä. Pakkanen voi nopeuttaa kulumista.` },
-              { title: "Takuu ei kata kaikkea", desc: "Valmistajan takuu kattaa vain tietyt viat. AkkuTurva laajentaa suojaa." },
+              { title: "Takuu ei kata kaikkea", desc: "Valmistajan takuu kattaa vain tietyt viat. Jatkoturva laajentaa suojaa." },
               { title: "Mielenrauha joka päivä", desc: "Aja huoletta tietäen, että odottamattomat akkuongelmat on katettu." },
             ].map(b => (
               <div key={b.title} className="bg-card rounded-xl border border-border p-6">
@@ -182,9 +182,9 @@ const EVModelPage = () => {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <Link to="/" className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center"><Shield className="w-4 h-4 text-primary-foreground" /></div>
-            <span className="font-bold text-foreground">AkkuTurva</span>
+            <span className="font-bold text-foreground">Jatkoturva</span>
           </Link>
-          <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} AkkuTurva · Perustuu Fragus GoSafe Electric -tuotteeseen</p>
+          <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} Jatkoturva · Perustuu Fragus GoSafe Electric -tuotteeseen</p>
         </div>
       </footer>
     </div>

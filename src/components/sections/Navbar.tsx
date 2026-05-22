@@ -17,7 +17,7 @@ const Navbar = ({ onStartFlow }: NavbarProps) => {
           <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center shadow-lg shadow-primary/20">
             <Shield className="w-5 h-5 text-primary-foreground" />
           </div>
-          <span className="text-xl font-extrabold text-foreground">AkkuTurva</span>
+          <span className="text-xl font-extrabold text-foreground">Jatkoturva</span>
         </Link>
 
         <div className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
