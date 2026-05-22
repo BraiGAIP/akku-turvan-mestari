@@ -167,8 +167,6 @@ export default function StripeCheckout({
   onSuccess,
   onCancel,
 }: StripeCheckoutProps) {
-  const [stripeError, setStripeError] = useState<string | null>(null);
-
   if (!import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY) {
     return (
       <div className="p-6 rounded-xl bg-card border border-border text-center">
