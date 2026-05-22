@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { CoverageTier, calculatePricing, getEVData, checkEligibility, repairLimits } from "@/data/evDatabase";
 import type { VehicleData } from "@/components/QualificationFlow";
-import { Shield, Check, AlertTriangle, ArrowRight, ArrowLeft, Lock, CreditCard, FileText, Battery, Wrench, Info } from "lucide-react";
+import { Shield, Check, AlertTriangle, ArrowRight, ArrowLeft, Lock, CreditCard, FileText, Battery, Wrench, Info, Zap, Calendar, Loader2 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import StripeCheckout from "./StripeCheckout";
 
 interface Props {
   data: VehicleData;
@@ -13,10 +16,10 @@ const PricingResult = ({ data, onBack }: Props) => {
   const [tiers, setTiers] = useState<CoverageTier[] | null>(null);
   const [loading, setLoading] = useState(true);
   const [selectedTier, setSelectedTier] = useState<string | null>(null);
-  const [showCheckout, setShowCheckout] = useState(false);
-  const [showFinancing, setShowFinancing] = useState(true);
-  const [paymentMethod, setPaymentMethod] = useState<"card" | "klarna" | "svea">("card");
-  const [termsAccepted, setTermsAccepted] = useState(false);
+  const [showStripeModal, setShowStripeModal] = useState(false);
+  const [clientSecret, setClientSecret] = useState<string | null>(null);
+  const [isLoadingPayment, setIsLoadingPayment] = useState(false);
+  const [paymentOption, setPaymentOption] = useState<"full" | "monthly">("monthly");
 
   const evData = getEVData(data.brand, data.model);
   const eligibility = checkEligibility(data.year, data.mileage);
@@ -33,6 +36,31 @@ const PricingResult = ({ data, onBack }: Props) => {
   }, [data]);
 
   const selected = tiers?.find((t) => t.id === selectedTier);
+
+  const handleOpenCheckout = async () => {
+    if (!selected) return;
+    setIsLoadingPayment(true);
+    try {
+      const { data: intentData, error } = await supabase.functions.invoke('create-payment-intent', {
+        body: {
+          amount: selected.price,
+          currency: 'eur',
+          productName: `Jatkoturva - ${data.brand} ${data.model} (${selected.duration})`,
+          customerEmail: '',
+        },
+      });
+      if (error || intentData?.error) {
+        console.error('Payment intent error:', error || intentData?.error);
+      } else {
+        setClientSecret(intentData.clientSecret);
+        setShowStripeModal(true);
+      }
+    } catch (err) {
+      console.error('Error creating payment intent:', err);
+    } finally {
+      setIsLoadingPayment(false);
+    }
+  };
 
   if (loading) {
     return (
@@ -66,167 +94,6 @@ const PricingResult = ({ data, onBack }: Props) => {
     );
   }
 
-  // CHECKOUT VIEW
-  if (showCheckout && selected) {
-    return (
-      <div className="min-h-screen bg-background pb-28">
-        <div className="max-w-5xl mx-auto px-6 pt-8">
-          <button onClick={() => setShowCheckout(false)} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-6">
-            <ArrowLeft className="w-4 h-4" /> Takaisin tarjoukseen
-          </button>
-
-          <div className="grid lg:grid-cols-5 gap-8">
-            <div className="lg:col-span-3 space-y-6">
-              <div>
-                <h2 className="text-2xl font-black text-foreground mb-1">Viimeistele tilaus</h2>
-                <p className="text-muted-foreground text-sm">Vielä muutama tieto – turva alkaa heti.</p>
-              </div>
-
-              {/* Contact info */}
-              <div className="bg-card rounded-xl border border-border p-6 space-y-4">
-                <h3 className="font-semibold text-foreground flex items-center gap-2"><FileText className="w-4 h-4 text-primary" /> Yhteystiedot</h3>
-                <div className="grid grid-cols-2 gap-3">
-                  <div>
-                    <label className="text-xs font-semibold text-muted-foreground mb-1 block">Etunimi</label>
-                    <input type="text" autoComplete="given-name" className="w-full h-11 px-4 rounded-lg border border-input bg-background text-foreground focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none text-sm" />
-                  </div>
-                  <div>
-                    <label className="text-xs font-semibold text-muted-foreground mb-1 block">Sukunimi</label>
-                    <input type="text" autoComplete="family-name" className="w-full h-11 px-4 rounded-lg border border-input bg-background text-foreground focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none text-sm" />
-                  </div>
-                </div>
-                <div>
-                  <label className="text-xs font-semibold text-muted-foreground mb-1 block">Sähköposti</label>
-                  <input type="email" autoComplete="email" className="w-full h-11 px-4 rounded-lg border border-input bg-background text-foreground focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none text-sm" />
-                </div>
-                <div>
-                  <label className="text-xs font-semibold text-muted-foreground mb-1 block">Puhelinnumero</label>
-                  <input type="tel" autoComplete="tel" className="w-full h-11 px-4 rounded-lg border border-input bg-background text-foreground focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none text-sm" />
-                </div>
-
-                {/* Customer type */}
-                <div>
-                  <label className="text-xs font-semibold text-muted-foreground mb-1 block">Asiakastyyppi</label>
-                  <select className="w-full h-11 px-4 rounded-lg border border-input bg-background text-foreground focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none text-sm appearance-none">
-                    <option value="private">Yksityishenkilö</option>
-                    <option value="business">Yritys</option>
-                  </select>
-                </div>
-              </div>
-
-              {/* Payment method */}
-              <div className="bg-card rounded-xl border border-border p-6 space-y-4">
-                <h3 className="font-semibold text-foreground flex items-center gap-2"><CreditCard className="w-4 h-4 text-primary" /> Maksutapa</h3>
-                <div className="grid grid-cols-3 gap-3">
-                  {([
-                    { id: "card" as const, label: "Korttimaksu", sub: "Visa / Mastercard" },
-                    { id: "klarna" as const, label: "Klarna", sub: "Lasku tai osamaksu" },
-                    { id: "svea" as const, label: "Svea", sub: "Rahoitus 6–36 kk" },
-                  ]).map((pm) => (
-                    <button key={pm.id} onClick={() => setPaymentMethod(pm.id)}
-                      className={`p-3 rounded-lg border-2 text-center transition-all ${
-                        paymentMethod === pm.id ? "border-primary bg-primary/5" : "border-border hover:border-primary/30"
-                      }`}>
-                      <p className="font-semibold text-foreground text-sm">{pm.label}</p>
-                      <p className="text-xs text-muted-foreground mt-0.5">{pm.sub}</p>
-                    </button>
-                  ))}
-                </div>
-                {paymentMethod === "card" && (
-                  <div className="space-y-3 pt-2">
-                    <div>
-                      <label className="text-xs font-semibold text-muted-foreground mb-1 block">Korttinumero</label>
-                      <input type="text" autoComplete="cc-number" placeholder="1234 5678 9012 3456" className="w-full h-11 px-4 rounded-lg border border-input bg-background text-foreground focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none text-sm" />
-                    </div>
-                    <div className="grid grid-cols-2 gap-3">
-                      <div>
-                        <label className="text-xs font-semibold text-muted-foreground mb-1 block">Voimassaolo</label>
-                        <input type="text" autoComplete="cc-exp" placeholder="MM/VV" className="w-full h-11 px-4 rounded-lg border border-input bg-background text-foreground focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none text-sm" />
-                      </div>
-                      <div>
-                        <label className="text-xs font-semibold text-muted-foreground mb-1 block">CVC</label>
-                        <input type="text" autoComplete="cc-csc" placeholder="123" className="w-full h-11 px-4 rounded-lg border border-input bg-background text-foreground focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none text-sm" />
-                      </div>
-                    </div>
-                  </div>
-                )}
-                {paymentMethod === "klarna" && (
-                  <p className="p-3 rounded-lg bg-muted/50 text-sm text-muted-foreground">Sinut ohjataan Klarnan turvalliseen maksuympäristöön tilauksen vahvistamisen jälkeen.</p>
-                )}
-                {paymentMethod === "svea" && (
-                  <p className="p-3 rounded-lg bg-muted/50 text-sm text-muted-foreground">Svea-rahoitus 6–36 kuukauden maksuajalla. Korko alk. 4,9 %.</p>
-                )}
-              </div>
-
-              {/* Terms */}
-              <label className="flex items-start gap-3 cursor-pointer p-4 rounded-lg border border-border bg-card">
-                <input type="checkbox" checked={termsAccepted} onChange={(e) => setTermsAccepted(e.target.checked)} className="mt-0.5 w-4 h-4 rounded border-input text-primary" />
-                <span className="text-sm text-muted-foreground">
-                  Hyväksyn <a href="/kayttoehdot" target="_blank" className="text-primary hover:underline">käyttöehdot</a> ja{" "}
-                  <a href="/tietosuoja" target="_blank" className="text-primary hover:underline">tietosuojaselosteen</a>.
-                  Ymmärrän, että minulla on 14 päivän peruutusoikeus.
-                </span>
-              </label>
-
-              <div className="p-4 rounded-lg bg-secondary/10 border border-secondary/20 flex items-start gap-3">
-                <Shield className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
-                <div>
-                  <p className="font-semibold text-foreground text-sm">14 päivän peruutusoikeus</p>
-                  <p className="text-xs text-muted-foreground mt-1">Voit peruuttaa tilauksen 14 päivän sisällä ilman syytä.</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Order summary sidebar */}
-            <div className="lg:col-span-2">
-              <div className="lg:sticky lg:top-8 bg-card rounded-xl border border-border p-6 space-y-4">
-                <h3 className="font-semibold text-foreground">Tilausyhteenveto</h3>
-                <div className="space-y-2 text-sm">
-                  <div className="flex justify-between"><span className="text-muted-foreground">Auto</span><span className="font-semibold text-foreground">{data.brand} {data.model} {data.year}</span></div>
-                  <div className="flex justify-between"><span className="text-muted-foreground">Turva-aika</span><span className="font-semibold text-foreground">{selected.duration}</span></div>
-                  <div className="flex justify-between"><span className="text-muted-foreground">Korvausraja</span><span className="font-semibold text-foreground">{selected.repairLimit.toLocaleString("fi-FI")} €</span></div>
-                  {isLimited && <div className="flex justify-between"><span className="text-muted-foreground">Turvatyyppi</span><span className="font-semibold text-primary">Rajoitettu</span></div>}
-                </div>
-                <div className="border-t border-border pt-4">
-                  <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">Sisältää</p>
-                  <ul className="space-y-1.5">
-                    {selected.features.map((f) => (
-                      <li key={f} className="flex items-start gap-2 text-sm text-foreground"><Check className="w-3.5 h-3.5 text-secondary flex-shrink-0 mt-0.5" /> {f}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="border-t border-border pt-4">
-                  {showFinancing ? (
-                    <div className="flex justify-between items-end"><span className="text-sm text-muted-foreground">Kuukausierä</span><span className="font-black text-xl text-foreground">{selected.monthlyPrice} €/kk</span></div>
-                  ) : (
-                    <div className="flex justify-between items-end"><span className="text-sm text-muted-foreground">Yhteensä</span><span className="font-black text-2xl text-foreground">{selected.price} €</span></div>
-                  )}
-                </div>
-                <p className="text-[10px] text-muted-foreground">Perustuu Fraguksen virallisiin sopimusehtoihin · Ei piilokuluja</p>
-                {data.isManualEntry && (
-                  <p className="text-[10px] text-primary flex items-center gap-1"><Info className="w-3 h-3" /> Arvio – lopullinen hinta vahvistetaan erikseen</p>
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Sticky CTA */}
-        <div className="fixed bottom-0 left-0 right-0 z-40 bg-background/90 backdrop-blur-md border-t border-border/50">
-          <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
-            <div className="hidden sm:block">
-              <p className="font-black text-lg text-foreground">{showFinancing ? `${selected.monthlyPrice} €/kk` : `${selected.price} €`}</p>
-              <p className="text-xs text-muted-foreground">{selected.duration} · Korvausraja {selected.repairLimit.toLocaleString("fi-FI")} €</p>
-            </div>
-            <Button size="lg" className="h-13 px-10 rounded-full text-base flex-1 sm:flex-initial" disabled={!termsAccepted}>
-              Osta akkuturva nyt <ArrowRight className="w-5 h-5 ml-1" />
-            </Button>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
   // MAIN PRICING VIEW (Step 2 – no lead gate)
   return (
     <div className="min-h-screen bg-background pb-28">
@@ -255,7 +122,7 @@ const PricingResult = ({ data, onBack }: Props) => {
             <h3 className="font-bold text-foreground mb-4">Ilman suojaa vs. Jatkoturva</h3>
             <div className="flex items-center gap-6 flex-wrap">
               <div className="flex-1 min-w-[160px]">
-                <p className="text-sm text-muted-foreground mb-1">Akun vaihto ilman suojaa</p>
+                <p className="text-sm text-muted-foreground mb-1">Akun korjaus</p>
                 <p className="text-3xl font-black text-destructive">{evData.avgReplacementCost.toLocaleString("fi-FI")} €</p>
               </div>
               <ArrowRight className="w-5 h-5 text-muted-foreground hidden md:block" />
@@ -295,14 +162,40 @@ const PricingResult = ({ data, onBack }: Props) => {
           </div>
         </div>
 
-        {/* Payment toggle */}
-        <div className="flex items-center justify-center gap-4 mb-6">
-          <span className={`text-sm font-medium ${!showFinancing ? "text-foreground" : "text-muted-foreground"}`}>Kertamaksu</span>
-          <button onClick={() => setShowFinancing(!showFinancing)}
-            className={`relative w-12 h-6 rounded-full transition-colors ${showFinancing ? "bg-primary" : "bg-muted"}`}>
-            <div className={`absolute top-1 w-4 h-4 rounded-full bg-primary-foreground shadow transition-transform ${showFinancing ? "translate-x-7" : "translate-x-1"}`} />
-          </button>
-          <span className={`text-sm font-medium ${showFinancing ? "text-foreground" : "text-muted-foreground"}`}>Kuukausierä</span>
+        {/* Payment method selector */}
+        <div className="mb-6">
+          <h3 className="text-sm font-semibold text-muted-foreground mb-3 text-center">Valitse maksutapa</h3>
+          <div className="grid grid-cols-2 gap-3 max-w-lg mx-auto">
+            <button
+              onClick={() => setPaymentOption("full")}
+              className={`relative text-left bg-card rounded-xl border-2 p-5 transition-all ${
+                paymentOption === "full" ? "border-primary shadow-sm" : "border-border hover:border-primary/30"
+              }`}
+            >
+              <div className="flex items-center gap-2 mb-2">
+                <Zap className="w-4 h-4 text-primary" />
+                <span className="font-semibold text-foreground text-sm">Maksa kerralla</span>
+              </div>
+              <p className="text-xl font-black text-foreground">{selected?.price ?? tiers[0].price} €</p>
+              <p className="text-xs text-muted-foreground mt-1">Yksi maksu, turva alkaa heti</p>
+            </button>
+            <button
+              onClick={() => setPaymentOption("monthly")}
+              className={`relative text-left bg-card rounded-xl border-2 p-5 transition-all ${
+                paymentOption === "monthly" ? "border-primary shadow-sm" : "border-border hover:border-primary/30"
+              }`}
+            >
+              <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 text-[10px] font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full">
+                Suosituin
+              </span>
+              <div className="flex items-center gap-2 mb-2">
+                <Calendar className="w-4 h-4 text-primary" />
+                <span className="font-semibold text-foreground text-sm">Kuukausimaksu</span>
+              </div>
+              <p className="text-xl font-black text-foreground">{selected?.monthlyPrice ?? tiers[0].monthlyPrice} €/kk</p>
+              <p className="text-xs text-muted-foreground mt-1">36 kuukautta · joustava</p>
+            </button>
+          </div>
         </div>
 
         {/* Tier cards */}
@@ -320,9 +213,9 @@ const PricingResult = ({ data, onBack }: Props) => {
               )}
               <h3 className="text-lg font-bold text-foreground">{tier.name}</h3>
               <p className="text-2xl font-black text-foreground mt-1">
-                {showFinancing ? `${tier.monthlyPrice} €/kk` : `${tier.price} €`}
+                {paymentOption === "monthly" ? `${tier.monthlyPrice} €/kk` : `${tier.price} €`}
               </p>
-              {showFinancing && <p className="text-xs text-muted-foreground">Kokonaishinta {tier.price} €</p>}
+              {paymentOption === "monthly" && <p className="text-xs text-muted-foreground">Kokonaishinta {tier.price} €</p>}
               <p className="text-sm text-muted-foreground mt-1">Korvausraja {tier.repairLimit.toLocaleString("fi-FI")} €</p>
               <ul className="mt-4 space-y-1.5">
                 {tier.features.slice(0, 4).map((f) => (
@@ -370,25 +263,69 @@ const PricingResult = ({ data, onBack }: Props) => {
             Tämän voi hoitaa nyt – suoja alkaa heti maksun jälkeen.
           </p>
         </div>
+
+        {/* Stripe Checkout Dialog */}
+        <Dialog open={showStripeModal} onOpenChange={setShowStripeModal}>
+          <DialogContent className="sm:max-w-lg bg-card border-border">
+            <DialogHeader>
+              <DialogTitle className="sr-only">Maksu</DialogTitle>
+            </DialogHeader>
+            {clientSecret ? (
+              <StripeCheckout
+                amount={selected?.price ?? 0}
+                productName={`Jatkoturva - ${data.brand} ${data.model} (${selected?.duration ?? ''})`}
+                clientSecret={clientSecret}
+                onSuccess={() => {
+                  setShowStripeModal(false);
+                  setClientSecret(null);
+                }}
+                onCancel={() => {
+                  setShowStripeModal(false);
+                  setClientSecret(null);
+                }}
+              />
+            ) : (
+              <div className="p-6 text-center">
+                <Loader2 className="w-8 h-8 animate-spin text-primary mx-auto mb-4" />
+                <p className="text-sm text-muted-foreground">Ladataan maksuikkunaa...</p>
+              </div>
+            )}
+          </DialogContent>
+        </Dialog>
       </div>
 
       {/* Sticky CTA */}
       <div className="fixed bottom-0 left-0 right-0 z-40 bg-background/90 backdrop-blur-md border-t border-border/50">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
+        <div className="max-w-6xl mx-auto px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
           {selected && (
             <div className="hidden sm:block">
-              <p className="font-black text-lg text-foreground">{showFinancing ? `${selected.monthlyPrice} €/kk` : `${selected.price} €`}</p>
+              <p className="font-black text-lg text-foreground">{paymentOption === "monthly" ? `${selected.monthlyPrice} €/kk` : `${selected.price} €`}</p>
               <p className="text-xs text-muted-foreground">{selected.duration} · {data.brand} {data.model}</p>
             </div>
           )}
-          <Button
-            size="lg"
-            className="h-13 px-10 rounded-full text-base flex-1 sm:flex-initial"
-            disabled={!selectedTier}
-            onClick={() => setShowCheckout(true)}
-          >
-            Osta akkuturva nyt <ArrowRight className="w-5 h-5 ml-1" />
-          </Button>
+          <div className="flex flex-col items-center sm:items-end gap-1 flex-1 sm:flex-initial">
+            <Button
+              size="lg"
+              className="h-13 px-10 rounded-full text-base"
+              disabled={!selectedTier || isLoadingPayment}
+              onClick={handleOpenCheckout}
+            >
+              {isLoadingPayment ? (
+                <>
+                  <Loader2 className="w-5 h-5 animate-spin mr-2" />
+                  Ladataan...
+                </>
+              ) : paymentOption === "monthly" ? (
+                <>Aloita — vain {selected?.monthlyPrice} €/kk <ArrowRight className="w-5 h-5 ml-1" /></>
+              ) : (
+                <>Osta nyt — {selected?.price} € <ArrowRight className="w-5 h-5 ml-1" /></>
+              )}
+            </Button>
+            <p className="text-[10px] text-muted-foreground flex items-center gap-2">
+              <Lock className="w-3 h-3" />
+              Et sitoudu ennen maksua · Turva alkaa heti · Peruuta koska tahansa
+            </p>
+          </div>
         </div>
       </div>
     </div>
