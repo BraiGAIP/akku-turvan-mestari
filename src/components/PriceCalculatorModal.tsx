@@ -125,10 +125,14 @@ const PriceCalculatorModal = ({ open, onComplete, onClose }: Props) => {
 
   const handleBrandSelect = (b: string) => {
     setBrand(b);
+    setManualBrand(b);
     setBrandSearch("");
     setModel("");
+    setManualModel("");
     setYear(null);
+    setManualYear("");
     setMileage(null);
+    setManualMileage("");
     setModelSearch("");
   };
 
