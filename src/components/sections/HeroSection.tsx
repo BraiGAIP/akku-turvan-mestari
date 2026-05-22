@@ -55,22 +55,22 @@ const HeroSection = ({ onStartFlow }: HeroSectionProps) => (
         </div>
 
         <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-black text-foreground leading-[1.08] tracking-tight mb-3">
-          Sähköauton akku voi{" "}
+          Auton kallein vika voi{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-foreground to-foreground/70">
-            hajota yllättäen
+            tulla yllättäen
           </span>
         </h1>
         <p className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-secondary leading-tight mb-6">
-          Suojaa itsesi jopa 20 000 € kustannuksilta
+          Fraguksen jatkoturva suojaa jopa 20 000 € kustannuksilta
         </p>
 
         {/* Pain amplifier */}
         <div className="bg-destructive/10 border border-destructive/20 rounded-xl px-5 py-3 mb-8 inline-block">
           <p className="text-base md:text-lg font-bold text-destructive">
-            Akun vaihto maksaa 5 000–20 000 €
+            Moottorin, vaihteiston tai akun korjaus 3 000–20 000 €
           </p>
           <p className="text-sm text-secondary font-bold mt-1">
-            Jatkoturva alkaen vain 41 €/kk
+            Jatkoturva alkaen vain 19 €/kk
           </p>
         </div>
 
