@@ -384,7 +384,7 @@ const PriceCalculatorModal = ({ open, onComplete, onClose }: Props) => {
                           <select
                             ref={inputRef as any}
                             value={year || ""}
-                            onChange={(e) => setYear(Number(e.target.value) || null)}
+                            onChange={(e) => { setYear(Number(e.target.value) || null); setManualYear(e.target.value); }}
                             className="w-full h-11 px-3 rounded-xl border border-white/10 bg-white/5 text-white focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-all text-sm appearance-none"
                           >
                             <option value="" className="bg-[#111827]">Valitse</option>
