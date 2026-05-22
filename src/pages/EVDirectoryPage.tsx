@@ -12,7 +12,7 @@ const EVDirectoryPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <SeoHead
-        title="Sähköautojen akkuturva – Kaikki mallit | AkkuTurva"
+        title="Sähköautojen akkuturva – Kaikki mallit | Jatkoturva"
         description="Selaa kaikkien sähköautojen akkuturva-sivut. Tesla, VW, BMW, Hyundai ja muut – löydä omalle autollesi sopiva turva."
         canonical="https://akkuturva.fi/akkuturva"
       />
@@ -23,7 +23,7 @@ const EVDirectoryPage = () => {
             <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center">
               <Shield className="w-5 h-5 text-primary-foreground" />
             </div>
-            <span className="text-xl font-extrabold text-foreground">AkkuTurva</span>
+            <span className="text-xl font-extrabold text-foreground">Jatkoturva</span>
           </Link>
           <Link to="/"><Button size="sm" className="rounded-full bg-gradient-to-r from-primary to-primary/80 btn-glow font-bold">Laske hinta heti</Button></Link>
         </div>
@@ -74,9 +74,9 @@ const EVDirectoryPage = () => {
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center"><Shield className="w-4 h-4 text-primary-foreground" /></div>
-            <span className="font-bold text-foreground">AkkuTurva</span>
+            <span className="font-bold text-foreground">Jatkoturva</span>
           </Link>
-          <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} AkkuTurva</p>
+          <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} Jatkoturva</p>
         </div>
       </footer>
     </div>

@@ -52,7 +52,7 @@ const CostComparison = ({ onStartFlow }: CostComparisonProps) => (
           <CostBar label="BMW iX – akun vaihto" value={20000} max={20000} variant="danger" />
           <CostBar label="VW ID.4 – akun vaihto" value={13000} max={20000} variant="danger" />
           <div className="border-t border-border pt-6">
-            <CostBar label="AkkuTurva – suoja alkaen" value={490} max={20000} variant="success" />
+            <CostBar label="Jatkoturva – suoja alkaen" value={490} max={20000} variant="success" />
             <p className="text-secondary font-bold text-sm mt-2">eli vain 41 € kuukaudessa</p>
           </div>
         </div>
@@ -61,7 +61,7 @@ const CostComparison = ({ onStartFlow }: CostComparisonProps) => (
           <div>
             <p className="font-semibold text-foreground">Murto-osa akun vaihtokustannuksista</p>
             <p className="text-sm text-muted-foreground mt-1">
-              AkkuTurva suojaa sähköautosi kriittisimmät osat – 14 päivän peruutusoikeus.
+              Jatkoturva suojaa sähköautosi kriittisimmät osat – 14 päivän peruutusoikeus.
             </p>
           </div>
         </div>

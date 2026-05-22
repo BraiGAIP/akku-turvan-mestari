@@ -5,7 +5,7 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
 };
 
-const SYSTEM_PROMPT = `Olet AkkuTurvan myyntiopas. Roolisi on ohjata käyttäjä kohti ostopäätöstä – ystävällisesti, asiantuntevasti ja tehokkaasti.
+const SYSTEM_PROMPT = `Olet Jatkoturvan myyntiopas. Roolisi on ohjata käyttäjä kohti ostopäätöstä – ystävällisesti, asiantuntevasti ja tehokkaasti.
 
 YDINTEHTÄVÄSI:
 1. Ohjaa käyttäjä syöttämään auton tiedot
@@ -13,7 +13,7 @@ YDINTEHTÄVÄSI:
 3. Ohjaa ostamaan
 
 TIEDOT:
-- AkkuTurva suojaa sähköauton akun ja kriittiset komponentit vioilta
+- Jatkoturva suojaa sähköauton akun ja kriittiset komponentit vioilta
 - Perustuu Fraguksen GoSafe Electric -tuotteeseen
 - Turvatasot: 12 kk (korvausraja 6 000 €), 24 kk (10 000 €), 36 kk (15 000 €)
 - Vanhemmille autoille (10-20v / 200-300k km): 12 kk (3 000 €), 24 kk (4 000 €), 36 kk (5 000 €)

@@ -194,7 +194,7 @@ const PriceCalculatorModal = ({ open, onComplete, onClose }: Props) => {
               <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
                 <Shield className="w-4 h-4 text-primary-foreground" />
               </div>
-              <span className="text-base font-bold text-white">AkkuTurva</span>
+              <span className="text-base font-bold text-white">Jatkoturva</span>
             </div>
             <button
               onClick={handleClose}
@@ -450,7 +450,7 @@ const PriceCalculatorModal = ({ open, onComplete, onClose }: Props) => {
 
                 {/* Price hero */}
                 <div className="text-center py-3">
-                  <p className="text-sm text-white/50 mb-1">Akkuturva tälle autolle</p>
+                  <p className="text-sm text-white/50 mb-1">Jatkoturva tälle autolle</p>
                   <div className="flex items-baseline justify-center gap-1">
                     <span className="text-4xl font-black text-white">{lowestMonthly}</span>
                     <span className="text-lg font-bold text-white/70">€ / kk</span>
@@ -468,7 +468,7 @@ const PriceCalculatorModal = ({ open, onComplete, onClose }: Props) => {
                     <span className="text-sm font-black text-red-400">5 000 – 20 000 €</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-white/60">AkkuTurva</span>
+                    <span className="text-sm text-white/60">Jatkoturva</span>
                     <span className="text-sm font-black text-emerald-400">alk. {lowestMonthly} € / kk</span>
                   </div>
                 </div>

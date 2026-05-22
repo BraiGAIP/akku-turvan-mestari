@@ -26,7 +26,7 @@ const FLOW_RESPONSES: Record<string, { content: string; buttons?: QuickAction[] 
     buttons: [{ label: "Näe hinta autollesi →", message: "__START_FLOW__" }],
   },
   "Mietin kannattaako akkuturva": {
-    content: "Sähköauton akun korjaus voi maksaa 5 000–20 000 €.\n\nAkkuturva on järkevä erityisesti jos:\n✔ Auto ei ole uusi\n✔ Ajat paljon\n✔ Haluat välttää yllättävät kulut\n\nUseimmat ottavat turvan ennen kuin ongelmia ilmenee – silloin se on halvin.",
+    content: "Sähköauton akun korjaus voi maksaa 5 000–20 000 €.\n\nJatkoturva on järkevä erityisesti jos:\n✔ Auto ei ole uusi\n✔ Ajat paljon\n✔ Haluat välttää yllättävät kulut\n\nUseimmat ottavat turvan ennen kuin ongelmia ilmenee – silloin se on halvin.",
     buttons: [{ label: "Näytä hinta autolleni →", message: "__START_FLOW__" }],
   },
   "Haluan suojan heti": {
@@ -224,7 +224,7 @@ const AiAssistant = () => {
               <Sparkles className="w-5 h-5 text-primary-foreground" />
             </div>
             <div>
-              <p className="font-bold text-primary-foreground text-sm">AkkuTurva Opas</p>
+              <p className="font-bold text-primary-foreground text-sm">Jatkoturva Opas</p>
               <p className="text-xs text-primary-foreground/70">Autan löytämään oikean turvan</p>
             </div>
           </div>

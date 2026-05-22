@@ -70,7 +70,7 @@ const HeroSection = ({ onStartFlow }: HeroSectionProps) => (
             Akun vaihto maksaa 5 000–20 000 €
           </p>
           <p className="text-sm text-secondary font-bold mt-1">
-            Akkuturva alkaen vain 41 €/kk
+            Jatkoturva alkaen vain 41 €/kk
           </p>
         </div>
 

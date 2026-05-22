@@ -52,7 +52,7 @@ Akun vaihtohintaan vaikuttavat akun kapasiteetti (kWh), auton ikä, saatavuus ja
 
 ## Miten suojautua?
 
-AkkuTurva tarjoaa akkusuojan, joka kattaa akun viat ja kapasiteetin laskun. Premium-turva maksaa murto-osan akun vaihtohinnasta ja suojaa jopa 5 vuodeksi.
+Jatkoturva tarjoaa akkusuojan, joka kattaa akun viat ja kapasiteetin laskun. Premium-turva maksaa murto-osan akun vaihtohinnasta ja suojaa jopa 5 vuodeksi.
 
 Turvan voi ostaa kertamaksulla tai kuukausierillä. 14 päivän peruutusoikeus takaa riskittömän kokeilun.`,
   },
@@ -77,7 +77,7 @@ Tyypillinen litiumioniakku säilyttää 80 % alkuperäisestä kapasiteetistaan n
 
 ## Suojaudu kapasiteetin laskulta
 
-AkkuTurvan Premium-turva kattaa kapasiteetin laskun alle 80 %:iin. Tämä tarkoittaa, että jos akkusi heikkenee odotettua nopeammin, korjaus- tai vaihtokulut katetaan sinulle.`,
+Jatkoturvan Premium-turva kattaa kapasiteetin laskun alle 80 %:iin. Tämä tarkoittaa, että jos akkusi heikkenee odotettua nopeammin, korjaus- tai vaihtokulut katetaan sinulle.`,
   },
   {
     slug: "sahkoauto-riskit-suomessa",
@@ -101,7 +101,7 @@ Suomessa sähköauton korjausten työkustannukset ovat Euroopan korkeimpia. Akun
 
 ## Miten suojautua?
 
-AkkuTurva on suunniteltu erityisesti Suomen olosuhteisiin. Turvasuunnitelma kattaa akun viat, kapasiteetin laskun ja jopa lämpötilanhallintajärjestelmän ongelmat.
+Jatkoturva on suunniteltu erityisesti Suomen olosuhteisiin. Turvasuunnitelma kattaa akun viat, kapasiteetin laskun ja jopa lämpötilanhallintajärjestelmän ongelmat.
 
 Premium- ja Laajennettu-turvatasot sisältävät myös hinauspalvelun ja sijaisauton, mikä on erityisen tärkeää pitkien etäisyyksien Suomessa.`,
   },
@@ -127,7 +127,7 @@ Sähköauton vuosihuolto maksaa tyypillisesti 200–400 €, mikä on selvästi 
 
 ## Miksi akkuturva kannattaa?
 
-Vaikka hoitaisit akkuasi täydellisesti, valmistusvirheet ja odottamattomat viat ovat mahdollisia. AkkuTurva kattaa nämä riskit, joten voit ajaa huoletta.`,
+Vaikka hoitaisit akkuasi täydellisesti, valmistusvirheet ja odottamattomat viat ovat mahdollisia. Jatkoturva kattaa nämä riskit, joten voit ajaa huoletta.`,
   },
   {
     slug: "kannattaako-sahkoauto-2026",
@@ -160,7 +160,7 @@ Akun vaihto on sähköauton suurin taloudellinen riski. Ilman suojaa se voi tull
 
 ## Suositus
 
-Sähköauto kannattaa – mutta suojaa akku AkkuTurvalla. Näin eliminoit suurimman taloudellisen riskin ja nautit kaikista eduista huoletta.`,
+Sähköauto kannattaa – mutta suojaa akku Jatkoturvalla. Näin eliminoit suurimman taloudellisen riskin ja nautit kaikista eduista huoletta.`,
   },
 ];
 

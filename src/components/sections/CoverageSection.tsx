@@ -54,7 +54,7 @@ const CoverageSection = () => (
               Kattaa myös akun kapasiteetin heikkenemisen
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-5">
-               Sähköauton akun kapasiteetti laskee ajan myötä. Akkuturva korvaa,
+               Sähköauton akun kapasiteetti laskee ajan myötä. Jatkoturva korvaa,
               jos kapasiteetti laskee merkittävästi.
             </p>
             <div className="grid sm:grid-cols-2 gap-3">

@@ -7,7 +7,7 @@ import SiteFooter from "@/components/sections/SiteFooter";
 
 const steps = [
   { icon: Mail, title: "Vahvistus sähköpostiin", desc: "Saat tilausvahvistuksen ja turvakirjan sähköpostiisi muutaman minuutin sisällä." },
-  { icon: FileText, title: "Turvakirja aktivoituu", desc: "Akkuturvasi on voimassa heti maksun jälkeen – ei odotusaikaa." },
+  { icon: FileText, title: "Turvakirja aktivoituu", desc: "Jatkoturvasi on voimassa heti maksun jälkeen – ei odotusaikaa." },
   { icon: Phone, title: "Tarvitsetko apua?", desc: "Ota yhteyttä asiakaspalveluumme milloin tahansa. Autamme mielellämme." },
 ];
 
@@ -34,7 +34,7 @@ const ThankYouPage = () => {
             Kiitos tilauksestasi!
           </h1>
           <p className="text-lg text-muted-foreground mb-2">
-            Akkuturvasi on nyt aktiivinen.
+            Jatkoturvasi on nyt aktiivinen.
           </p>
           <p className="text-sm text-muted-foreground/70 mb-10">
             Suojaat sähköautosi kalleinta osaa – fiksu päätös.

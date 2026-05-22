@@ -24,7 +24,7 @@ const TrustSection = () => (
       <div className="glass-card rounded-2xl p-8">
         <h3 className="font-bold text-lg text-foreground mb-4 flex items-center gap-2">
           <Building2 className="w-5 h-5 text-primary" />
-          Kuka on AkkuTurvan takana?
+          Kuka on Jatkoturvan takana?
         </h3>
         <div className="grid sm:grid-cols-2 gap-6 text-sm">
           <div className="space-y-3">
@@ -52,7 +52,7 @@ const TrustSection = () => (
           </div>
         </div>
         <p className="text-xs text-muted-foreground mt-6 pt-4 border-t border-border">
-          Akkuturva perustuu Fraguksen GoSafe Electric -tuotteeseen. Kaikki sopimusehdot noudattavat Fraguksen virallisia ehtoja.
+          Jatkoturva perustuu Fraguksen GoSafe Electric -tuotteeseen. Kaikki sopimusehdot noudattavat Fraguksen virallisia ehtoja.
         </p>
       </div>
     </div>

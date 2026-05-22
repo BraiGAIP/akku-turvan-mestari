@@ -5,8 +5,8 @@ import SeoHead from "@/components/SeoHead";
 const TermsPage = () => (
   <div className="min-h-screen bg-background">
     <SeoHead
-      title="Käyttöehdot | AkkuTurva"
-      description="AkkuTurvan palvelun käyttöehdot. Lue sopimusehdot ennen akkuturvan ostamista."
+      title="Käyttöehdot | Jatkoturva"
+      description="Jatkoturvan palvelun käyttöehdot. Lue sopimusehdot ennen akkuturvan ostamista."
       canonical="https://akkuturva.fi/kayttoehdot"
     />
 
@@ -16,7 +16,7 @@ const TermsPage = () => (
           <div className="w-9 h-9 rounded-xl gradient-hero flex items-center justify-center">
             <Shield className="w-5 h-5 text-primary-foreground" />
           </div>
-          <span className="text-xl font-extrabold text-gradient">AkkuTurva</span>
+          <span className="text-xl font-extrabold text-gradient">Jatkoturva</span>
         </Link>
       </div>
     </nav>
@@ -33,12 +33,12 @@ const TermsPage = () => (
         <div className="space-y-8 text-sm text-muted-foreground leading-relaxed">
           <section>
             <h2 className="text-xl font-bold text-foreground mb-3">1. Yleistä</h2>
-            <p>Nämä käyttöehdot koskevat AkkuTurva-palvelun käyttöä. Palvelun tarjoaa AkkuTurva yhteistyössä Fragus Group AB:n kanssa. Käyttämällä palvelua hyväksyt nämä ehdot.</p>
+            <p>Nämä käyttöehdot koskevat Jatkoturva-palvelun käyttöä. Palvelun tarjoaa Jatkoturva yhteistyössä Fragus Group AB:n kanssa. Käyttämällä palvelua hyväksyt nämä ehdot.</p>
           </section>
 
           <section>
             <h2 className="text-xl font-bold text-foreground mb-3">2. Palvelun kuvaus</h2>
-            <p>AkkuTurva tarjoaa sähköautojen akkujen suojatuotteita, jotka kattavat akun viat, kapasiteetin laskun ja muut ongelmat valitun turvatason mukaisesti. Turvatuotteet ovat vakuutustyylisiä sopimuksia, jotka Fragus Group AB hallinnoi.</p>
+            <p>Jatkoturva tarjoaa sähköautojen akkujen suojatuotteita, jotka kattavat akun viat, kapasiteetin laskun ja muut ongelmat valitun turvatason mukaisesti. Turvatuotteet ovat vakuutustyylisiä sopimuksia, jotka Fragus Group AB hallinnoi.</p>
           </section>
 
           <section>
@@ -80,7 +80,7 @@ const TermsPage = () => (
 
           <section>
             <h2 className="text-xl font-bold text-foreground mb-3">8. Vastuunrajoitus</h2>
-            <p>AkkuTurva ei vastaa välillisistä vahingoista. Korvauksen enimmäismäärä määräytyy valitun turvatason mukaan. Palveluntarjoaja ei vastaa force majeure -tilanteista johtuvista viivästyksistä.</p>
+            <p>Jatkoturva ei vastaa välillisistä vahingoista. Korvauksen enimmäismäärä määräytyy valitun turvatason mukaan. Palveluntarjoaja ei vastaa force majeure -tilanteista johtuvista viivästyksistä.</p>
           </section>
 
           <section>
@@ -90,12 +90,12 @@ const TermsPage = () => (
 
           <section>
             <h2 className="text-xl font-bold text-foreground mb-3">10. Ehtojen muutokset</h2>
-            <p>AkkuTurva pidättää oikeuden muuttaa näitä ehtoja. Olennaisista muutoksista ilmoitetaan asiakkaille sähköpostitse vähintään 30 päivää ennen muutosten voimaantuloa.</p>
+            <p>Jatkoturva pidättää oikeuden muuttaa näitä ehtoja. Olennaisista muutoksista ilmoitetaan asiakkaille sähköpostitse vähintään 30 päivää ennen muutosten voimaantuloa.</p>
           </section>
 
           <section>
             <h2 className="text-xl font-bold text-foreground mb-3">11. Yhteystiedot</h2>
-            <p>AkkuTurva<br />
+            <p>Jatkoturva<br />
             asiakaspalvelu@akkuturva.fi<br />
             Yhteistyössä Fragus Group AB</p>
           </section>
@@ -107,9 +107,9 @@ const TermsPage = () => (
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-lg gradient-hero flex items-center justify-center"><Shield className="w-4 h-4 text-primary-foreground" /></div>
-          <span className="font-bold text-foreground">AkkuTurva</span>
+          <span className="font-bold text-foreground">Jatkoturva</span>
         </Link>
-        <p className="text-xs text-muted-foreground">© 2026 AkkuTurva</p>
+        <p className="text-xs text-muted-foreground">© 2026 Jatkoturva</p>
       </div>
     </footer>
   </div>

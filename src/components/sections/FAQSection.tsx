@@ -1,14 +1,14 @@
 import { ChevronDown } from "lucide-react";
 
 const faqs = [
-  { q: "Kannattaako akkuturva?", a: "Sähköauton akun vaihto maksaa tyypillisesti 5 000–20 000 €. Akkuturva suojaa sinua tältä riskiltä murto-osalla kustannuksista. Korvausraja on jopa 15 000 € sopimuskauden aikana." },
+  { q: "Kannattaako akkuturva?", a: "Sähköauton akun vaihto maksaa tyypillisesti 5 000–20 000 €. Jatkoturva suojaa sinua tältä riskiltä murto-osalla kustannuksista. Korvausraja on jopa 15 000 € sopimuskauden aikana." },
   { q: "Mitä akkuturva kattaa?", a: "GoSafe Electric kattaa sähköajomoottorin, ohjainlaitteet, voimansiirron, jarru- ja ohjausjärjestelmän, korkeajänniteakun, latausjärjestelmän, akun jäähdytyksen, turvalaitteet, lämmitys- ja jäähdytysjärjestelmän sekä sähköiset mukavuustoiminnot." },
   { q: "Kattaako turva akun kapasiteetin laskun?", a: "Kyllä. Turva korvaa, jos akun kapasiteetti laskee alle 70 % alkuperäisestä tai alenema ylittää 6 % 12 kuukauden aikana." },
   { q: "Miten korjaus toimii?", a: "Ilmoita viasta meille. Saat ohjeet korjaamolle, Fragus hyväksyy korjauksen ja maksaa suoraan korjaamolle." },
   { q: "Sopiiko käytetyille autoille?", a: "Kyllä. Täysi turva alle 10-vuotiaille autoille, joissa on alle 200 000 km. Rajoitettu turva 10–20-vuotiaille autoille tai 200 000–300 000 km." },
   { q: "Voinko peruuttaa?", a: "Kyllä. Sinulla on 14 päivän peruutusoikeus ilman kuluja ja ilman syytä." },
   { q: "Milloin sopimus alkaa?", a: "Sopimus alkaa tehdastakuun jälkeen eikä ole takautuva. Sopimus päättyy, kun auto täyttää 20 vuotta tai saavuttaa 300 000 km." },
-  { q: "Kuka on Fragus?", a: "Fragus Group on eurooppalainen ajoneuvojen suojatuotteiden tarjoaja yli 20 vuoden kokemuksella. Akkuturva perustuu Fraguksen virallisiin GoSafe Electric -sopimusehtoihin." },
+  { q: "Kuka on Fragus?", a: "Fragus Group on eurooppalainen ajoneuvojen suojatuotteiden tarjoaja yli 20 vuoden kokemuksella. Jatkoturva perustuu Fraguksen virallisiin GoSafe Electric -sopimusehtoihin." },
 ];
 
 const FAQSection = () => (
