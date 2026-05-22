@@ -138,9 +138,12 @@ const PriceCalculatorModal = ({ open, onComplete, onClose }: Props) => {
 
   const handleModelSelect = (m: string) => {
     setModel(m);
+    setManualModel(m);
     setModelSearch("");
     setYear(null);
+    setManualYear("");
     setMileage(null);
+    setManualMileage("");
   };
 
   const canShowPrice = () => {
