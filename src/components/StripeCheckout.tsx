@@ -220,16 +220,7 @@ export default function StripeCheckout({
   };
 
   return (
-    <Elements
-      stripe={stripePromise}
-      options={options}
-      onReady={() => setStripeError(null)}
-      onError={(error) => {
-        if (error && "message" in error) {
-          setStripeError(error.message ?? "Stripea ei voitu ladata.");
-        }
-      }}
-    >
+    <Elements stripe={stripePromise} options={options}>
       <div className="w-full max-w-lg mx-auto">
         {/* Header */}
         <div className="text-center mb-6">
@@ -246,18 +237,12 @@ export default function StripeCheckout({
 
         {/* Card */}
         <div className="p-6 rounded-xl bg-card border border-border shadow-sm">
-          {stripeError ? (
-            <div className="p-4 rounded-lg bg-destructive/10 border border-destructive/20 text-sm text-destructive text-center">
-              {stripeError}
-            </div>
-          ) : (
-            <PaymentForm
-              amount={amount}
-              productName={productName}
-              onSuccess={onSuccess}
-              onCancel={onCancel}
-            />
-          )}
+          <PaymentForm
+            amount={amount}
+            productName={productName}
+            onSuccess={onSuccess}
+            onCancel={onCancel}
+          />
         </div>
       </div>
     </Elements>
