@@ -14,6 +14,12 @@ import PrivacyPolicyPage from "./pages/PrivacyPolicyPage.tsx";
 import TermsPage from "./pages/TermsPage.tsx";
 import ThankYouPage from "./pages/ThankYouPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import AdminLogin from "./pages/admin/AdminLogin.tsx";
+import AdminLayout from "./components/admin/AdminLayout.tsx";
+import AdminOverview from "./pages/admin/AdminOverview.tsx";
+import AdminLeads from "./pages/admin/AdminLeads.tsx";
+import AdminOrders from "./pages/admin/AdminOrders.tsx";
+import AdminCustomers from "./pages/admin/AdminCustomers.tsx";
 
 const queryClient = new QueryClient();
 
