@@ -14,6 +14,12 @@ import PrivacyPolicyPage from "./pages/PrivacyPolicyPage.tsx";
 import TermsPage from "./pages/TermsPage.tsx";
 import ThankYouPage from "./pages/ThankYouPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import AdminLogin from "./pages/admin/AdminLogin.tsx";
+import AdminLayout from "./components/admin/AdminLayout.tsx";
+import AdminOverview from "./pages/admin/AdminOverview.tsx";
+import AdminLeads from "./pages/admin/AdminLeads.tsx";
+import AdminOrders from "./pages/admin/AdminOrders.tsx";
+import AdminCustomers from "./pages/admin/AdminCustomers.tsx";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +38,13 @@ const App = () => (
           <Route path="/tietosuoja" element={<PrivacyPolicyPage />} />
           <Route path="/kayttoehdot" element={<TermsPage />} />
           <Route path="/kiitos" element={<ThankYouPage />} />
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin" element={<AdminLayout />}>
+            <Route index element={<AdminOverview />} />
+            <Route path="leads" element={<AdminLeads />} />
+            <Route path="orders" element={<AdminOrders />} />
+            <Route path="customers" element={<AdminCustomers />} />
+          </Route>
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
