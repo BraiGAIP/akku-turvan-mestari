@@ -126,4 +126,52 @@
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
     pointer-events: none;
   }
+
+  /* ===== Admin (Caars-inspired) ===== */
+  .admin-card {
+    position: relative;
+    background: linear-gradient(165deg, hsl(224 35% 12%) 0%, hsl(224 40% 9%) 100%);
+    border: 1px solid hsl(187 92% 53% / 0.10);
+    border-radius: var(--radius);
+    box-shadow: 0 1px 0 hsl(0 0% 100% / 0.04) inset, 0 18px 44px -14px hsl(0 0% 0% / 0.55);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  .admin-card:hover {
+    border-color: hsl(187 92% 53% / 0.35);
+    box-shadow: 0 1px 0 hsl(0 0% 100% / 0.06) inset, 0 26px 60px -14px hsl(0 0% 0% / 0.7), 0 0 36px -10px hsl(187 92% 53% / 0.30);
+  }
+
+  .admin-chip {
+    display: inline-flex; align-items: center; gap: 0.375rem;
+    padding: 0.4rem 0.85rem; border-radius: 9999px;
+    font-size: 0.8rem; font-weight: 600;
+    color: hsl(var(--foreground) / 0.85);
+    background: hsl(224 30% 14%);
+    border: 1px solid hsl(0 0% 100% / 0.06);
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+  .admin-chip:hover { border-color: hsl(187 92% 53% / 0.45); color: hsl(var(--foreground)); }
+  .admin-chip[data-selected="true"] {
+    color: hsl(187 92% 75%);
+    background: hsl(187 92% 53% / 0.14);
+    border-color: hsl(187 92% 53% / 0.55);
+    box-shadow: 0 0 0 1px hsl(187 92% 53% / 0.2), 0 6px 18px -8px hsl(187 92% 53% / 0.4);
+  }
+
+  .admin-nav-link {
+    display: flex; align-items: center; justify-content: space-between; gap: 0.75rem;
+    padding: 0.55rem 0.75rem; border-radius: 0.5rem;
+    font-size: 0.875rem; font-weight: 500;
+    color: hsl(var(--muted-foreground));
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+  }
+  .admin-nav-link:hover { color: hsl(var(--foreground)); background: hsl(224 30% 14% / 0.7); }
+  .admin-nav-link[data-active="true"] {
+    color: hsl(var(--foreground));
+    background: hsl(187 92% 53% / 0.12);
+    border-color: hsl(187 92% 53% / 0.40);
+    box-shadow: 0 0 0 1px hsl(187 92% 53% / 0.15);
+  }
 }
