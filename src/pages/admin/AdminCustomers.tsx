@@ -87,7 +87,7 @@ const AdminCustomers = () => {
         <Input className="pl-9" placeholder="Hae..." value={search} onChange={(e) => setSearch(e.target.value)} />
       </div>
 
-      <Card>
+      <div className="admin-card overflow-hidden">
         <Table>
           <TableHeader>
             <TableRow>
@@ -115,7 +115,7 @@ const AdminCustomers = () => {
             )}
           </TableBody>
         </Table>
-      </Card>
+      </div>
     </div>
   );
 };
