@@ -52,23 +52,23 @@ const AdminOverview = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {kpis.map((k) => (
-          <Card key={k.label} className="p-5">
+          <div key={k.label} className="admin-card p-5">
             <div className="flex items-center justify-between mb-3">
-              <span className="text-xs text-muted-foreground">{k.label}</span>
+              <span className="text-xs uppercase tracking-wider text-muted-foreground">{k.label}</span>
               <k.icon className={`w-4 h-4 ${k.color}`} />
             </div>
             <div className="text-2xl font-bold">{k.value}</div>
-          </Card>
+          </div>
         ))}
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <Card className="p-5">
-          <h3 className="font-semibold mb-4">Uusimmat liidit</h3>
+        <div className="admin-card p-5">
+          <h3 className="font-semibold mb-4 text-sm uppercase tracking-wider text-secondary">Uusimmat liidit</h3>
           <div className="space-y-3">
             {recentLeads.length === 0 && <p className="text-sm text-muted-foreground">Ei vielä liidejä</p>}
             {recentLeads.map((l) => (
-              <div key={l.id} className="flex items-center justify-between text-sm">
+              <div key={l.id} className="flex items-center justify-between text-sm py-2 border-b border-border/30 last:border-0">
                 <div className="min-w-0">
                   <div className="font-medium truncate">{l.name}</div>
                   <div className="text-xs text-muted-foreground truncate">{l.email || l.phone || "—"}</div>
@@ -77,14 +77,14 @@ const AdminOverview = () => {
               </div>
             ))}
           </div>
-        </Card>
+        </div>
 
-        <Card className="p-5">
-          <h3 className="font-semibold mb-4">Uusimmat tilaukset</h3>
+        <div className="admin-card p-5">
+          <h3 className="font-semibold mb-4 text-sm uppercase tracking-wider text-secondary">Uusimmat tilaukset</h3>
           <div className="space-y-3">
             {recentOrders.length === 0 && <p className="text-sm text-muted-foreground">Ei vielä tilauksia</p>}
             {recentOrders.map((o) => (
-              <div key={o.id} className="flex items-center justify-between text-sm">
+              <div key={o.id} className="flex items-center justify-between text-sm py-2 border-b border-border/30 last:border-0">
                 <div className="min-w-0">
                   <div className="font-medium truncate">{o.customer_name}</div>
                   <div className="text-xs text-muted-foreground truncate">{o.product_name}</div>
@@ -93,7 +93,7 @@ const AdminOverview = () => {
               </div>
             ))}
           </div>
-        </Card>
+        </div>
       </div>
     </div>
   );
