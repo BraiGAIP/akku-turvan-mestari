@@ -106,13 +106,13 @@ const AdminOrders = () => {
       </div>
 
       <div className="flex gap-2 flex-wrap">
-        <Button size="sm" variant={filter === "all" ? "default" : "outline"} onClick={() => setFilter("all")}>Kaikki</Button>
+        <button className="admin-chip" data-selected={filter === "all"} onClick={() => setFilter("all")}>Kaikki</button>
         {STATUSES.map((s) => (
-          <Button key={s} size="sm" variant={filter === s ? "default" : "outline"} onClick={() => setFilter(s)}>{s}</Button>
+          <button key={s} className="admin-chip" data-selected={filter === s} onClick={() => setFilter(s)}>{s}</button>
         ))}
       </div>
 
-      <Card>
+      <div className="admin-card overflow-hidden">
         <Table>
           <TableHeader>
             <TableRow>
@@ -150,7 +150,7 @@ const AdminOrders = () => {
             )}
           </TableBody>
         </Table>
-      </Card>
+      </div>
     </div>
   );
 };
