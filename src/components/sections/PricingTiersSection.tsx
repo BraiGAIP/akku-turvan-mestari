@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Check, Star, ArrowRight, Shield, BadgeCheck, Crown, Zap, Battery, Wrench, Car } from "lucide-react";
 import { products } from "@/data/productData";
 import type { Product } from "@/data/productData";
+import PhotoPlaceholder from "@/components/PhotoPlaceholder";
+
 
 interface PricingTiersSectionProps {
   onStartFlow: () => void;
