@@ -30,7 +30,7 @@ const FAQSection = () => (
           <details key={q} className="group glass-card rounded-xl p-5 cursor-pointer hover:border-primary/30 transition-all">
             <summary className="flex items-center justify-between font-semibold text-foreground list-none">
               <h3 className="text-base font-semibold">{q}</h3>
-              <ChevronDown className="w-5 h-5 text-muted-foreground group-open:rotate-180 transition-transform duration-200 flex-shrink-0 ml-4" />
+              <ChevronDown className="w-5 h-5 text-primary group-open:rotate-180 transition-transform duration-200 flex-shrink-0 ml-4" />
             </summary>
             <p className="mt-3 text-muted-foreground leading-relaxed text-sm">{a}</p>
           </details>

@@ -40,16 +40,16 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navbar onStartFlow={startFlow} />
       <HeroSection onStartFlow={startFlow} />
-      <ScrollReveal><PartnerBanner /></ScrollReveal>
-      <ScrollReveal delay={50}><ComparisonTable /></ScrollReveal>
-      <ScrollReveal delay={50}><CostComparison onStartFlow={startFlow} /></ScrollReveal>
-      <ScrollReveal delay={50}><SavingsCalculator onStartFlow={startFlow} /></ScrollReveal>
-      <ScrollReveal delay={100}><CoverageSection /></ScrollReveal>
-      <ScrollReveal delay={50}><PricingTiersSection onStartFlow={startFlow} /></ScrollReveal>
-      <ScrollReveal><Testimonials /></ScrollReveal>
-      <ScrollReveal><TrustSection /></ScrollReveal>
-      <ScrollReveal delay={50}><FAQSection /></ScrollReveal>
-      <ScrollReveal><CTASection onStartFlow={startFlow} /></ScrollReveal>
+      <ScrollReveal className="section-dark-mid"><PartnerBanner /></ScrollReveal>
+      <ScrollReveal className="section-light" delay={50}><ComparisonTable /></ScrollReveal>
+      <ScrollReveal className="section-light-alt" delay={50}><CostComparison onStartFlow={startFlow} /></ScrollReveal>
+      <ScrollReveal className="section-light" delay={50}><SavingsCalculator onStartFlow={startFlow} /></ScrollReveal>
+      <ScrollReveal className="section-dark-deep" delay={100}><CoverageSection /></ScrollReveal>
+      <ScrollReveal className="section-light" delay={50}><PricingTiersSection onStartFlow={startFlow} /></ScrollReveal>
+      <ScrollReveal className="section-light-alt"><Testimonials /></ScrollReveal>
+      <ScrollReveal className="section-dark-mid"><TrustSection /></ScrollReveal>
+      <ScrollReveal className="section-light" delay={50}><FAQSection /></ScrollReveal>
+      <ScrollReveal className="section-dark-deep"><CTASection onStartFlow={startFlow} /></ScrollReveal>
       <SiteFooter />
 
       <WhatsAppButton />

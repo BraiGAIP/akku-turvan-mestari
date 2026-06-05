@@ -1,6 +1,7 @@
 export interface Product {
   id: string;
   name: string;
+  subtitle: string;
   tagline: string;
   monthlyPrice: number;
   fullPrice: number;
@@ -16,10 +17,11 @@ export interface Product {
 export const products: Product[] = [
   {
     id: "gosafe-basic",
-    name: "GOSafe Basic",
+    name: "Perusturva",
+    subtitle: "GOSafe Basic",
     tagline: "Luotettava perusturva jokapäiväiseen ajoon",
     monthlyPrice: 19,
-    fullPrice: Math.round(19 * 36),
+    fullPrice: 684,
     months: 36,
     color: "text-cyan-400",
     icon: "Shield",
@@ -28,24 +30,25 @@ export const products: Product[] = [
     highlights: [
       "Moottori- ja voimansiirtoviat",
       "Turbo- ja kompressoriviat",
-      "Sähkö- ja elektronikkaviat",
+      "Sähkö- ja elektroniikkaviat",
       "24/7 tiepalvelu",
     ],
     recommended: false,
   },
   {
     id: "gosafe-complete",
-    name: "GOSafe Complete",
+    name: "Täysturva",
+    subtitle: "GOSafe Complete",
     tagline: "Kattavin suoja kaikille polttomoottoriautoille",
     monthlyPrice: 27,
-    fullPrice: Math.round(27 * 36),
+    fullPrice: 972,
     months: 36,
     color: "text-amber-400",
     icon: "BadgeCheck",
     coverageLevel: 2,
     vehicleTypes: ["Bensiini", "Diesel", "Hybridi"],
     highlights: [
-      "Kaikki GOSafe Basicin edut",
+      "Kaikki Perusturvan edut",
       "Ilma- ja alustajärjestelmät",
       "Polttoaine- ja jäähdytysjärjestelmät",
       "Erikoistyökalut ja testaus",
@@ -54,17 +57,18 @@ export const products: Product[] = [
   },
   {
     id: "gosafe-premium",
-    name: "GOSafe Premium",
-    tagline: "Premium-tason turva arvokkaammille ajoneuvoille",
+    name: "Huippuajajan turva",
+    subtitle: "GOSafe Premium",
+    tagline: "Premium-tason turva arvokkaille ajoneuvoille",
     monthlyPrice: 35,
-    fullPrice: Math.round(35 * 36),
+    fullPrice: 1260,
     months: 36,
     color: "text-violet-400",
     icon: "Crown",
     coverageLevel: 3,
     vehicleTypes: ["Bensiini", "Diesel", "Hybridi", "Premium"],
     highlights: [
-      "Kaikki GOSafe Completen edut",
+      "Kaikki Täysturvan edut",
       "Korkeammat korvauskatot",
       "Vaihteisto- ja kytkinvauriot",
       "Kattava matkavakuutus",
@@ -73,10 +77,11 @@ export const products: Product[] = [
   },
   {
     id: "gosafe-electric",
-    name: "GOSafe Electric",
+    name: "Sähköturva",
+    subtitle: "GOSafe Electric",
     tagline: "Älykäs turva sähköajoneuvoille",
     monthlyPrice: 32,
-    fullPrice: Math.round(32 * 36),
+    fullPrice: 1152,
     months: 36,
     color: "text-emerald-400",
     icon: "Zap",
@@ -92,10 +97,11 @@ export const products: Product[] = [
   },
   {
     id: "gosafe-battery",
-    name: "GOSafe Battery",
+    name: "Akkuturva",
+    subtitle: "GOSafe Battery",
     tagline: "Erikoisturva sähköauton akulle",
     monthlyPrice: 18,
-    fullPrice: Math.round(18 * 36),
+    fullPrice: 648,
     months: 36,
     color: "text-sky-400",
     icon: "Battery",
@@ -111,10 +117,11 @@ export const products: Product[] = [
   },
   {
     id: "gosafe-motorcycle",
-    name: "GOSafe Motorcycle",
+    name: "Moottoripyöräturva",
+    subtitle: "GOSafe Motorcycle",
     tagline: "Kevyt ja kattava turva moottoripyörälle",
     monthlyPrice: 17,
-    fullPrice: Math.round(17 * 36),
+    fullPrice: 612,
     months: 36,
     color: "text-orange-400",
     icon: "Wrench",
@@ -130,10 +137,11 @@ export const products: Product[] = [
   },
   {
     id: "gosafe-motorhome",
-    name: "GOSafe Motorhome",
+    name: "Matkailuautoturva",
+    subtitle: "GOSafe Motorhome",
     tagline: "Luotettava kumppani matkailuautoilijalle",
     monthlyPrice: 29,
-    fullPrice: Math.round(29 * 36),
+    fullPrice: 1044,
     months: 36,
     color: "text-rose-400",
     icon: "Car",

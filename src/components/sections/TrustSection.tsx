@@ -30,7 +30,7 @@ const TrustSection = () => (
           <div className="space-y-3">
             <div>
               <p className="text-muted-foreground text-xs uppercase tracking-wider font-semibold mb-0.5">Tuote</p>
-              <p className="text-foreground">Fragus GoSafe Electric -akkuturva</p>
+              <p className="text-foreground">Fragus GOSafe -kunnossapitosopimukset</p>
             </div>
             <div>
               <p className="text-muted-foreground text-xs uppercase tracking-wider font-semibold mb-0.5">Kumppani</p>

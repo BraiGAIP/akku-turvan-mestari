@@ -92,7 +92,7 @@ const CTASection = ({ onStartFlow }: CTASectionProps) => (
             className="h-14 px-12 text-base rounded-full bg-gradient-to-r from-primary to-primary/80 btn-glow font-bold transition-all duration-200 hover:scale-[1.03]"
             onClick={onStartFlow}
           >
-            Osta akkuturva <ArrowRight className="w-5 h-5 ml-1" />
+            Hanki turva nyt <ArrowRight className="w-5 h-5 ml-1" />
           </Button>
           <div className="mt-3 space-y-0.5">
             <p className="text-xs text-muted-foreground">✔ Et sitoudu ennen maksua</p>
