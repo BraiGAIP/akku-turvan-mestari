@@ -69,7 +69,7 @@ const PricingTiersSection = ({ onStartFlow, onSelectProduct }: PricingTiersSecti
         {/* Thin full-width banner image above the product cards */}
         <PhotoPlaceholder
           alt="Suomalainen auto Jatkoturvan suojassa"
-          className="products-banner-image w-full mb-10"
+          className="products-banner-image w-full h-[200px] mb-10"
           rounded="rounded-2xl"
           overlayOpacity={0.5}
           label="Lisää banner-kuva (hillitty autokuva)"
