@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Check, Zap, Car, Shield, BadgeEuro, Clock } from "lucide-react";
-import evHeroImg from "@/assets/ev-hero.jpg";
+import PhotoPlaceholder from "@/components/PhotoPlaceholder";
+
 
 interface HeroSectionProps {
   onStartFlow: () => void;
@@ -30,13 +31,16 @@ const steps = [
 const HeroSection = ({ onStartFlow }: HeroSectionProps) => (
   <section className="relative min-h-[92vh] flex items-center pt-16 noise-bg overflow-hidden">
     {/* Background image with heavy dark overlay */}
-    <div className="absolute inset-0">
-      <img
-        src={evHeroImg}
-        alt="Moderni sähköauto"
-        className="w-full h-full object-cover object-center opacity-20"
-        width={1920}
-        height={1024}
+    <div className="absolute inset-0 hero-bg-image">
+      <PhotoPlaceholder
+        alt="Jatkoturva suojaa autosi kalleimmat osat"
+        className="w-full h-full"
+        loading="eager"
+        label="Lisää hero-kuva (auton yksityiskohta / interiööri)"
+      />
+      <div
+        className="absolute inset-0"
+        style={{ backgroundColor: "rgba(10,18,32,0.65)" }}
       />
       <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/50" />
       <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/90" />
@@ -45,6 +49,7 @@ const HeroSection = ({ onStartFlow }: HeroSectionProps) => (
       {/* Secondary glow */}
       <div className="absolute bottom-[20%] right-[10%] w-[400px] h-[300px] rounded-full bg-secondary/5 blur-[120px] animate-glow" style={{ animationDelay: "1.5s" }} />
     </div>
+
 
     <div className="relative z-10 max-w-7xl mx-auto px-6 py-16 md:py-24 w-full">
       <div className="max-w-2xl mb-14">

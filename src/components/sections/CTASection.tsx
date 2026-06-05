@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Check, Shield, Clock, CreditCard, Lock, AlertTriangle } from "lucide-react";
+import PhotoPlaceholder from "@/components/PhotoPlaceholder";
+
 
 interface CTASectionProps {
   onStartFlow: () => void;
@@ -20,8 +22,18 @@ const trustPoints = [
 
 const CTASection = ({ onStartFlow }: CTASectionProps) => (
   <section className="py-20 px-6 relative overflow-hidden">
-    <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-background to-secondary/5" />
+    {/* Aspirational dark car background */}
+    <div className="absolute inset-0 cta-bg-image">
+      <PhotoPlaceholder
+        alt="Auto kotimaisemissa — Jatkoturva jatkaa siitä mihin tehdastakuu päättyy"
+        className="w-full h-full"
+        overlayOpacity={0.75}
+        label="Lisää CTA-taustakuva (auto takaa / sivulta)"
+      />
+    </div>
+    <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-background/40 to-secondary/5" />
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[500px] rounded-full bg-primary/8 blur-[140px]" />
+
 
     <div className="max-w-3xl mx-auto relative">
       {/* Main sales card */}

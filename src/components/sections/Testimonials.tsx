@@ -46,23 +46,45 @@ const Testimonials = () => (
       </div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        {reviews.map((r) => (
-          <div key={r.name} className="glass-card rounded-2xl p-6 flex flex-col">
-            <div className="flex mb-3">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-4 h-4 fill-[#FF4D9D] text-[#FF4D9D]" />
-              ))}
+        {reviews.map((r) => {
+          const initials = r.name
+            .split(/[ ,]+/)
+            .filter(Boolean)
+            .slice(0, 2)
+            .map((p) => p[0])
+            .join("")
+            .toUpperCase();
+          return (
+            <div key={r.name} className="glass-card rounded-2xl p-6 flex flex-col">
+              <div className="flex mb-3">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-[#FF4D9D] text-[#FF4D9D]" />
+                ))}
+              </div>
+              <p className="text-sm text-foreground/90 leading-relaxed mb-4 flex-1">
+                "{r.text}"
+              </p>
+              <div className="pt-3 border-t border-border/40 flex items-center gap-3">
+                {/* Initials-based avatar with gradient border ring */}
+                <div
+                  className="w-12 h-12 rounded-full p-[2px] flex-shrink-0"
+                  style={{ background: "linear-gradient(135deg, #6A3DF0, #FF4D9D)" }}
+                  aria-hidden="true"
+                >
+                  <div className="w-full h-full rounded-full bg-card flex items-center justify-center">
+                    <span className="text-sm font-bold text-brand-gradient">{initials}</span>
+                  </div>
+                </div>
+                <div>
+                  <p className="font-bold text-sm text-foreground">{r.name}</p>
+                  <p className="text-xs text-muted-foreground">{r.car}</p>
+                </div>
+              </div>
             </div>
-            <p className="text-sm text-foreground/90 leading-relaxed mb-4 flex-1">
-              "{r.text}"
-            </p>
-            <div className="pt-3 border-t border-border/40">
-              <p className="font-bold text-sm text-foreground">{r.name}</p>
-              <p className="text-xs text-muted-foreground">{r.car}</p>
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
+
     </div>
   </section>
 );
