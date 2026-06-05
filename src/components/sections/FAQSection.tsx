@@ -1,14 +1,16 @@
 import { ChevronDown } from "lucide-react";
 
 const faqs = [
-  { q: "Kannattaako akkuturva?", a: "Sähköauton akun vaihto maksaa tyypillisesti 5 000–20 000 €. Jatkoturva suojaa sinua tältä riskiltä murto-osalla kustannuksista. Korvausraja on jopa 15 000 € sopimuskauden aikana." },
-  { q: "Mitä akkuturva kattaa?", a: "GoSafe Electric kattaa sähköajomoottorin, ohjainlaitteet, voimansiirron, jarru- ja ohjausjärjestelmän, korkeajänniteakun, latausjärjestelmän, akun jäähdytyksen, turvalaitteet, lämmitys- ja jäähdytysjärjestelmän sekä sähköiset mukavuustoiminnot." },
-  { q: "Kattaako turva akun kapasiteetin laskun?", a: "Kyllä. Turva korvaa, jos akun kapasiteetti laskee alle 70 % alkuperäisestä tai alenema ylittää 6 % 12 kuukauden aikana." },
-  { q: "Miten korjaus toimii?", a: "Ilmoita viasta meille. Saat ohjeet korjaamolle, Fragus hyväksyy korjauksen ja maksaa suoraan korjaamolle." },
-  { q: "Sopiiko käytetyille autoille?", a: "Kyllä. Täysi turva alle 10-vuotiaille autoille, joissa on alle 200 000 km. Rajoitettu turva 10–20-vuotiaille autoille tai 200 000–300 000 km." },
-  { q: "Voinko peruuttaa?", a: "Kyllä. Sinulla on 14 päivän peruutusoikeus ilman kuluja ja ilman syytä." },
-  { q: "Milloin sopimus alkaa?", a: "Sopimus alkaa tehdastakuun jälkeen eikä ole takautuva. Sopimus päättyy, kun auto täyttää 20 vuotta tai saavuttaa 300 000 km." },
-  { q: "Kuka on Fragus?", a: "Fragus Group on eurooppalainen ajoneuvojen suojatuotteiden tarjoaja yli 20 vuoden kokemuksella. Jatkoturva perustuu Fraguksen virallisiin GoSafe Electric -sopimusehtoihin." },
+  { q: "Mitä sopimus kattaa?", a: "Jatkoturva kattaa auton kalleimmat tekniset osat: moottorin, vaihteiston, voimansiirron, ohjainlaitteet, jarru- ja ohjausjärjestelmän, jäähdytyksen sekä sähköiset järjestelmät. Sähkö- ja hybridiautoissa myös korkeajänniteakun, latausjärjestelmän ja akun jäähdytyksen. Tarkka kattavuus riippuu valitusta turvatasosta." },
+  { q: "Onko omavastuuta?", a: "Ei. Jatkoturvassa ei ole omavastuuta — korvattavat korjaukset maksetaan kokonaan korvausrajaan saakka (jopa 20 000 € sopimuskauden aikana)." },
+  { q: "Miten toimin kun auto vikaantuu?", a: "Soita meille tai jätä ilmoitus verkkosivulla. Saat päätöksen tyypillisesti tunnissa. Vie auto haluamallesi korjaamolle Suomessa — me hyväksymme korjauksen ja maksamme suoraan korjaamolle. Sinun ei tarvitse maksaa mitään etukäteen." },
+  { q: "Voinko siirtää sopimuksen uudelle omistajalle?", a: "Kyllä. Jatkoturva on siirrettävissä auton mukana uudelle omistajalle, mikä nostaa auton jälleenmyyntiarvoa. Ilmoita vain omistajanvaihdoksesta meille." },
+  { q: "Onko sopimus voimassa ulkomailla?", a: "Kyllä. Sopimus on voimassa koko EU-alueella sekä muutamassa lähimaassa. Korvattavat korjaukset hyväksytään ulkomailla samalla periaatteella kuin Suomessa." },
+  { q: "Kannattaako jatkoturva?", a: "Yksi yllättävä korjaus (moottori, vaihteisto, akku) maksaa tyypillisesti 3 000–20 000 €. Jatkoturva alkaen 19 €/kk on murto-osa tästä — ja korvausraja on jopa 20 000 € sopimuskauden aikana." },
+  { q: "Mitä jatkoturva ei kata?", a: "Sopimus ei kata kuluvia osia (jarrupalat, renkaat), huoltoja, kolarivaurioita, ilkivaltaa, eikä vikoja, jotka ovat olleet olemassa ennen sopimuksen alkua. Tarkat rajoitukset löytyvät sopimusehdoista." },
+  { q: "Sopiiko jatkoturva käytetylle autolle?", a: "Kyllä. Täysi turva alle 10-vuotiaille autoille, joissa on alle 200 000 km. Rajoitettu turva 10–20-vuotiaille autoille tai 200 000–300 000 km ajetuille." },
+  { q: "Voinko peruuttaa sopimuksen?", a: "Kyllä. Sinulla on 14 päivän peruutusoikeus ilman kuluja ja ilman syytä." },
+  { q: "Milloin sopimus alkaa?", a: "Sopimus alkaa heti maksun jälkeen tai tehdastakuun päättyessä. Sopimus ei ole takautuva, ja se päättyy viimeistään kun auto täyttää 20 vuotta tai saavuttaa 300 000 km." },
 ];
 
 const FAQSection = () => (

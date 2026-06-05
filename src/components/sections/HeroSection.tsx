@@ -54,39 +54,53 @@ const HeroSection = ({ onStartFlow }: HeroSectionProps) => (
           <span className="text-sm font-semibold text-accent">Virallinen Fragus-kumppani Suomessa</span>
         </div>
 
-        <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-black text-foreground leading-[1.08] tracking-tight mb-3">
-          Auton kallein vika voi{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-foreground to-foreground/70">
-            tulla yllättäen
-          </span>
+        <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-black text-foreground leading-[1.05] tracking-tight uppercase mb-4">
+          Kun tehdastakuu päättyy —{" "}
+          <span className="text-brand-gradient">me jatkamme.</span>
         </h1>
-        <p className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-secondary leading-tight mb-6">
-          Fraguksen jatkoturva suojaa jopa 20 000 € kustannuksilta
+        <p className="text-xl md:text-2xl font-bold text-foreground/85 leading-snug mb-6">
+          Fraguksen jatkoturva suojaa sinua jopa 20 000 € yllätyskorjauksilta.
         </p>
 
+        {/* Trust badges */}
+        <div className="flex flex-wrap gap-2 mb-6">
+          {["Ei omavastuuta", "Päätös tunnissa", "Kotimainen palvelu"].map((label) => (
+            <span
+              key={label}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-gradient-soft border border-[#FF4D9D]/30 text-sm font-bold text-foreground"
+            >
+              <Check className="w-4 h-4 text-[#FF4D9D]" strokeWidth={3} />
+              {label}
+            </span>
+          ))}
+        </div>
+
         {/* Pain amplifier */}
-        <div className="bg-destructive/10 border border-destructive/20 rounded-xl px-5 py-3 mb-8 inline-block">
+        <div className="bg-destructive/10 border border-destructive/20 rounded-xl px-5 py-3 mb-6 inline-block">
           <p className="text-base md:text-lg font-bold text-destructive">
             Moottorin, vaihteiston tai akun korjaus 3 000–20 000 €
           </p>
-          <p className="text-sm text-secondary font-bold mt-1">
+          <p className="text-sm text-brand-gradient font-bold mt-1">
             Jatkoturva alkaen vain 19 €/kk
           </p>
         </div>
 
-        {/* Value stack */}
-        <div className="grid grid-cols-2 gap-x-6 gap-y-2.5 mb-6">
-          {[
-            "Suoja auton kalleimmalle osalle",
-            "Ei piilokuluja",
-            "Voimassa heti",
-            "14 päivän peruutusoikeus",
-          ].map((item) => (
-            <div key={item} className="flex items-center gap-2 text-sm text-foreground/90">
-              <Check className="w-4 h-4 text-secondary flex-shrink-0" />
-              <span>{item}</span>
-            </div>
-          ))}
+        {/* Primary CTA */}
+        <div className="flex flex-wrap items-center gap-3 mb-2">
+          <Button
+            size="lg"
+            className="h-14 px-8 text-base btn-brand"
+            onClick={onStartFlow}
+          >
+            Hanki turva nyt
+            <ArrowRight className="w-5 h-5 ml-1" />
+          </Button>
+          <a
+            href="#turva"
+            className="text-sm font-bold text-foreground/80 hover:text-foreground underline-offset-4 hover:underline"
+          >
+            Katso turvatasot →
+          </a>
         </div>
       </div>
 
