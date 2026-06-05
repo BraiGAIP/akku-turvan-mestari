@@ -9,7 +9,9 @@ interface PhotoPlaceholderProps {
   loading?: "lazy" | "eager";
   label?: string;
   showLabel?: boolean;
+  fetchPriority?: "high" | "low" | "auto";
 }
+
 
 /**
  * Image slot with gradient + camera-icon fallback when no `src` is provided.
