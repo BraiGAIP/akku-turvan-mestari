@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Shield, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import Logo, { BrandShield } from "@/components/brand/Logo";
 
 interface NavbarProps {
   onStartFlow: () => void;
@@ -13,11 +14,10 @@ const Navbar = ({ onStartFlow }: NavbarProps) => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-40 bg-background/80 backdrop-blur-xl border-b border-border/50">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2.5">
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center shadow-lg shadow-primary/20">
-            <Shield className="w-5 h-5 text-primary-foreground" />
-          </div>
-          <span className="text-xl font-extrabold text-foreground">Jatkoturva</span>
+        <Link to="/" className="flex items-center" aria-label="Jatkoturva etusivulle">
+          {/* Mobile: symbol only. Desktop: full wordmark logo on dark navbar */}
+          <span className="sm:hidden"><BrandShield size={34} /></span>
+          <span className="hidden sm:block"><Logo variant="full" theme="dark" tagline={false} size={32} /></span>
         </Link>
 
         <div className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
@@ -29,7 +29,7 @@ const Navbar = ({ onStartFlow }: NavbarProps) => {
         </div>
 
         <div className="flex items-center gap-3">
-          <Button size="sm" className="rounded-full hidden sm:inline-flex bg-gradient-to-r from-primary to-primary/80 btn-glow font-bold" onClick={onStartFlow}>
+          <Button size="sm" className="rounded-full hidden sm:inline-flex btn-brand font-bold px-5" onClick={onStartFlow}>
             Laske hinta heti
           </Button>
           <button
@@ -48,7 +48,7 @@ const Navbar = ({ onStartFlow }: NavbarProps) => {
           <Link to="/akkuturva" className="block text-sm font-medium text-muted-foreground hover:text-foreground">Mallit</Link>
           <Link to="/blogi" className="block text-sm font-medium text-muted-foreground hover:text-foreground">Blogi</Link>
           <a href="#faq" className="block text-sm font-medium text-muted-foreground hover:text-foreground" onClick={() => setMobileOpen(false)}>UKK</a>
-          <Button size="sm" className="w-full rounded-full mt-2 bg-gradient-to-r from-primary to-primary/80 btn-glow font-bold" onClick={() => { onStartFlow(); setMobileOpen(false); }}>
+          <Button size="sm" className="w-full rounded-full mt-2 btn-brand font-bold" onClick={() => { onStartFlow(); setMobileOpen(false); }}>
             Laske hinta heti
           </Button>
         </div>

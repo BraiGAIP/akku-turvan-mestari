@@ -6,7 +6,7 @@ import {
   ShoppingCart,
   UserCircle,
   LogOut,
-  Shield,
+  
   Menu,
   X,
   ArrowLeft,
@@ -15,6 +15,7 @@ import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import { useAdminAuth } from "@/hooks/useAdminAuth";
 import { cn } from "@/lib/utils";
+import { BrandShield } from "@/components/brand/Logo";
 
 interface NavItem {
   to: string;
@@ -78,17 +79,15 @@ const AdminLayout = () => {
         <ArrowLeft className="w-3.5 h-3.5" /> Etusivulle
       </Link>
 
-      <div className="flex items-center gap-2 px-4 pb-4 border-b border-border/40">
-        <div className="w-9 h-9 rounded-lg bg-secondary/15 flex items-center justify-center shrink-0 border border-secondary/30">
-          <Shield className="w-4 h-4 text-secondary" />
-        </div>
-        <div className="flex flex-col min-w-0">
-          <span className="font-bold text-sm leading-tight">AkkuTurva</span>
-          <span className="text-[10px] uppercase tracking-[0.18em] text-secondary font-semibold">Admin</span>
+      <div className="flex items-center gap-3 px-4 pb-4 border-b border-border/40">
+        <BrandShield size={34} />
+        <div className="flex flex-col min-w-0 leading-none">
+          <span className="font-black text-sm tracking-[0.04em] uppercase text-foreground">JATKOTURVA</span>
+          <span className="text-[10px] uppercase tracking-[0.18em] font-bold mt-1 text-brand-gradient">Admin</span>
         </div>
       </div>
 
-      <div className="px-3 pt-4 pb-2 text-[10px] font-bold uppercase tracking-[0.18em] text-secondary">
+      <div className="px-3 pt-4 pb-2 text-[10px] font-bold uppercase tracking-[0.18em] text-brand-gradient">
         Operatiivinen
       </div>
 
@@ -140,9 +139,10 @@ const AdminLayout = () => {
           >
             {drawer ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </Button>
-          <div className="flex-1 flex items-baseline gap-3 min-w-0">
-            <span className="font-bold text-xs tracking-[0.18em] text-secondary uppercase">AkkuTurva</span>
-            <span className="text-base font-semibold truncate">{currentTitle}</span>
+          <div className="flex-1 flex items-center gap-3 min-w-0">
+            <BrandShield size={26} />
+            <span className="font-black text-xs tracking-[0.06em] uppercase text-foreground">JATKOTURVA</span>
+            <span className="text-base font-semibold truncate text-muted-foreground">/ {currentTitle}</span>
           </div>
           <div className="hidden sm:flex items-center gap-2 text-xs">
             {counts.new_leads > 0 && (

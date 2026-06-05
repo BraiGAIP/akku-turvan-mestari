@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
-import { Shield } from "lucide-react";
+import { BrandShield } from "@/components/brand/Logo";
 import { toast } from "sonner";
 import { useAdminAuth } from "@/hooks/useAdminAuth";
 
@@ -50,12 +50,10 @@ const AdminLogin = () => {
     <div className="min-h-screen bg-background flex items-center justify-center p-6">
       <Card className="w-full max-w-md p-8">
         <div className="flex items-center gap-3 mb-6">
-          <div className="w-10 h-10 rounded-xl bg-primary/15 flex items-center justify-center">
-            <Shield className="w-5 h-5 text-primary" />
-          </div>
+          <BrandShield size={40} />
           <div>
-            <h1 className="text-xl font-bold">Hallintapaneeli</h1>
-            <p className="text-sm text-muted-foreground">AkkuTurva Admin</p>
+            <h1 className="text-xl font-black uppercase tracking-[0.04em]">JATKOTURVA</h1>
+            <p className="text-xs uppercase tracking-[0.18em] font-bold text-brand-gradient">Hallintapaneeli</p>
           </div>
         </div>
 
