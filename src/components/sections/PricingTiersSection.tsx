@@ -79,7 +79,7 @@ const PricingTiersSection = ({ onStartFlow, onSelectProduct }: PricingTiersSecti
           <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-secondary bg-secondary/10 mb-4">
             Turvatasot
           </span>
-          <h2 className="text-3xl md:text-4xl font-black text-foreground tracking-tight mb-4">Valitse turva-aika</h2>
+          <h2 className="text-3xl md:text-4xl font-black text-foreground tracking-tight mb-4">Valitse sopiva turvataso autollesi</h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
             Pidempi sopimus = suurempi korvausraja ja parempi hinta per kuukausi.
             14 päivän peruutusoikeus.

@@ -40,8 +40,9 @@ const CTASection = ({ onStartFlow }: CTASectionProps) => (
       <div className="glass-card rounded-2xl p-8 md:p-10">
         {/* Headline */}
         <h2 className="text-2xl md:text-3xl font-black text-foreground mb-2 tracking-tight text-center">
-          Jatkoturva suojaa sinua jopa 20 000 € korjauskuluilta
+          Jatkoturva suojaa jopa 20 000 € korjauskuluilta
         </h2>
+
         <p className="text-secondary text-xl font-black text-center mb-8">
           Alkaen vain 41 € / kk
         </p>

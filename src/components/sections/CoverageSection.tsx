@@ -22,7 +22,7 @@ const CoverageSection = () => (
           <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-secondary bg-secondary/10 mb-4">
             GoSafe Electric
           </span>
-          <h2 className="text-3xl md:text-4xl font-black text-foreground tracking-tight mb-4">Mitä akkuturva kattaa?</h2>
+          <h2 className="text-3xl md:text-4xl font-black text-foreground tracking-tight mb-4">Mitä kunnossapitosopimus kattaa?</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Kattava turva sähköauton kaikille kriittisille komponenteille.
             Perustuu Fraguksen virallisiin sopimusehtoihin.
@@ -50,9 +50,10 @@ const CoverageSection = () => (
             <Battery className="w-7 h-7 text-secondary" />
           </div>
           <div>
-            <h2 className="text-2xl font-black text-foreground mb-3">
+            <h3 className="text-2xl font-black text-foreground mb-3">
               Kattaa myös akun kapasiteetin heikkenemisen
-            </h2>
+            </h3>
+
             <p className="text-muted-foreground leading-relaxed mb-5">
                Sähköauton akun kapasiteetti laskee ajan myötä. Jatkoturva korvaa,
               jos kapasiteetti laskee merkittävästi.
