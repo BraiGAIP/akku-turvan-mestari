@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import MaintenanceGate from "@/components/MaintenanceGate";
 import AiAssistant from "@/components/AiAssistant";
 import CookieConsent from "@/components/CookieConsent";
 import Index from "./pages/Index.tsx";
@@ -28,29 +29,31 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/akkuturva" element={<EVDirectoryPage />} />
-          <Route path="/akkuturva/:slug" element={<EVModelPage />} />
-          <Route path="/blogi" element={<BlogPage />} />
-          <Route path="/blogi/:slug" element={<BlogPostPage />} />
-          <Route path="/tietosuoja" element={<PrivacyPolicyPage />} />
-          <Route path="/kayttoehdot" element={<TermsPage />} />
-          <Route path="/kiitos" element={<ThankYouPage />} />
-          <Route path="/admin/login" element={<AdminLogin />} />
-          <Route path="/admin" element={<AdminLayout />}>
-            <Route index element={<AdminOverview />} />
-            <Route path="leads" element={<AdminLeads />} />
-            <Route path="orders" element={<AdminOrders />} />
-            <Route path="customers" element={<AdminCustomers />} />
-          </Route>
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <AiAssistant />
-        <CookieConsent />
-      </BrowserRouter>
+      <MaintenanceGate>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/akkuturva" element={<EVDirectoryPage />} />
+            <Route path="/akkuturva/:slug" element={<EVModelPage />} />
+            <Route path="/blogi" element={<BlogPage />} />
+            <Route path="/blogi/:slug" element={<BlogPostPage />} />
+            <Route path="/tietosuoja" element={<PrivacyPolicyPage />} />
+            <Route path="/kayttoehdot" element={<TermsPage />} />
+            <Route path="/kiitos" element={<ThankYouPage />} />
+            <Route path="/admin/login" element={<AdminLogin />} />
+            <Route path="/admin" element={<AdminLayout />}>
+              <Route index element={<AdminOverview />} />
+              <Route path="leads" element={<AdminLeads />} />
+              <Route path="orders" element={<AdminOrders />} />
+              <Route path="customers" element={<AdminCustomers />} />
+            </Route>
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+          <AiAssistant />
+          <CookieConsent />
+        </BrowserRouter>
+      </MaintenanceGate>
     </TooltipProvider>
   </QueryClientProvider>
 );
