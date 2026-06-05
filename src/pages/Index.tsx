@@ -13,6 +13,7 @@ import SiteFooter from "@/components/sections/SiteFooter";
 import Testimonials from "@/components/sections/Testimonials";
 import ComparisonTable from "@/components/sections/ComparisonTable";
 import SavingsCalculator from "@/components/sections/SavingsCalculator";
+import CompetitiveAdvantageSection from "@/components/sections/CompetitiveAdvantageSection";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import PriceCalculatorModal from "@/components/PriceCalculatorModal";
 import PricingResult from "@/components/PricingResult";
