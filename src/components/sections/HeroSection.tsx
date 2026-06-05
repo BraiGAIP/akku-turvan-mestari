@@ -29,7 +29,7 @@ const steps = [
 ];
 
 const HeroSection = ({ onStartFlow }: HeroSectionProps) => (
-  <section className="relative min-h-[92vh] flex items-center pt-16 noise-bg overflow-hidden">
+  <section className="relative min-h-[85vh] md:min-h-screen flex items-center pt-16 noise-bg overflow-hidden">
     {/* Background image with heavy dark overlay */}
     <div className="absolute inset-0 hero-bg-image">
       <PhotoPlaceholder

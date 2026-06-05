@@ -24,7 +24,7 @@ const reviews = [
 ];
 
 const Testimonials = () => (
-  <section className="py-20 px-6 bg-background">
+  <section className="py-20 px-6">
     <div className="max-w-6xl mx-auto">
       <div className="text-center mb-12">
         <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-brand-gradient bg-brand-gradient-soft mb-4">

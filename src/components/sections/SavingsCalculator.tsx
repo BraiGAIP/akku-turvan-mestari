@@ -36,7 +36,7 @@ const SavingsCalculator = ({ onStartFlow }: Props) => {
   const fuels: FuelType[] = ["bensiini", "diesel", "hybridi", "sahko"];
 
   return (
-    <section className="py-20 px-6 bg-background">
+    <section className="py-20 px-6">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-10">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-brand-gradient bg-brand-gradient-soft mb-4">
