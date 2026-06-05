@@ -116,16 +116,19 @@ const PricingTiersSection = ({ onStartFlow, onSelectProduct }: PricingTiersSecti
                 }`}
               >
                 {product.recommended && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-secondary to-secondary/80 text-secondary-foreground text-xs font-bold px-4 py-1 rounded-full flex items-center gap-1.5 shadow-lg shadow-secondary/20">
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-brand-gradient text-white text-xs font-bold px-4 py-1 rounded-full flex items-center gap-1.5 shadow-lg">
                     <Star className="w-3 h-3" /> Suosituin
                   </div>
                 )}
 
                 {/* Product icon + name */}
-                <div className="flex items-center gap-3 mb-2">
+                <div className="flex items-center gap-3 mb-1">
                   <IconComponent className={`w-6 h-6 ${product.color}`} />
                   <h3 className="text-xl font-bold text-foreground">{product.name}</h3>
                 </div>
+                <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
+                  {product.subtitle}
+                </p>
                 <p className="text-sm text-muted-foreground mb-4">{product.tagline}</p>
 
                 {/* Monthly price – PRIMARY emphasis */}
@@ -149,14 +152,10 @@ const PricingTiersSection = ({ onStartFlow, onSelectProduct }: PricingTiersSecti
                 </ul>
 
                 <Button
-                  className={`w-full h-12 rounded-xl font-bold transition-all duration-200 hover:scale-[1.02] ${
-                    product.recommended
-                      ? "bg-gradient-to-r from-secondary to-secondary/80 text-secondary-foreground btn-glow shadow-secondary/20"
-                      : "bg-gradient-to-r from-primary to-primary/80 text-primary-foreground btn-glow"
-                  }`}
+                  className={`w-full h-12 rounded-xl font-bold transition-all duration-200 hover:scale-[1.02] bg-gradient-to-r from-primary to-primary/80 text-primary-foreground btn-glow`}
                   onClick={() => handleSelect(product)}
                 >
-                  Valitse tämä turva <ArrowRight className="w-4 h-4 ml-1" />
+                  Valitse {product.name} <ArrowRight className="w-4 h-4 ml-1" />
                 </Button>
                 <p className="text-xs text-center text-muted-foreground mt-2">
                   Et sitoudu ennen maksua · Turva alkaa heti
