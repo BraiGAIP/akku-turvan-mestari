@@ -50,9 +50,10 @@ const CoverageSection = () => (
             <Battery className="w-7 h-7 text-secondary" />
           </div>
           <div>
-            <h2 className="text-2xl font-black text-foreground mb-3">
+            <h3 className="text-2xl font-black text-foreground mb-3">
               Kattaa myös akun kapasiteetin heikkenemisen
-            </h2>
+            </h3>
+
             <p className="text-muted-foreground leading-relaxed mb-5">
                Sähköauton akun kapasiteetti laskee ajan myötä. Jatkoturva korvaa,
               jos kapasiteetti laskee merkittävästi.
