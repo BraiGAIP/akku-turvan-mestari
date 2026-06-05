@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { useState } from "react";
 import Logo, { BrandShield } from "@/components/brand/Logo";
 
@@ -29,8 +29,15 @@ const Navbar = ({ onStartFlow }: NavbarProps) => {
         </div>
 
         <div className="flex items-center gap-3">
+          <a
+            href="tel:+358401234567"
+            className="hidden md:inline-flex items-center gap-2 text-sm font-bold text-foreground hover:text-brand-gradient transition-colors px-3 py-1.5 rounded-full border border-border/60 hover:border-[#FF4D9D]/50"
+          >
+            <Phone className="w-4 h-4 text-[#FF4D9D]" />
+            <span>040 123 4567</span>
+          </a>
           <Button size="sm" className="rounded-full hidden sm:inline-flex btn-brand font-bold px-5" onClick={onStartFlow}>
-            Laske hinta heti
+            Hanki turva nyt
           </Button>
           <button
             className="md:hidden w-9 h-9 flex items-center justify-center text-muted-foreground"
@@ -48,8 +55,11 @@ const Navbar = ({ onStartFlow }: NavbarProps) => {
           <Link to="/akkuturva" className="block text-sm font-medium text-muted-foreground hover:text-foreground">Mallit</Link>
           <Link to="/blogi" className="block text-sm font-medium text-muted-foreground hover:text-foreground">Blogi</Link>
           <a href="#faq" className="block text-sm font-medium text-muted-foreground hover:text-foreground" onClick={() => setMobileOpen(false)}>UKK</a>
+          <a href="tel:+358401234567" className="flex items-center gap-2 text-sm font-bold text-foreground py-2">
+            <Phone className="w-4 h-4 text-[#FF4D9D]" /> 040 123 4567
+          </a>
           <Button size="sm" className="w-full rounded-full mt-2 btn-brand font-bold" onClick={() => { onStartFlow(); setMobileOpen(false); }}>
-            Laske hinta heti
+            Hanki turva nyt
           </Button>
         </div>
       )}

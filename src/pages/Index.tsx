@@ -10,11 +10,15 @@ import TrustSection from "@/components/sections/TrustSection";
 import FAQSection from "@/components/sections/FAQSection";
 import CTASection from "@/components/sections/CTASection";
 import SiteFooter from "@/components/sections/SiteFooter";
+import Testimonials from "@/components/sections/Testimonials";
+import ComparisonTable from "@/components/sections/ComparisonTable";
+import SavingsCalculator from "@/components/sections/SavingsCalculator";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import PriceCalculatorModal from "@/components/PriceCalculatorModal";
 import PricingResult from "@/components/PricingResult";
 import type { VehicleData } from "@/components/QualificationFlow";
 import { Button } from "@/components/ui/button";
-import { Shield, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const Index = () => {
   const [showFlow, setShowFlow] = useState(false);
@@ -37,18 +41,23 @@ const Index = () => {
       <Navbar onStartFlow={startFlow} />
       <HeroSection onStartFlow={startFlow} />
       <ScrollReveal><PartnerBanner /></ScrollReveal>
+      <ScrollReveal delay={50}><ComparisonTable /></ScrollReveal>
       <ScrollReveal delay={50}><CostComparison onStartFlow={startFlow} /></ScrollReveal>
+      <ScrollReveal delay={50}><SavingsCalculator onStartFlow={startFlow} /></ScrollReveal>
       <ScrollReveal delay={100}><CoverageSection /></ScrollReveal>
       <ScrollReveal delay={50}><PricingTiersSection onStartFlow={startFlow} /></ScrollReveal>
+      <ScrollReveal><Testimonials /></ScrollReveal>
       <ScrollReveal><TrustSection /></ScrollReveal>
       <ScrollReveal delay={50}><FAQSection /></ScrollReveal>
       <ScrollReveal><CTASection onStartFlow={startFlow} /></ScrollReveal>
       <SiteFooter />
 
+      <WhatsAppButton />
+
       {/* Sticky mobile CTA */}
       <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden p-4 bg-background/95 backdrop-blur-xl border-t border-border/30">
-        <Button className="w-full h-12 rounded-full text-base font-bold bg-gradient-to-r from-primary to-primary/80 btn-glow" onClick={startFlow}>
-          Laske hinta heti <ArrowRight className="w-4 h-4 ml-1" />
+        <Button className="w-full h-12 rounded-full text-base font-bold btn-brand" onClick={startFlow}>
+          Hanki turva nyt <ArrowRight className="w-4 h-4 ml-1" />
         </Button>
         <p className="text-center text-[10px] text-muted-foreground mt-1.5">Et sitoudu · Vie alle 2 min · Turva alkaa heti</p>
       </div>
