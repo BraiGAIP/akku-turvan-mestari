@@ -33,11 +33,13 @@ const HeroSection = ({ onStartFlow }: HeroSectionProps) => (
     {/* Background image with heavy dark overlay */}
     <div className="absolute inset-0 hero-bg-image">
       <PhotoPlaceholder
-        alt="Jatkoturva suojaa autosi kalleimmat osat"
+        alt="Jatkoturva – auton kunnossapitosopimus käytetylle autolle"
         className="w-full h-full"
         loading="eager"
+        fetchPriority="high"
         label="Lisää hero-kuva (auton yksityiskohta / interiööri)"
       />
+
       <div
         className="absolute inset-0"
         style={{ backgroundColor: "rgba(10,18,32,0.65)" }}
