@@ -21,8 +21,9 @@ const FAQSection = () => (
           UKK
         </span>
         <h2 className="text-3xl md:text-4xl font-black text-foreground tracking-tight">
-          Usein kysytyt kysymykset
+          Usein kysytyt kysymykset lisäturvasta
         </h2>
+
       </div>
       <div className="space-y-2">
         {faqs.map(({ q, a }) => (
