@@ -88,7 +88,7 @@ const HeroSection = ({ onStartFlow }: HeroSectionProps) => (
         </div>
 
         {/* Pain amplifier */}
-        <div className="bg-destructive/10 border border-destructive/20 rounded-xl px-5 py-3 mb-6 inline-block">
+        <div className="bg-[#0A1220]/90 backdrop-blur-md border border-destructive/40 rounded-xl px-5 py-3 mb-6 inline-block shadow-lg">
           <p className="text-base md:text-lg font-bold text-destructive">
             Moottorin, vaihteiston tai akun korjaus 3 000–20 000 €
           </p>
