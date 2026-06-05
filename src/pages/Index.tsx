@@ -13,6 +13,7 @@ import SiteFooter from "@/components/sections/SiteFooter";
 import Testimonials from "@/components/sections/Testimonials";
 import ComparisonTable from "@/components/sections/ComparisonTable";
 import SavingsCalculator from "@/components/sections/SavingsCalculator";
+import CompetitiveAdvantageSection from "@/components/sections/CompetitiveAdvantageSection";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import PriceCalculatorModal from "@/components/PriceCalculatorModal";
 import PricingResult from "@/components/PricingResult";
@@ -40,6 +41,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navbar onStartFlow={startFlow} />
       <HeroSection onStartFlow={startFlow} />
+      <CompetitiveAdvantageSection onStartFlow={startFlow} />
       <ScrollReveal className="section-dark-mid"><PartnerBanner /></ScrollReveal>
       <ScrollReveal className="section-light" delay={50}><ComparisonTable /></ScrollReveal>
       <ScrollReveal className="section-light-alt" delay={50}><CostComparison onStartFlow={startFlow} /></ScrollReveal>
