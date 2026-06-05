@@ -29,31 +29,31 @@ const steps = [
 ];
 
 const HeroSection = ({ onStartFlow }: HeroSectionProps) => (
-  <section className="relative min-h-[85vh] md:min-h-screen flex items-center pt-16 noise-bg overflow-hidden">
-    {/* Background image with heavy dark overlay */}
-    <div className="absolute inset-0 hero-bg-image">
-      <PhotoPlaceholder
-        alt="Jatkoturva – auton kunnossapitosopimus käytetylle autolle"
-        className="w-full h-full"
-        loading="eager"
-        fetchPriority="high"
-        label="Lisää hero-kuva (auton yksityiskohta / interiööri)"
-      />
-
-      <div
-        className="absolute inset-0"
-        style={{ backgroundColor: "rgba(10,18,32,0.65)" }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/50" />
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/90" />
-      {/* Radial glow behind headline */}
-      <div className="absolute top-[20%] left-[15%] w-[700px] h-[500px] rounded-full bg-primary/8 blur-[150px] animate-glow" />
-      {/* Secondary glow */}
-      <div className="absolute bottom-[20%] right-[10%] w-[400px] h-[300px] rounded-full bg-secondary/5 blur-[120px] animate-glow" style={{ animationDelay: "1.5s" }} />
-    </div>
+  <section
+    className="relative min-h-[85vh] md:min-h-screen flex items-center pt-16 overflow-hidden"
+    style={{
+      backgroundImage: 'url(/hero-bg.jpg)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center center',
+      backgroundRepeat: 'no-repeat',
+      position: 'relative',
+    }}
+  >
+    {/* Dark overlay for text readability */}
+    <div
+      style={{
+        position: 'absolute',
+        inset: 0,
+        background:
+          'linear-gradient(135deg, rgba(10,18,32,0.82) 0%, rgba(10,18,32,0.45) 60%, rgba(10,18,32,0.2) 100%)',
+        zIndex: 1,
+      }}
+    />
 
 
-    <div className="relative z-10 max-w-7xl mx-auto px-6 py-16 md:py-24 w-full">
+
+
+    <div className="relative z-10 max-w-7xl mx-auto px-6 py-16 md:py-24 w-full" style={{ position: 'relative', zIndex: 2 }}>
       <div className="max-w-2xl mb-14">
         {/* Trust badge with gold accent */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-6">
