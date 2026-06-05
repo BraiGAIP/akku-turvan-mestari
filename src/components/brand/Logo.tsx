@@ -17,46 +17,49 @@ interface LogoProps {
  * Brand colors:
  *   Purple #6A3DF0, Pink #FF4D9D, Deep navy-charcoal #111827, Light #F2F4F7
  */
-export const BrandShield = ({ className, size = 36 }: { className?: string; size?: number }) => (
-  <svg
-    width={size}
-    height={size}
-    viewBox="0 0 64 64"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className={className}
-    aria-hidden="true"
-  >
-    <defs>
-      <linearGradient id="jt-brand-grad" x1="8" y1="6" x2="58" y2="60" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#6A3DF0" />
-        <stop offset="100%" stopColor="#FF4D9D" />
-      </linearGradient>
-    </defs>
-    {/* Shield outline */}
-    <path
-      d="M32 4 C32 4 44 9 56 12 C56 12 56 30 56 34 C56 47 45 56 32 60 C19 56 8 47 8 34 C8 30 8 12 8 12 C20 9 32 4 32 4 Z"
+export const BrandShield = ({ className, size = 36 }: { className?: string; size?: number }) => {
+  const gradId = useId().replace(/:/g, "") + "-jt";
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 64 64"
       fill="none"
-      stroke="url(#jt-brand-grad)"
-      strokeWidth="4"
-      strokeLinejoin="round"
-    />
-    {/* Stylized J */}
-    <path
-      d="M33 18 H43"
-      stroke="url(#jt-brand-grad)"
-      strokeWidth="4.5"
-      strokeLinecap="round"
-    />
-    <path
-      d="M40 18 V37 C40 43 35 47 29 47 C23.5 47 19 43.5 18 38.5"
-      fill="none"
-      stroke="url(#jt-brand-grad)"
-      strokeWidth="4.5"
-      strokeLinecap="round"
-    />
-  </svg>
-);
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      aria-hidden="true"
+    >
+      <defs>
+        <linearGradient id={gradId} x1="8" y1="6" x2="58" y2="60" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#6A3DF0" />
+          <stop offset="100%" stopColor="#FF4D9D" />
+        </linearGradient>
+      </defs>
+      {/* Shield outline */}
+      <path
+        d="M32 4 C32 4 44 9 56 12 C56 12 56 30 56 34 C56 47 45 56 32 60 C19 56 8 47 8 34 C8 30 8 12 8 12 C20 9 32 4 32 4 Z"
+        fill="none"
+        stroke={`url(#${gradId})`}
+        strokeWidth="4"
+        strokeLinejoin="round"
+      />
+      {/* Stylized J */}
+      <path
+        d="M33 18 H43"
+        stroke={`url(#${gradId})`}
+        strokeWidth="4.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M40 18 V37 C40 43 35 47 29 47 C23.5 47 19 43.5 18 38.5"
+        fill="none"
+        stroke={`url(#${gradId})`}
+        strokeWidth="4.5"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+};
 
 const Logo = ({
   variant = "full",
