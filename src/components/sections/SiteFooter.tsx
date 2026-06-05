@@ -1,15 +1,10 @@
 import { Link } from "react-router-dom";
-import { Shield } from "lucide-react";
+import Logo from "@/components/brand/Logo";
 
 const SiteFooter = () => (
-  <footer className="py-10 px-6 border-t border-border/30">
+  <footer className="py-10 px-6 border-t border-border/30 bg-background">
     <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-      <div className="flex items-center gap-2.5">
-        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center shadow-lg shadow-primary/20">
-          <Shield className="w-4 h-4 text-primary-foreground" />
-        </div>
-        <span className="font-bold text-foreground">Jatkoturva</span>
-      </div>
+      <Logo variant="full" theme="dark" tagline size={34} />
       <div className="flex gap-6 text-sm text-muted-foreground">
         <Link to="/tietosuoja" className="hover:text-foreground transition-colors">Tietosuoja</Link>
         <Link to="/kayttoehdot" className="hover:text-foreground transition-colors">Käyttöehdot</Link>
@@ -21,7 +16,7 @@ const SiteFooter = () => (
         </button>
       </div>
       <p className="text-xs text-muted-foreground">
-        © {new Date().getFullYear()} Jatkoturva · Perustuu Fragus GoSafe Electric -tuotteeseen
+        © {new Date().getFullYear()} Jatkoturva · Perustuu Fragus GoSafe -tuotteeseen
       </p>
     </div>
   </footer>
