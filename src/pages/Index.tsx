@@ -41,7 +41,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navbar onStartFlow={startFlow} />
       <HeroSection onStartFlow={startFlow} />
-      <CompetitiveAdvantageSection onStartFlow={startFlow} />
+      <ScrollReveal delay={50}><CompetitiveAdvantageSection onStartFlow={startFlow} /></ScrollReveal>
       <ScrollReveal className="section-dark-mid"><PartnerBanner /></ScrollReveal>
       <ScrollReveal className="section-light" delay={50}><ComparisonTable /></ScrollReveal>
       <ScrollReveal className="section-light-alt" delay={50}><CostComparison onStartFlow={startFlow} /></ScrollReveal>
