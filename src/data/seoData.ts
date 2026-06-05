@@ -242,6 +242,8 @@ Alkaen 19 €/kk — ei omavastuuta — turva alkaa heti.
   {
     slug: "sahkoauton-akun-vaihto-hinta",
     title: "Paljonko sähköauton akun vaihto maksaa Suomessa 2026?",
+    metaTitle: "Sähköauton akun vaihto hinta 2026 | Jatkoturva",
+    excerpt: "Sähköauton akun vaihto maksaa 5 000–25 000 €. Lue kattava hintavertailu eri merkeille ja opi suojautumaan kustannuksilta.",
     metaDescription: "Sähköauton akun vaihto maksaa 5 000–25 000 €. Lue kattava hintavertailu eri merkeille ja opi suojautumaan kustannuksilta.",
     date: "2026-03-15",
     readTime: "6 min",
@@ -271,6 +273,8 @@ Turvan voi ostaa kertamaksulla tai kuukausierillä. 14 päivän peruutusoikeus t
   {
     slug: "sahkoauton-akun-kesto",
     title: "Kuinka kauan sähköauton akku kestää? Totuus käyttöiästä",
+    metaTitle: "Kuinka kauan sähköauton akku kestää? | Jatkoturva",
+    excerpt: "Sähköauton akun käyttöikä on 8–15 vuotta, mutta kapasiteetti laskee ajan myötä. Lue mitä se tarkoittaa sinulle ja miten suojaudut.",
     metaDescription: "Sähköauton akun käyttöikä on 8–15 vuotta, mutta kapasiteetti laskee ajan myötä. Lue mitä se tarkoittaa sinulle.",
     date: "2026-02-28",
     readTime: "5 min",
@@ -294,6 +298,8 @@ Jatkoturvan Premium-turva kattaa kapasiteetin laskun alle 80 %:iin. Tämä tarko
   {
     slug: "sahkoauto-riskit-suomessa",
     title: "Sähköauton riskit Suomessa – mitä jokaisen omistajan pitää tietää",
+    metaTitle: "Sähköauton riskit Suomessa 2026 | Jatkoturva",
+    excerpt: "Suomen olosuhteet tuovat sähköautolle erityishaasteita — pakkanen, pitkät etäisyydet ja korkeat korjauskustannukset. Näin varaudut.",
     metaDescription: "Sähköauton omistaminen Suomessa tuo erityishaasteita: pakkanen, akun kuluminen ja korkeat korjauskustannukset. Näin varaudut.",
     date: "2026-02-10",
     readTime: "7 min",
@@ -320,6 +326,8 @@ Premium- ja Laajennettu-turvatasot sisältävät myös hinauspalvelun ja sijaisa
   {
     slug: "sahkoauton-huolto-opas",
     title: "Sähköauton huolto-opas: Näin pidät akkusi kunnossa",
+    metaTitle: "Sähköauton huolto-opas — akun hoitovinkit | Jatkoturva",
+    excerpt: "Sähköauton akun hoito ratkaisee kuinka kauan se kestää. Lue parhaat vinkit ja vältä kalliit korjaukset.",
     metaDescription: "Sähköauton huolto eroaa polttomoottoriautosta. Opi akun hoitovinkit ja vältä kalliit korjaukset.",
     date: "2026-01-20",
     readTime: "5 min",
@@ -344,6 +352,8 @@ Vaikka hoitaisit akkuasi täydellisesti, valmistusvirheet ja odottamattomat viat
   {
     slug: "kannattaako-sahkoauto-2026",
     title: "Kannattaako sähköauto vuonna 2026? Laskelmat ja faktat",
+    metaTitle: "Kannattaako sähköauto 2026? Laskelmat ja faktat | Jatkoturva",
+    excerpt: "Sähköauton kokonaiskustannukset, edut ja haitat vuonna 2026. Rehellinen vertailu — mukaan lukien akun vaihdon riski.",
     metaDescription: "Sähköauton kokonaiskustannukset, edut ja haitat vuonna 2026. Kattava vertailu polttomoottoriautoon.",
     date: "2026-01-05",
     readTime: "8 min",
