@@ -195,4 +195,61 @@
     border-color: hsl(331 100% 65% / 0.45);
     box-shadow: 0 0 0 1px hsl(257 86% 59% / 0.18);
   }
+
+  /* ===== Section background variants ===== */
+  .section-dark-mid  { background-color: #1A2332; }
+  .section-dark-deep { background-color: #111827; }
+  .section-light     { background-color: #F2F4F7; color: #0A1220; }
+  .section-light-alt { background-color: #E8EAF0; color: #0A1220; }
+
+  /* ===== Light-section overrides (scoped) ===== */
+  .section-light, .section-light-alt {
+    color: #0A1220;
+  }
+  .section-light h1, .section-light h2, .section-light h3, .section-light h4,
+  .section-light-alt h1, .section-light-alt h2, .section-light-alt h3, .section-light-alt h4 {
+    color: #0A1220;
+  }
+  .section-light .text-foreground, .section-light-alt .text-foreground { color: #0A1220 !important; }
+  .section-light .text-foreground\/90, .section-light-alt .text-foreground\/90,
+  .section-light .text-foreground\/85, .section-light-alt .text-foreground\/85,
+  .section-light .text-foreground\/80, .section-light-alt .text-foreground\/80,
+  .section-light .text-foreground\/75, .section-light-alt .text-foreground\/75 { color: #374151 !important; }
+  .section-light .text-muted-foreground, .section-light-alt .text-muted-foreground { color: #6B7280 !important; }
+  .section-light .text-secondary, .section-light-alt .text-secondary { color: #6A3DF0 !important; }
+  .section-light .text-secondary\/80, .section-light-alt .text-secondary\/80 { color: rgba(106,61,240,0.8) !important; }
+
+  .section-light .glass-card, .section-light-alt .glass-card {
+    background: #FFFFFF !important;
+    border: 1px solid #E5E7EB !important;
+    box-shadow: 0 2px 16px rgba(10,18,32,0.08) !important;
+    backdrop-filter: none !important;
+  }
+  .section-light .bg-card, .section-light-alt .bg-card { background-color: #FFFFFF !important; }
+  .section-light .bg-muted, .section-light-alt .bg-muted,
+  .section-light .bg-muted\/30, .section-light-alt .bg-muted\/30,
+  .section-light .bg-muted\/40, .section-light-alt .bg-muted\/40,
+  .section-light .bg-muted\/50, .section-light-alt .bg-muted\/50 { background-color: #F2F4F7 !important; }
+  .section-light .border-border, .section-light-alt .border-border,
+  .section-light .border-border\/30, .section-light-alt .border-border\/30,
+  .section-light .border-border\/40, .section-light-alt .border-border\/40,
+  .section-light .border-border\/50, .section-light-alt .border-border\/50 { border-color: #E5E7EB !important; }
+
+  /* Brand-soft pill stays purple-tinted on light bg */
+  .section-light .bg-brand-gradient-soft, .section-light-alt .bg-brand-gradient-soft {
+    background-image: linear-gradient(135deg, rgba(106,61,240,0.12), rgba(255,77,157,0.12)) !important;
+  }
+
+  /* Savings calculator chips on light bg */
+  .section-light .admin-chip, .section-light-alt .admin-chip {
+    background: #FFFFFF;
+    color: #374151;
+    border-color: #E5E7EB;
+  }
+  .section-light .admin-chip:hover, .section-light-alt .admin-chip:hover { color: #0A1220; border-color: #6A3DF0; }
+  .section-light .admin-chip[data-selected="true"], .section-light-alt .admin-chip[data-selected="true"] {
+    color: #fff;
+    background-image: linear-gradient(135deg, #6A3DF0, #FF4D9D);
+    border-color: transparent;
+  }
 }
