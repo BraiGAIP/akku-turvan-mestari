@@ -27,20 +27,33 @@ export const BrandShield = ({ className, size = 36 }: { className?: string; size
     aria-hidden="true"
   >
     <defs>
-      <linearGradient id="jt-brand-grad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <linearGradient id="jt-brand-grad" x1="6" y1="6" x2="58" y2="60" gradientUnits="userSpaceOnUse">
         <stop offset="0%" stopColor="#6A3DF0" />
         <stop offset="100%" stopColor="#FF4D9D" />
       </linearGradient>
     </defs>
-    {/* Shield silhouette */}
+    {/* Shield outline (stroked, rounded) */}
     <path
-      d="M32 3 L57 12 V32 C57 47 46 56 32 61 C18 56 7 47 7 32 V12 Z"
-      fill="url(#jt-brand-grad)"
+      d="M32 4 L55 12.5 Q56.5 13 56.5 14.5 V32 C56.5 46.5 46 55.5 32.7 60 Q32 60.25 31.3 60 C18 55.5 7.5 46.5 7.5 32 V14.5 Q7.5 13 9 12.5 Z"
+      fill="none"
+      stroke="url(#jt-brand-grad)"
+      strokeWidth="4"
+      strokeLinejoin="round"
     />
-    {/* Stylized J cut-out */}
+    {/* Stylized J (stroked) */}
     <path
-      d="M38 16 H44 V38 C44 45.732 37.732 52 30 52 C23.373 52 17.804 47.387 16.42 41.2 L22.28 39.8 C23.05 43.262 26.225 46 30 46 C34.418 46 38 42.418 38 38 Z"
-      fill="#F2F4F7"
+      d="M40 17 V37 C40 43.075 35.075 48 29 48 C23.94 48 19.68 44.58 18.4 39.93"
+      fill="none"
+      stroke="url(#jt-brand-grad)"
+      strokeWidth="4.5"
+      strokeLinecap="round"
+    />
+    <path
+      d="M33.5 17 H44"
+      fill="none"
+      stroke="url(#jt-brand-grad)"
+      strokeWidth="4.5"
+      strokeLinecap="round"
     />
   </svg>
 );
