@@ -1,9 +1,20 @@
-import type { ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import Logo from "./brand/Logo";
+
+const PREVIEW_TOKEN = "jatkoturva2025";
 
 function isLovablePreview(): boolean {
   if (typeof window === "undefined") return false;
   return window.location.hostname.includes("lovable");
+}
+
+function readPreviewAccess(): boolean {
+  if (typeof window === "undefined") return false;
+  try {
+    return window.sessionStorage.getItem("preview_access") === "true";
+  } catch {
+    return false;
+  }
 }
 
 function MaintenancePage() {
@@ -45,9 +56,24 @@ interface MaintenanceGateProps {
 }
 
 export default function MaintenanceGate({ children }: MaintenanceGateProps) {
+  const [hasPreviewAccess, setHasPreviewAccess] = useState<boolean>(readPreviewAccess);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("preview") === PREVIEW_TOKEN) {
+      try {
+        window.sessionStorage.setItem("preview_access", "true");
+      } catch {
+        /* ignore */
+      }
+      setHasPreviewAccess(true);
+    }
+  }, []);
+
   const maintenanceMode = import.meta.env.VITE_MAINTENANCE_MODE === "true";
 
-  if (maintenanceMode && !isLovablePreview()) {
+  if (maintenanceMode && !hasPreviewAccess && !isLovablePreview()) {
     return <MaintenancePage />;
   }
 
