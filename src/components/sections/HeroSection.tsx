@@ -62,12 +62,17 @@ const HeroSection = ({ onStartFlow }: HeroSectionProps) => (
         </div>
 
         <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-black text-foreground leading-[1.05] tracking-tight uppercase mb-4">
-          Kun tehdastakuu päättyy —{" "}
-          <span className="text-brand-gradient">me jatkamme.</span>
+          Auton kunnossapitosopimus <span className="text-brand-gradient">käytetylle autolle</span>
         </h1>
-        <p className="text-xl md:text-2xl font-bold text-foreground/85 leading-snug mb-6">
+        <p className="text-xl md:text-2xl font-bold text-foreground/85 leading-snug mb-3">
+          Kun tehdastakuu päättyy — me jatkamme.
+        </p>
+        <p className="text-base md:text-lg text-foreground/75 leading-snug mb-6">
           Fraguksen jatkoturva suojaa sinua jopa 20 000 € yllätyskorjauksilta.
         </p>
+
+        <h2 className="sr-only">Fragus GOSafe – Suomen luotettavin lisäturva</h2>
+
 
         {/* Trust badges */}
         <div className="flex flex-wrap gap-2 mb-6">
