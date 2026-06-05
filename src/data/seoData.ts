@@ -30,6 +30,216 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "auton-lisaturva-ilman-autoliiketta",
+    title: "Auton lisäturva ilman autoliikettä — näin se onnistuu verkossa",
+    excerpt: "Tiesitkö, että voit hankkia auton lisäturvan verkosta ilman autoliikettä? Jatkoturva myy kunnossapitosopimuksen kenelle tahansa — myös jo omistamaasi autoon.",
+    category: "Lisäturva",
+    date: "2026-05-20",
+    readTime: "5 min",
+    metaTitle: "Auton lisäturva ilman autoliikettä | Jatkoturva",
+    metaDescription: "Tiesitkö, että voit hankkia auton lisäturvan verkosta ilman autoliikettä? Jatkoturva myy Fragus GOSafe -kunnossapitosopimuksen kenelle tahansa — myös jo omistamaasi autoon.",
+    content: `
+## Auton lisäturva ilman autoliikettä — näin se onnistuu verkossa
+
+Suomessa auton lisäturva on perinteisesti ostettu autoliikkeestä auton oston yhteydessä. Myyjä esittelee paperipinon, tarjoaa turvapakettia ja lisäturva päätyy kauppakirjan liitteeksi — tai jää kokonaan ottamatta, koska päätöstä pitää tehdä kiireessä.
+
+Mutta mitä jos haluaisit lisäturvan autoon, jonka ostat yksityiseltä? Tai autoon joka sinulla on jo? Tai tuontiautoon jota olet hankkimassa ulkomailta?
+
+**Jatkoturvalta se onnistuu. Autoliikettä ei tarvita.**
+
+## Miksi lisäturva on perinteisesti sidottu autoliikkeeseen?
+
+Suomessa lähes kaikki lisäturvat myydään autoliikkeiden kautta. Syy on yksinkertainen: lisäturva on autoliikkeille erittäin kannattava lisämyynti. Marginaalit ovat korkeat ja myyntihetki on otollinen — asiakas on jo päättänyt ostaa auton eikä jaksa enää neuvotella.
+
+Tämä tarkoittaa käytännössä sitä, että tavallinen suomalainen autoilija on jäänyt ilman vaihtoehtoja:
+
+- Ostat auton yksityiseltä → ei lisäturvaa tarjolla
+
+- Sinulla on jo auto ja tehdastakuu päättyi → lisäturvaa ei voi enää hankkia
+
+- Tuot auton ulkomailta → suomalaiset autoliikkeet eivät myy turvaa siihen
+
+- Olet jo ostanut auton mutta katunut ettei tullut hankittua lisäturvaa → myöhäistä
+
+Tai niin on tähän asti ollut.
+
+## Jatkoturva myy lisäturvan suoraan sinulle — ilman autoliikettä
+
+Jatkoturva on virallinen Fragus Group -kumppani Suomessa. Fragus on Euroopan johtava ajoneuvoturvien tarjoaja yli 20 vuoden kokemuksella.
+
+Jatkoturvan kautta voit hankkia Fragus GOSafe -kunnossapitosopimuksen suoraan verkosta:
+
+- **Autoon joka sinulla on jo alla** — ei tarvitse ostaa uutta autoa
+
+- **Yksityiseltä ostettuun autoon** — kauppa ei tarvitse mennä autoliikkeen kautta
+
+- **Tuontiautoon** — myös ulkomailta tuotaviin ajoneuvoihin
+
+- **Autoon jonka tehdastakuu on jo päättynyt** — voit hankkia turvan myöhemminkin
+
+Prosessi on yksinkertainen: syötä rekisterinumero, valitse sopimus, maksa — turva alkaa välittömästi. Koko prosessi vie alle 2 minuuttia.
+
+## Kenelle Jatkoturva sopii erityisen hyvin?
+
+**Yksityiseltä auton ostajat**
+
+Yksityinen myyjä ei vastaa auton vioista samalla tavalla kuin autoliike. Lisäturva on yksityiskaupassa erityisen arvokas — se antaa ostajalle saman mielenrauhan kuin autoliikkeen takuu, ilman että kaupan tarvitsee mennä liikkeen kautta.
+
+**Tuontiauton hankkijat**
+
+Ulkomailta tuodut autot ovat usein edullisempia kuin vastaavat Suomessa myydyt. Mutta suomalaiset autoliikkeet eivät myy lisäturvaa niihin. Jatkoturvalta turvan saa — rekisterinumero riittää.
+
+**Autoilijat joiden tehdastakuu on juuri päättynyt**
+
+Tehdastakuun päättyminen on juuri se hetki kun auto alkaa olla omavastuuvaiheen ikäinen. Juuri silloin lisäturva on järkevin hankkia — ennen kuin ensimmäinen iso lasku tulee.
+
+**Jo pitkään autoa omistaneet**
+
+Ehkä et ajatellut lisäturvaa kun ostit auton. Nyt kun auto alkaa ikääntyä ja kilometrit kertyvät, turva alkaa kiinnostaa. Jatkoturvalta sen saa — autoliikkeeseen ei tarvitse mennä.
+
+## Vertailu: autoliike vs. Jatkoturva
+
+| Ominaisuus | Autoliike | Jatkoturva |
+
+|---|---|---|
+
+| Milloin voi ostaa | Auton oston yhteydessä | Milloin tahansa |
+
+| Kenelle myydään | Liikkeen asiakkaille | Kenelle tahansa |
+
+| Tuontiautot | Ei | Kyllä |
+
+| Yksityiskauppa-autot | Ei | Kyllä |
+
+| Verkossa ilman käyntiä | Harvoin | Aina |
+
+| Omavastuuta | Usein | Ei |
+
+| Sopimus siirrettävissä | Vaihtelee | Kyllä |
+
+## Näin hankit lisäturvan verkossa
+
+1. Mene osoitteeseen jatkoturva.fi
+
+2. Syötä autosi rekisterinumero
+
+3. Valitse sopiva turvataso
+
+4. Maksa — turva alkaa heti
+
+Et sitoudu ennen maksua. Voit myös maksaa kuukausittain alkaen 19 €/kk.
+
+  `,
+  },
+  {
+    slug: "lisaturva-tuontiautoon",
+    title: "Tuontiauto Suomeen — muista lisäturva jonka muut eivät myy",
+    excerpt: "Tuontiautoon on vaikea saada lisäturvaa Suomessa — autoliikkeet eivät myy sitä omille asiakkailleen. Jatkoturva myy Fragus GOSafe -sopimuksen myös tuontiauton omistajalle verkossa.",
+    category: "Tuontiautot",
+    date: "2026-05-10",
+    readTime: "6 min",
+    metaTitle: "Lisäturva tuontiautoon — näin se onnistuu | Jatkoturva",
+    metaDescription: "Tuontiautoon on vaikea saada lisäturvaa Suomessa — autoliikkeet eivät myy sitä. Jatkoturva myy Fragus GOSafe -kunnossapitosopimuksen myös tuontiauton omistajalle verkossa.",
+    content: `
+## Tuontiauto Suomeen — muista lisäturva jonka muut eivät myy
+
+Tuontiauto on yhä useamman suomalaisen valinta. Saksasta, Ruotsista tai Virosta tuotu auto voi olla tuhansia euroja halvempi kuin vastaava Suomessa myyty — samalla varusteella, samalla kunnolla, ilman suomalaisen autoliikkeen katetta.
+
+Mutta tuontiautossa on yksi hankala puoli: **lisäturvaa on lähes mahdoton saada.**
+
+Suomalaiset autoliikkeet myyvät lisäturvaa vain omiin autoihinsa. Jos auto ei ole kulkenut heidän myyntinsä kautta, he eivät myy turvaa siihen. Jatkoturva tekee tämän toisin.
+
+## Miksi tuontiautoon on vaikea saada lisäturvaa?
+
+Suomessa lisäturvamarkkina on rakentunut autoliikkeiden ympärille. Lisäturva on autoliikkeelle kannattava lisämyynti — ja siksi he myyvät sitä vain omille asiakkailleen, omiin autoihinsa.
+
+Tuontiauton omistaja jää tämän systeemin ulkopuolelle. Vaikka auto olisi teknisesti täysin sama malli kuin suomalaisessa liikkeessä myyty, lisäturvaa ei myönnetä koska:
+
+- Auto ei ole kulkenut kyseisen liikkeen myynnin kautta
+
+- Liikkeellä ei ole auton huoltohistoriaa omassa järjestelmässään
+
+- Lisäturva on sidottu kaupantekotapahtumaan, ei ajoneuvoon
+
+Tuloksena: tuontiauton omistaja ajaa ilman turvaa, vaikka haluaisi maksaa siitä.
+
+## Jatkoturva: lisäturva myös tuontiautoon
+
+Jatkoturva on Suomessa toimiva virallinen Fragus Group -kumppani. Fragus on eurooppalainen toimija — ei suomalainen autoliike. Siksi heidän tuotteensa eivät ole sidottuja yksittäisen liikkeen myyntiketjuun.
+
+Jatkoturvalta voit hankkia lisäturvan tuontiautoon näin:
+
+1. Mene jatkoturva.fi
+
+2. Syötä autosi suomalainen rekisterinumero
+
+3. Näet heti sopimukset ja hinnat autosi tietoihin perustuen
+
+4. Valitse ja maksa — turva alkaa välittömästi
+
+Autoliikettä ei tarvita. Myyjää ei tarvita. Riittää että auto on sinun.
+
+## Milloin tuontiauton omistajan kannattaa hankkia lisäturva?
+
+**Heti rekisteröinnin jälkeen**
+
+Paras hetki on heti kun auto on rekisteröity Suomeen. Tehdastakuu saattaa olla vielä voimassa tai juuri päättynyt — tässä kohdassa turvan hinta on alhaisimmillaan ja kattavuus laajimmillaan.
+
+**Kun tehdastakuu päättyy**
+
+Jos tuontiauto on jo muutaman vuoden ikäinen, tehdastakuu on todennäköisesti jo ohi. Juuri silloin kunnossapitosopimus on järkevintä hankkia — ennen kuin ensimmäinen kallis vikaantuminen tapahtuu.
+
+## Mihin autoihin sopimus sopii?
+
+Fragus GOSafe -sopimukset sopivat laajasti eri ajoneuvoihin:
+
+- **Bensiini- ja dieselautot** — Perusturva, Täysturva tai Huippuajajan turva
+
+- **Hybridit** — Täysturva tai Huippuajajan turva
+
+- **Sähköautot** — Sähköturva tai Akkuturva
+
+- **Moottoripyörät** — Moottoripyöräturva
+
+- **Matkailuautot** — Matkailuautoturva
+
+Ikäraja: enintään 20 vuotta vanha auto. Kilometriraja: enintään 300 000 km.
+
+## Tuontiauton ostajan tarkistuslista
+
+- ✅ Rekisteröi auto Suomeen — tarvitaan ennen sopimuksen tekemistä
+
+- ✅ Tarkista onko tehdastakuu vielä voimassa — sopimus voidaan aktivoida sen jatkoksi
+
+- ✅ Ota huoltohistoria talteen — helpottaa mahdollisia korvauskäsittelyjä
+
+- ✅ Hanki lisäturva verkosta — jatkoturva.fi, rekisterinumero riittää
+
+- ✅ Valitse sopiva turvataso — sähköautoille oma sopimus, polttomoottorit omansa
+
+## Usein kysyttyä tuontiauton lisäturvasta
+
+**Tarvitseenko minulla olla huoltokirja?**
+
+Ei välttämättä. Rekisterinumero riittää sopimuksen tekemiseen. Huoltohistoria on hyvä olla tallessa mahdollisia korvaustilanteita varten.
+
+**Onko sopimus voimassa myös ulkomailla?**
+
+Kyllä. Fragus GOSafe -sopimus on voimassa koko Euroopassa.
+
+**Voinko siirtää sopimuksen jos myyn auton?**
+
+Kyllä. Sopimus seuraa ajoneuvoa ja voidaan siirtää uudelle omistajalle yksityiskaupassa. Tämä nostaa myös auton jälleenmyyntiarvoa.
+
+## Hanki lisäturva tuontiautollesi nyt
+
+Et tarvitse autoliikettä. Et tarvitse myyjää. Tarvitset vain rekisterinumeron ja 2 minuuttia.
+
+Alkaen 19 €/kk — ei omavastuuta — turva alkaa heti.
+
+  `,
+  },
+  {
     slug: "sahkoauton-akun-vaihto-hinta",
     title: "Paljonko sähköauton akun vaihto maksaa Suomessa 2026?",
     metaDescription: "Sähköauton akun vaihto maksaa 5 000–25 000 €. Lue kattava hintavertailu eri merkeille ja opi suojautumaan kustannuksilta.",
