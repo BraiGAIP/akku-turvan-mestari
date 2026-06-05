@@ -26,6 +26,7 @@ const PhotoPlaceholder = ({
   loading = "lazy",
   label = "Lisää kuva tähän",
   showLabel = true,
+  fetchPriority,
 }: PhotoPlaceholderProps) => {
   return (
     <div
@@ -41,8 +42,10 @@ const PhotoPlaceholder = ({
           src={src}
           alt={alt}
           loading={loading}
+          fetchPriority={fetchPriority}
           className="absolute inset-0 w-full h-full object-cover"
         />
+
       ) : (
         showLabel && (
           <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-white/60">
