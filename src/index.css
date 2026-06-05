@@ -7,19 +7,19 @@
 @layer base {
   :root {
     /* ===== JATKOTURVA brand palette =====
-       #0A1220 dark navy (background)
+       #111827 deep navy-charcoal (background)
        #6A3DF0 purple (primary)
        #FF4D9D pink (secondary/accent)
        #F2F4F7 light (foreground / light bg)
        Gradient: linear-gradient(135deg, #6A3DF0, #FF4D9D)
     */
-    --background: 219 52% 8%;        /* #0A1220 */
+    --background: 221 39% 11%;        /* #111827 */
     --foreground: 214 21% 96%;       /* #F2F4F7 */
 
-    --card: 219 42% 11%;
+    --card: 218 32% 15%;        /* #1A2332 */
     --card-foreground: 214 21% 96%;
 
-    --popover: 219 42% 11%;
+    --popover: 215 35% 19%;        /* #1F2D40 */
     --popover-foreground: 214 21% 96%;
 
     --primary: 257 86% 59%;          /* #6A3DF0 purple */
@@ -28,7 +28,7 @@
     --secondary: 331 100% 65%;       /* #FF4D9D pink */
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 219 30% 16%;
+    --muted: 215 35% 19%;        /* #1F2D40 */
     --muted-foreground: 218 14% 68%;
 
     --accent: 331 100% 65%;          /* pink accent */
@@ -43,7 +43,7 @@
 
     --radius: 0.875rem;
 
-    --sidebar-background: 219 50% 6%;
+    --sidebar-background: 221 39% 11%;        /* #111827 */
     --sidebar-foreground: 214 21% 96%;
     --sidebar-primary: 257 86% 59%;
     --sidebar-primary-foreground: 0 0% 100%;
@@ -121,7 +121,7 @@
 
   /* Glass card */
   .glass-card {
-    background: hsl(219 42% 11% / 0.7);
+    background: hsl(218 32% 15% / 0.7);
     backdrop-filter: blur(14px);
     border: 1px solid hsl(0 0% 100% / 0.08);
     box-shadow: 0 10px 30px hsl(0 0% 0% / 0.5);
@@ -151,7 +151,7 @@
   /* ===== Admin (Caars-inspired, rebranded) ===== */
   .admin-card {
     position: relative;
-    background: linear-gradient(165deg, hsl(219 38% 12%) 0%, hsl(219 46% 9%) 100%);
+    background: linear-gradient(165deg, hsl(218 32% 15%) 0%, hsl(221 39% 11%) 100%);
     border: 1px solid hsl(257 86% 59% / 0.12);
     border-radius: var(--radius);
     box-shadow: 0 1px 0 hsl(0 0% 100% / 0.04) inset, 0 18px 44px -14px hsl(0 0% 0% / 0.55);
@@ -167,7 +167,7 @@
     padding: 0.4rem 0.85rem; border-radius: 9999px;
     font-size: 0.8rem; font-weight: 600;
     color: hsl(var(--foreground) / 0.85);
-    background: hsl(219 30% 14%);
+    background: hsl(218 32% 15%);
     border: 1px solid hsl(0 0% 100% / 0.06);
     transition: all 0.2s ease;
     cursor: pointer;
@@ -188,7 +188,7 @@
     border: 1px solid transparent;
     transition: all 0.2s ease;
   }
-  .admin-nav-link:hover { color: hsl(var(--foreground)); background: hsl(219 30% 14% / 0.7); }
+  .admin-nav-link:hover { color: hsl(var(--foreground)); background: hsl(218 32% 15% / 0.7); }
   .admin-nav-link[data-active="true"] {
     color: #fff;
     background-image: linear-gradient(135deg, hsl(257 86% 59% / 0.18), hsl(331 100% 65% / 0.18));

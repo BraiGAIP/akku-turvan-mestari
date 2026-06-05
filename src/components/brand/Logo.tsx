@@ -14,7 +14,7 @@ interface LogoProps {
  * - Full: symbol + wordmark "JATKOTURVA" + optional tagline "TURVAA JATKUVUUTESI".
  *
  * Brand colors:
- *   Purple #6A3DF0, Pink #FF4D9D, Dark navy #0A1220, Light #F2F4F7
+ *   Purple #6A3DF0, Pink #FF4D9D, Deep navy-charcoal #111827, Light #F2F4F7
  */
 export const BrandShield = ({ className, size = 36 }: { className?: string; size?: number }) => (
   <svg

@@ -160,14 +160,14 @@ const AdminLayout = () => {
       </header>
 
       <div className="flex">
-        <aside className="hidden lg:block w-64 shrink-0 border-r border-border/60 bg-[hsl(224_40%_8%)] min-h-[calc(100vh-3.5rem)]">
+        <aside className="hidden lg:block w-64 shrink-0 border-r border-border/60 bg-[hsl(221_39%_11%)] min-h-[calc(100vh-3.5rem)]">
           {SidebarNav}
         </aside>
 
         {drawer && (
           <div className="fixed inset-0 z-50 lg:hidden">
             <div className="absolute inset-0 bg-black/60" onClick={() => setDrawer(false)} />
-            <aside className="absolute left-0 top-0 bottom-0 w-72 bg-[hsl(224_40%_8%)] border-r border-border/60 overflow-y-auto">
+            <aside className="absolute left-0 top-0 bottom-0 w-72 bg-[hsl(221_39%_11%)] border-r border-border/60 overflow-y-auto">
               {SidebarNav}
             </aside>
           </div>
