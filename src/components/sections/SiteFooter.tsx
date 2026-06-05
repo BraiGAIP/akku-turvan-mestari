@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Logo from "@/components/brand/Logo";
 
 const SiteFooter = () => (
-  <footer className="py-10 px-6 border-t border-border/30 bg-background">
+  <footer className="py-10 px-6 border-t border-border/30 bg-[#0A1220]">
     <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
       <Logo variant="full" theme="dark" tagline size={34} />
       <div className="flex gap-6 text-sm text-muted-foreground">

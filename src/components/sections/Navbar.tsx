@@ -12,7 +12,7 @@ const Navbar = ({ onStartFlow }: NavbarProps) => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-40 bg-background/80 backdrop-blur-xl border-b border-border/50">
+    <nav className="fixed top-0 left-0 right-0 z-40 bg-background/80 backdrop-blur-xl border-b border-[hsl(257_86%_59%/0.3)]">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center" aria-label="Jatkoturva etusivulle">
           {/* Mobile: symbol only. Desktop: full wordmark logo on dark navbar */}
