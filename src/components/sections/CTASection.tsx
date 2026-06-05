@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Check, Shield, Clock, CreditCard, Lock, AlertTriangle } from "lucide-react";
+import PhotoPlaceholder from "@/components/PhotoPlaceholder";
+
 
 interface CTASectionProps {
   onStartFlow: () => void;
