@@ -53,7 +53,7 @@ const HeroSection = ({ onStartFlow }: HeroSectionProps) => (
 
 
 
-    <div className="relative z-10 max-w-7xl mx-auto px-6 py-16 md:py-24 w-full">
+    <div className="relative z-10 max-w-7xl mx-auto px-6 py-16 md:py-24 w-full" style={{ position: 'relative', zIndex: 2 }}>
       <div className="max-w-2xl mb-14">
         {/* Trust badge with gold accent */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-6">
