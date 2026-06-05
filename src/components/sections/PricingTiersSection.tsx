@@ -66,6 +66,15 @@ const PricingTiersSection = ({ onStartFlow, onSelectProduct }: PricingTiersSecti
     <section id="turva" className="py-20 px-6 relative">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full bg-primary/5 blur-[120px]" />
       <div className="max-w-6xl mx-auto relative">
+        {/* Thin full-width banner image above the product cards */}
+        <PhotoPlaceholder
+          alt="Suomalainen auto Jatkoturvan suojassa"
+          className="products-banner-image w-full mb-10"
+          rounded="rounded-2xl"
+          overlayOpacity={0.5}
+          label="Lisää banner-kuva (hillitty autokuva)"
+        />
+
         <div className="text-center mb-14">
           <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-secondary bg-secondary/10 mb-4">
             Turvatasot
