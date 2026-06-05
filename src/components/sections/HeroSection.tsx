@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Check, Zap, Car, Shield, BadgeEuro, Clock } from "lucide-react";
-import evHeroImg from "@/assets/ev-hero.jpg";
+import PhotoPlaceholder from "@/components/PhotoPlaceholder";
+
 
 interface HeroSectionProps {
   onStartFlow: () => void;
