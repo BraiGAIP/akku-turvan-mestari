@@ -15,7 +15,7 @@ interface LogoProps {
  * - Full: symbol + wordmark "JATKOTURVA" + optional tagline "TURVAA JATKUVUUTESI".
  *
  * Brand colors:
- *   Purple #6A3DF0, Pink #FF4D9D, Deep navy-charcoal #111827, Light #F2F4F7
+ *   Purple #4C2EB8, Pink #C44579, Deep navy-charcoal #111827, Light #F2F4F7
  */
 export const BrandShield = ({ className, size = 36 }: { className?: string; size?: number }) => {
   const gradId = useId().replace(/:/g, "") + "-jt";
@@ -31,8 +31,8 @@ export const BrandShield = ({ className, size = 36 }: { className?: string; size
     >
       <defs>
         <linearGradient id={gradId} x1="8" y1="6" x2="58" y2="60" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="#6A3DF0" />
-          <stop offset="100%" stopColor="#FF4D9D" />
+          <stop offset="0%" stopColor="#4C2EB8" />
+          <stop offset="100%" stopColor="#C44579" />
         </linearGradient>
       </defs>
       {/* Shield outline */}
@@ -92,7 +92,7 @@ const Logo = ({
             className="font-bold uppercase tracking-[0.22em] mt-1 text-transparent bg-clip-text"
             style={{
               fontSize: `${Math.max(8, size * 0.22)}px`,
-              backgroundImage: "linear-gradient(90deg, #6A3DF0, #FF4D9D)",
+              backgroundImage: "linear-gradient(90deg, #4C2EB8, #C44579)",
             }}
           >
             Turvaa jatkuvuutesi

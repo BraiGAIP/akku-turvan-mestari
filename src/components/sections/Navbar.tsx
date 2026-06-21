@@ -31,9 +31,9 @@ const Navbar = ({ onStartFlow }: NavbarProps) => {
         <div className="flex items-center gap-3">
           <a
             href="tel:+358401234567"
-            className="hidden md:inline-flex items-center gap-2 text-sm font-bold text-foreground hover:text-brand-gradient transition-colors px-3 py-1.5 rounded-full border border-border/60 hover:border-[#FF4D9D]/50"
+            className="hidden md:inline-flex items-center gap-2 text-sm font-bold text-foreground hover:text-brand-gradient transition-colors px-3 py-1.5 rounded-full border border-border/60 hover:border-[#C44579]/50"
           >
-            <Phone className="w-4 h-4 text-[#FF4D9D]" />
+            <Phone className="w-4 h-4 text-[#C44579]" />
             <span>040 123 4567</span>
           </a>
           <Button size="sm" className="rounded-full hidden sm:inline-flex btn-brand font-bold px-5" onClick={onStartFlow}>
@@ -56,7 +56,7 @@ const Navbar = ({ onStartFlow }: NavbarProps) => {
           <Link to="/blogi" className="block text-sm font-medium text-muted-foreground hover:text-foreground">Blogi</Link>
           <a href="#faq" className="block text-sm font-medium text-muted-foreground hover:text-foreground" onClick={() => setMobileOpen(false)}>UKK</a>
           <a href="tel:+358401234567" className="flex items-center gap-2 text-sm font-bold text-foreground py-2">
-            <Phone className="w-4 h-4 text-[#FF4D9D]" /> 040 123 4567
+            <Phone className="w-4 h-4 text-[#C44579]" /> 040 123 4567
           </a>
           <Button size="sm" className="w-full rounded-full mt-2 btn-brand font-bold" onClick={() => { onStartFlow(); setMobileOpen(false); }}>
             Hanki turva nyt

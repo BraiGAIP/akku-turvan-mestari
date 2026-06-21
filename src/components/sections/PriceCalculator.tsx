@@ -338,7 +338,7 @@ const PriceCalculator = ({ onStartFlow }: Props) => {
                     step={1}
                     value={installmentMonths}
                     onChange={(e) => setInstallmentMonths(Number(e.target.value))}
-                    className="w-full accent-[#FF4D9D]"
+                    className="w-full accent-[#C44579]"
                   />
                   <div className="flex justify-between text-[10px] text-muted-foreground mt-1">
                     <span>3 kk</span><span>12 kk</span><span>24 kk</span><span>36 kk</span>
@@ -380,7 +380,7 @@ const PriceCalculator = ({ onStartFlow }: Props) => {
                 </div>
 
                 {mode === "once" && calc && (
-                  <div className="rounded-xl p-5 bg-brand-gradient-soft border border-[#FF4D9D]/30">
+                  <div className="rounded-xl p-5 bg-brand-gradient-soft border border-[#C44579]/30">
                     <p className="text-xs uppercase tracking-wider font-bold text-brand-gradient mb-1">
                       Maksat kerralla
                     </p>
@@ -395,7 +395,7 @@ const PriceCalculator = ({ onStartFlow }: Props) => {
 
                 {mode === "installment" && calc && (
                   <>
-                    <div className="rounded-xl p-5 bg-brand-gradient-soft border border-[#FF4D9D]/30">
+                    <div className="rounded-xl p-5 bg-brand-gradient-soft border border-[#C44579]/30">
                       <p className="text-xs uppercase tracking-wider font-bold text-brand-gradient mb-1">
                         Osamaksuerä {installmentMonths} kk
                       </p>

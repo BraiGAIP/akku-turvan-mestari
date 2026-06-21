@@ -84,7 +84,7 @@ const SavingsCalculator = ({ onStartFlow }: Props) => {
                 max={15}
                 value={age}
                 onChange={(e) => setAge(Number(e.target.value))}
-                className="w-full accent-[#FF4D9D]"
+                className="w-full accent-[#C44579]"
               />
               <div className="flex justify-between text-[10px] text-muted-foreground mt-1">
                 <span>1 v</span><span>5 v</span><span>10 v</span><span>15 v</span>
@@ -106,7 +106,7 @@ const SavingsCalculator = ({ onStartFlow }: Props) => {
               </p>
             </div>
 
-            <div className="rounded-xl p-5 bg-brand-gradient-soft border border-[#FF4D9D]/30">
+            <div className="rounded-xl p-5 bg-brand-gradient-soft border border-[#C44579]/30">
               <p className="text-xs uppercase tracking-wider font-bold text-brand-gradient mb-1">
                 Jatkoturva
               </p>

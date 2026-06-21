@@ -6,51 +6,51 @@
 
 @layer base {
   :root {
-    /* ===== JATKOTURVA brand palette =====
-       #111827 deep navy-charcoal (background)
-       #6A3DF0 purple (primary)
-       #FF4D9D pink (secondary/accent)
-       #F2F4F7 light (foreground / light bg)
-       Gradient: linear-gradient(135deg, #6A3DF0, #FF4D9D)
+    /* ===== JATKOTURVA brand palette (calm / professional) =====
+       #0F1729 deep navy (background)
+       #4C2EB8 deep violet (primary)
+       #C44579 muted rose (secondary/accent)
+       #E8ECF2 soft light (foreground)
+       Gradient: linear-gradient(135deg, #4C2EB8, #C44579) — restrained, no neon
     */
     --background: 221 39% 11%;        /* #111827 */
-    --foreground: 214 21% 96%;       /* #F2F4F7 */
+    --foreground: 218 22% 93%;        /* #E8ECF2 */
 
-    --card: 218 32% 15%;        /* #1A2332 */
-    --card-foreground: 214 21% 96%;
+    --card: 218 32% 15%;              /* #1A2332 */
+    --card-foreground: 218 22% 93%;
 
-    --popover: 215 35% 19%;        /* #1F2D40 */
-    --popover-foreground: 214 21% 96%;
+    --popover: 215 35% 19%;
+    --popover-foreground: 218 22% 93%;
 
-    --primary: 257 86% 59%;          /* #6A3DF0 purple */
+    --primary: 254 60% 45%;           /* #4C2EB8 deep violet */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 331 100% 65%;       /* #FF4D9D pink */
+    --secondary: 336 51% 52%;         /* #C44579 muted rose */
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 215 35% 19%;        /* #1F2D40 */
-    --muted-foreground: 218 14% 68%;
+    --muted: 215 35% 19%;
+    --muted-foreground: 218 14% 70%;
 
-    --accent: 331 100% 65%;          /* pink accent */
+    --accent: 336 51% 52%;            /* muted rose accent */
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 60% 50%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 219 30% 18%;
     --input: 219 30% 18%;
-    --ring: 257 86% 59%;
+    --ring: 254 60% 45%;
 
     --radius: 0.875rem;
 
-    --sidebar-background: 221 39% 11%;        /* #111827 */
-    --sidebar-foreground: 214 21% 96%;
-    --sidebar-primary: 257 86% 59%;
+    --sidebar-background: 221 39% 11%;
+    --sidebar-foreground: 218 22% 93%;
+    --sidebar-primary: 254 60% 45%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 219 30% 14%;
-    --sidebar-accent-foreground: 214 21% 96%;
+    --sidebar-accent-foreground: 218 22% 93%;
     --sidebar-border: 219 30% 18%;
-    --sidebar-ring: 257 86% 59%;
+    --sidebar-ring: 254 60% 45%;
   }
 }
 
@@ -63,7 +63,7 @@
   }
 
   ::selection {
-    background: hsl(331 100% 65% / 0.35);
+    background: hsl(336 51% 52% / 0.35);
     color: hsl(0 0% 100%);
   }
 
@@ -76,37 +76,37 @@
 @layer utilities {
   /* ===== Brand gradient utilities ===== */
   .bg-brand-gradient {
-    background-image: linear-gradient(135deg, #6A3DF0 0%, #FF4D9D 100%);
+    background-image: linear-gradient(135deg, #4C2EB8 0%, #C44579 100%);
   }
   .bg-brand-gradient-soft {
-    background-image: linear-gradient(135deg, hsl(257 86% 59% / 0.15), hsl(331 100% 65% / 0.15));
+    background-image: linear-gradient(135deg, hsl(254 60% 45% / 0.15), hsl(336 51% 52% / 0.15));
   }
   .text-brand-gradient {
-    background-image: linear-gradient(90deg, #6A3DF0, #FF4D9D);
+    background-image: linear-gradient(90deg, #4C2EB8, #C44579);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
   .border-brand-gradient {
-    border-image: linear-gradient(135deg, #6A3DF0, #FF4D9D) 1;
+    border-image: linear-gradient(135deg, #4C2EB8, #C44579) 1;
   }
   .ring-brand {
-    box-shadow: 0 0 0 1px hsl(257 86% 59% / 0.4);
+    box-shadow: 0 0 0 1px hsl(254 60% 45% / 0.4);
   }
 
   /* CTA button: full purple→pink gradient */
   .btn-brand {
-    background-image: linear-gradient(135deg, #6A3DF0 0%, #FF4D9D 100%);
+    background-image: linear-gradient(135deg, #4C2EB8 0%, #C44579 100%);
     color: #fff;
     border-radius: 9999px;
     font-weight: 700;
     transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
-    box-shadow: 0 8px 24px -8px hsl(257 86% 59% / 0.55), 0 4px 14px -6px hsl(331 100% 65% / 0.4);
+    box-shadow: 0 8px 24px -8px hsl(254 60% 45% / 0.55), 0 4px 14px -6px hsl(336 51% 52% / 0.4);
   }
   .btn-brand:hover {
     transform: translateY(-1px);
     filter: brightness(1.06);
-    box-shadow: 0 12px 32px -8px hsl(257 86% 59% / 0.65), 0 6px 18px -6px hsl(331 100% 65% / 0.5);
+    box-shadow: 0 12px 32px -8px hsl(254 60% 45% / 0.65), 0 6px 18px -6px hsl(336 51% 52% / 0.5);
   }
 
   @keyframes fade-up { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
@@ -129,12 +129,12 @@
 
   /* Premium button glow (now brand-tinted) */
   .btn-glow {
-    background-image: linear-gradient(135deg, #6A3DF0 0%, #FF4D9D 100%) !important;
+    background-image: linear-gradient(135deg, #4C2EB8 0%, #C44579 100%) !important;
     color: #fff !important;
-    box-shadow: 0 8px 24px -8px hsl(257 86% 59% / 0.55), 0 4px 14px -6px hsl(331 100% 65% / 0.4);
+    box-shadow: 0 8px 24px -8px hsl(254 60% 45% / 0.55), 0 4px 14px -6px hsl(336 51% 52% / 0.4);
   }
   .btn-glow:hover {
-    box-shadow: 0 12px 32px -8px hsl(257 86% 59% / 0.7), 0 6px 18px -6px hsl(331 100% 65% / 0.55);
+    box-shadow: 0 12px 32px -8px hsl(254 60% 45% / 0.7), 0 6px 18px -6px hsl(336 51% 52% / 0.55);
     filter: brightness(1.05);
   }
 
@@ -152,14 +152,14 @@
   .admin-card {
     position: relative;
     background: linear-gradient(165deg, hsl(218 32% 15%) 0%, hsl(221 39% 11%) 100%);
-    border: 1px solid hsl(257 86% 59% / 0.12);
+    border: 1px solid hsl(254 60% 45% / 0.12);
     border-radius: var(--radius);
     box-shadow: 0 1px 0 hsl(0 0% 100% / 0.04) inset, 0 18px 44px -14px hsl(0 0% 0% / 0.55);
     transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
   }
   .admin-card:hover {
-    border-color: hsl(331 100% 65% / 0.40);
-    box-shadow: 0 1px 0 hsl(0 0% 100% / 0.06) inset, 0 26px 60px -14px hsl(0 0% 0% / 0.7), 0 0 36px -10px hsl(331 100% 65% / 0.30);
+    border-color: hsl(336 51% 52% / 0.40);
+    box-shadow: 0 1px 0 hsl(0 0% 100% / 0.06) inset, 0 26px 60px -14px hsl(0 0% 0% / 0.7), 0 0 36px -10px hsl(336 51% 52% / 0.30);
   }
 
   .admin-chip {
@@ -172,12 +172,12 @@
     transition: all 0.2s ease;
     cursor: pointer;
   }
-  .admin-chip:hover { border-color: hsl(331 100% 65% / 0.5); color: hsl(var(--foreground)); }
+  .admin-chip:hover { border-color: hsl(336 51% 52% / 0.5); color: hsl(var(--foreground)); }
   .admin-chip[data-selected="true"] {
     color: #fff;
-    background-image: linear-gradient(135deg, hsl(257 86% 59% / 0.22), hsl(331 100% 65% / 0.22));
-    border-color: hsl(331 100% 65% / 0.6);
-    box-shadow: 0 0 0 1px hsl(257 86% 59% / 0.25), 0 6px 18px -8px hsl(331 100% 65% / 0.45);
+    background-image: linear-gradient(135deg, hsl(254 60% 45% / 0.22), hsl(336 51% 52% / 0.22));
+    border-color: hsl(336 51% 52% / 0.6);
+    box-shadow: 0 0 0 1px hsl(254 60% 45% / 0.25), 0 6px 18px -8px hsl(336 51% 52% / 0.45);
   }
 
   .admin-nav-link {
@@ -191,9 +191,9 @@
   .admin-nav-link:hover { color: hsl(var(--foreground)); background: hsl(218 32% 15% / 0.7); }
   .admin-nav-link[data-active="true"] {
     color: #fff;
-    background-image: linear-gradient(135deg, hsl(257 86% 59% / 0.18), hsl(331 100% 65% / 0.18));
-    border-color: hsl(331 100% 65% / 0.45);
-    box-shadow: 0 0 0 1px hsl(257 86% 59% / 0.18);
+    background-image: linear-gradient(135deg, hsl(254 60% 45% / 0.18), hsl(336 51% 52% / 0.18));
+    border-color: hsl(336 51% 52% / 0.45);
+    box-shadow: 0 0 0 1px hsl(254 60% 45% / 0.18);
   }
 
   /* ===== Section background variants ===== */
@@ -216,8 +216,8 @@
   .section-light .text-foreground\/80, .section-light-alt .text-foreground\/80,
   .section-light .text-foreground\/75, .section-light-alt .text-foreground\/75 { color: #374151 !important; }
   .section-light .text-muted-foreground, .section-light-alt .text-muted-foreground { color: #6B7280 !important; }
-  .section-light .text-secondary, .section-light-alt .text-secondary { color: #6A3DF0 !important; }
-  .section-light .text-secondary\/80, .section-light-alt .text-secondary\/80 { color: rgba(106,61,240,0.8) !important; }
+  .section-light .text-secondary, .section-light-alt .text-secondary { color: #4C2EB8 !important; }
+  .section-light .text-secondary\/80, .section-light-alt .text-secondary\/80 { color: rgba(76,46,184,0.8) !important; }
 
   .section-light .glass-card, .section-light-alt .glass-card {
     background: #FFFFFF !important;
@@ -237,7 +237,7 @@
 
   /* Brand-soft pill stays purple-tinted on light bg */
   .section-light .bg-brand-gradient-soft, .section-light-alt .bg-brand-gradient-soft {
-    background-image: linear-gradient(135deg, rgba(106,61,240,0.12), rgba(255,77,157,0.12)) !important;
+    background-image: linear-gradient(135deg, rgba(76,46,184,0.12), rgba(196,69,121,0.12)) !important;
   }
 
   /* Savings calculator chips on light bg */
@@ -246,10 +246,10 @@
     color: #374151;
     border-color: #E5E7EB;
   }
-  .section-light .admin-chip:hover, .section-light-alt .admin-chip:hover { color: #0A1220; border-color: #6A3DF0; }
+  .section-light .admin-chip:hover, .section-light-alt .admin-chip:hover { color: #0A1220; border-color: #4C2EB8; }
   .section-light .admin-chip[data-selected="true"], .section-light-alt .admin-chip[data-selected="true"] {
     color: #fff;
-    background-image: linear-gradient(135deg, #6A3DF0, #FF4D9D);
+    background-image: linear-gradient(135deg, #4C2EB8, #C44579);
     border-color: transparent;
   }
 }
