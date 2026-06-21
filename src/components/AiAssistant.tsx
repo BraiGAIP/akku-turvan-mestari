@@ -189,7 +189,7 @@ const AiAssistant = () => {
           >
             <p className="text-sm font-semibold text-foreground mb-1">Hei 👋</p>
             <p className="text-sm text-muted-foreground">
-              Autan sinua löytämään oikean Fragus-lisäturvan autollesi. Mikä tilanne sinulla on?
+              Autan sinua löytämään oikean Jatkoturvan lisäturvan autollesi. Mikä tilanne sinulla on?
             </p>
             <button
               onClick={(e) => { e.stopPropagation(); setShowBubble(false); }}
@@ -236,7 +236,7 @@ const AiAssistant = () => {
               <div className="space-y-3">
                 <div className="bg-muted rounded-2xl rounded-bl-sm px-4 py-3 text-sm text-foreground leading-relaxed">
                   <p className="font-semibold mb-1">Hei 👋</p>
-                  <p>Autan sinua löytämään oikean Fragus-lisäturvan autollesi. Mikä tilanne sinulla on?</p>
+                  <p>Autan sinua löytämään oikean Jatkoturvan lisäturvan autollesi. Mikä tilanne sinulla on?</p>
                 </div>
                 <div className="space-y-2">
                   {INITIAL_FLOWS.map(({ label, message }) => (
