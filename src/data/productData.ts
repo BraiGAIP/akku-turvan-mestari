@@ -38,8 +38,8 @@ export const products: Product[] = [
     name: "Jatkoturva Perusturva",
     subtitle: "Fragus GOSafe Basic",
     tagline: "Edullinen perussuoja vanhemmalle polttomoottoriautolle",
-    monthlyPrice: 15,        // TODO: vahvista hinta
-    fullPrice: 540,          // TODO: vahvista hinta
+    monthlyPrice: 21,        // 36 kk Ryhmä A, sis. ALV 25,5 %
+    fullPrice: 740,          // 294,78 × 2 × 1,255 ≈ 739,90 €, sis. ALV
     months: 36,
     color: "text-cyan-400",
     icon: "Shield",
