@@ -6,20 +6,20 @@
 
 @layer base {
   :root {
-    /* ===== JATKOTURVA brand palette (calm / professional) =====
-       #0F1729 deep navy (background)
+    /* ===== JATKOTURVA brand palette (brighter / airy) =====
+       #1e293b lighter navy (background)
        #4C2EB8 deep violet (primary)
        #C44579 muted rose (secondary/accent)
        #E8ECF2 soft light (foreground)
        Gradient: linear-gradient(135deg, #4C2EB8, #C44579) — restrained, no neon
     */
-    --background: 221 39% 11%;        /* #111827 */
+    --background: 220 30% 18%;        /* #1e293b — lighter navy */
     --foreground: 218 22% 93%;        /* #E8ECF2 */
 
-    --card: 218 32% 15%;              /* #1A2332 */
+    --card: 218 28% 24%;              /* #2d3a50 — lighter card surface */
     --card-foreground: 218 22% 93%;
 
-    --popover: 215 35% 19%;
+    --popover: 215 25% 26%;
     --popover-foreground: 218 22% 93%;
 
     --primary: 254 60% 45%;           /* #4C2EB8 deep violet */
@@ -28,8 +28,8 @@
     --secondary: 336 51% 52%;         /* #C44579 muted rose */
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 215 35% 19%;
-    --muted-foreground: 218 14% 70%;
+    --muted: 215 25% 28%;
+    --muted-foreground: 218 14% 72%;
 
     --accent: 336 51% 52%;            /* muted rose accent */
     --accent-foreground: 0 0% 100%;
@@ -37,19 +37,19 @@
     --destructive: 0 60% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 219 30% 18%;
-    --input: 219 30% 18%;
+    --border: 219 25% 26%;
+    --input: 219 25% 26%;
     --ring: 254 60% 45%;
 
     --radius: 0.875rem;
 
-    --sidebar-background: 221 39% 11%;
+    --sidebar-background: 220 30% 18%;
     --sidebar-foreground: 218 22% 93%;
     --sidebar-primary: 254 60% 45%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 219 30% 14%;
+    --sidebar-accent: 219 25% 20%;
     --sidebar-accent-foreground: 218 22% 93%;
-    --sidebar-border: 219 30% 18%;
+    --sidebar-border: 219 25% 26%;
     --sidebar-ring: 254 60% 45%;
   }
 }
@@ -121,10 +121,10 @@
 
   /* Glass card */
   .glass-card {
-    background: hsl(218 32% 15% / 0.7);
+    background: hsl(218 28% 24% / 0.50);
     backdrop-filter: blur(14px);
-    border: 1px solid hsl(0 0% 100% / 0.08);
-    box-shadow: 0 10px 30px hsl(0 0% 0% / 0.5);
+    border: 1px solid hsl(0 0% 100% / 0.12);
+    box-shadow: 0 10px 30px hsl(0 0% 0% / 0.35);
   }
 
   /* Premium button glow (now brand-tinted) */
