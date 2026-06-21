@@ -179,8 +179,9 @@ const PriceCalculatorModal = ({ open, onComplete, onClose }: Props) => {
 
   if (!open) return null;
 
+  // Pienin kk-vertailuluku (pisin sopimus = pienin kk) ja pienin kertahinta (lyhin sopimus).
   const lowestMonthly = pricingData ? Math.min(...pricingData.map(t => t.monthlyPrice)) : 0;
-  const lowestYearly = pricingData ? Math.min(...pricingData.map(t => t.price)) : 0;
+  const lowestPrice = pricingData ? Math.min(...pricingData.map(t => t.price)) : 0;
   const vehicleName = isManual ? `${manualBrand} ${manualModel}` : `${brand} ${model}`;
   const vehicleYear = isManual ? manualYear : year;
 
