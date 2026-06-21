@@ -13,7 +13,7 @@
 export interface Product {
   id: string;
   name: string;
-  subtitle: string;          // Fragus-tuotenimi
+  subtitle: string;          // Tuotelinjan kuvaus
   tagline: string;
   monthlyPrice: number;      // 36 kk sopimuksen kuukausihinta (alkaen)
   fullPrice: number;         // 36 kk sopimuksen kertahinta (alkaen)
