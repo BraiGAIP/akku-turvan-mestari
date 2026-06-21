@@ -140,6 +140,24 @@ export interface CoverageTier {
   repairLimit: number;
 }
 
+/**
+ * Hinnat perustuvat Jatkoturvan virallisiin Sähköturva-pakettihintoihin
+ * (Ryhmä A, kuluttajahinta sis. ALV 25,5 %):
+ *   12 kk = 947,27 €  ·  24 kk = 1 362,03 €  ·  36 kk = 1 779,34 €
+ *
+ * Vanhemmille / paljon ajetuille autoille ("limited") sovelletaan +30 %
+ * lisämaksua, ja korvausrajat ovat pienemmät.
+ *
+ * Kuukausihinta on yksinkertaisesti sopimushinta jaettuna kuukausilla
+ * — informatiivinen vertailuluku, ei rahoituksellinen osamaksu (osamaksun
+ * todellinen kk-erä lasketaan annuiteettina hintalaskurissa).
+ */
+const ELECTRIC_BASE_PRICES: Record<12 | 24 | 36, number> = {
+  12: 947.27,
+  24: 1362.03,
+  36: 1779.34,
+};
+
 export const calculatePricing = (
   brand: string,
   model: string,
@@ -152,32 +170,30 @@ export const calculatePricing = (
   const eligibility = checkEligibility(year, mileage);
   if (eligibility.status === "rejected") return null;
 
-  const currentYear = new Date().getFullYear();
-  const age = currentYear - year;
   const isLimited = eligibility.status === "limited";
-
-  // Base price factors
-  const ageFactor = 1 + (age * 0.08);
-  const mileageFactor = 1 + (mileage / 300000);
-  const capacityFactor = ev.batteryCapacity / 60;
   const limitedSurcharge = isLimited ? 1.3 : 1;
 
-  const basePrice = 490 * ageFactor * mileageFactor * capacityFactor * limitedSurcharge;
+  const limits = isLimited
+    ? repairLimits.map((r) => r.limitedLimit)
+    : repairLimits.map((r) => r.fullLimit);
 
-  const limits = isLimited ? repairLimits.map(r => r.limitedLimit) : repairLimits.map(r => r.fullLimit);
+  const priceFor = (m: 12 | 24 | 36) =>
+    Math.round(ELECTRIC_BASE_PRICES[m] * limitedSurcharge);
+  const monthlyFor = (m: 12 | 24 | 36) =>
+    Math.round((ELECTRIC_BASE_PRICES[m] * limitedSurcharge) / m);
 
   return [
     {
       id: "12kk",
       name: "12 kuukautta",
-      price: Math.round(basePrice),
-      monthlyPrice: Math.round(basePrice / 12),
+      price: priceFor(12),
+      monthlyPrice: monthlyFor(12),
       coverage: isLimited ? "Rajoitettu turva" : "Täysi turva",
       duration: "12 kk",
       repairLimit: limits[0],
       features: [
-        `Korkeajänniteakku (HV) turvattu`,
-        `Akun kapasiteetin heikkeneminen (< 70 %)`,
+        "Korkeajänniteakku (HV) turvattu",
+        "Akun kapasiteetin heikkeneminen (< 70 %)",
         "Sähköajomoottori ja ohjainlaitteet",
         "Latausjärjestelmä ja muuntimet",
         "Akun jäähdytysjärjestelmä",
@@ -187,8 +203,8 @@ export const calculatePricing = (
     {
       id: "24kk",
       name: "24 kuukautta",
-      price: Math.round(basePrice * 1.7),
-      monthlyPrice: Math.round((basePrice * 1.7) / 24),
+      price: priceFor(24),
+      monthlyPrice: monthlyFor(24),
       coverage: isLimited ? "Rajoitettu turva" : "Täysi turva",
       duration: "24 kk",
       repairLimit: limits[1],
@@ -205,8 +221,8 @@ export const calculatePricing = (
     {
       id: "36kk",
       name: "36 kuukautta",
-      price: Math.round(basePrice * 2.3),
-      monthlyPrice: Math.round((basePrice * 2.3) / 36),
+      price: priceFor(36),
+      monthlyPrice: monthlyFor(36),
       coverage: isLimited ? "Rajoitettu turva" : "Täysi turva",
       duration: "36 kk",
       repairLimit: limits[2],
