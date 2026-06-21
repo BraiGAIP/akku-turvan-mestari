@@ -129,6 +129,7 @@ const PricingResult = ({ data, onBack }: Props) => {
               <div className="flex-1 min-w-[160px]">
                 <p className="text-sm text-muted-foreground mb-1">Jatkoturva alkaen</p>
                 <p className="text-3xl font-black text-secondary">{tiers[0].monthlyPrice} € / kk</p>
+                <p className="text-xs text-muted-foreground mt-0.5">sis. ALV 25,5 %</p>
               </div>
             </div>
           </div>
