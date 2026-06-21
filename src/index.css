@@ -6,51 +6,51 @@
 
 @layer base {
   :root {
-    /* ===== JATKOTURVA brand palette =====
-       #111827 deep navy-charcoal (background)
-       #6A3DF0 purple (primary)
-       #FF4D9D pink (secondary/accent)
-       #F2F4F7 light (foreground / light bg)
-       Gradient: linear-gradient(135deg, #6A3DF0, #FF4D9D)
+    /* ===== JATKOTURVA brand palette (calm / professional) =====
+       #0F1729 deep navy (background)
+       #4C2EB8 deep violet (primary)
+       #C44579 muted rose (secondary/accent)
+       #E8ECF2 soft light (foreground)
+       Gradient: linear-gradient(135deg, #4C2EB8, #C44579) — restrained, no neon
     */
     --background: 221 39% 11%;        /* #111827 */
-    --foreground: 214 21% 96%;       /* #F2F4F7 */
+    --foreground: 218 22% 93%;        /* #E8ECF2 */
 
-    --card: 218 32% 15%;        /* #1A2332 */
-    --card-foreground: 214 21% 96%;
+    --card: 218 32% 15%;              /* #1A2332 */
+    --card-foreground: 218 22% 93%;
 
-    --popover: 215 35% 19%;        /* #1F2D40 */
-    --popover-foreground: 214 21% 96%;
+    --popover: 215 35% 19%;
+    --popover-foreground: 218 22% 93%;
 
-    --primary: 257 86% 59%;          /* #6A3DF0 purple */
+    --primary: 254 60% 45%;           /* #4C2EB8 deep violet */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 331 100% 65%;       /* #FF4D9D pink */
+    --secondary: 336 51% 52%;         /* #C44579 muted rose */
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 215 35% 19%;        /* #1F2D40 */
-    --muted-foreground: 218 14% 68%;
+    --muted: 215 35% 19%;
+    --muted-foreground: 218 14% 70%;
 
-    --accent: 331 100% 65%;          /* pink accent */
+    --accent: 336 51% 52%;            /* muted rose accent */
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 60% 50%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 219 30% 18%;
     --input: 219 30% 18%;
-    --ring: 257 86% 59%;
+    --ring: 254 60% 45%;
 
     --radius: 0.875rem;
 
-    --sidebar-background: 221 39% 11%;        /* #111827 */
-    --sidebar-foreground: 214 21% 96%;
-    --sidebar-primary: 257 86% 59%;
+    --sidebar-background: 221 39% 11%;
+    --sidebar-foreground: 218 22% 93%;
+    --sidebar-primary: 254 60% 45%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 219 30% 14%;
-    --sidebar-accent-foreground: 214 21% 96%;
+    --sidebar-accent-foreground: 218 22% 93%;
     --sidebar-border: 219 30% 18%;
-    --sidebar-ring: 257 86% 59%;
+    --sidebar-ring: 254 60% 45%;
   }
 }
 
