@@ -62,7 +62,7 @@ const TrustSection = () => (
           </div>
         </div>
         <p className="text-xs text-muted-foreground mt-6 pt-4 border-t border-border">
-          Jatkoturva perustuu Fraguksen GoSafe Electric -tuotteeseen. Kaikki sopimusehdot noudattavat Fraguksen virallisia ehtoja.
+          Jatkoturva on Fragus Warranty Finland Oy:n virallinen jälleenmyyjä Suomessa. Kaikki sopimukset noudattavat Fraguksen virallisia GOSafe-ehtoja (Basic, Premium, Electric, Premium & Battery).
         </p>
       </div>
     </div>

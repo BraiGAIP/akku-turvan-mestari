@@ -122,7 +122,7 @@ const PricingResult = ({ data, onBack }: Props) => {
             <h3 className="font-bold text-foreground mb-4">Ilman suojaa vs. Jatkoturva</h3>
             <div className="flex items-center gap-6 flex-wrap">
               <div className="flex-1 min-w-[160px]">
-                <p className="text-sm text-muted-foreground mb-1">Akun korjaus</p>
+                <p className="text-sm text-muted-foreground mb-1">Tyypillinen yllätyskorjaus</p>
                 <p className="text-3xl font-black text-destructive">{evData.avgReplacementCost.toLocaleString("fi-FI")} €</p>
               </div>
               <ArrowRight className="w-5 h-5 text-muted-foreground hidden md:block" />
@@ -238,8 +238,8 @@ const PricingResult = ({ data, onBack }: Props) => {
             Tämä on pieni hinta verrattuna mahdolliseen riskiin
           </h3>
           <div className="flex items-center justify-between p-3 rounded-lg bg-destructive/5 border border-destructive/10">
-            <span className="text-sm text-muted-foreground">Akun korjaus</span>
-            <span className="text-sm font-black text-destructive">5 000 – 20 000 €</span>
+            <span className="text-sm text-muted-foreground">Tyypillinen yllätyskorjaus</span>
+            <span className="text-sm font-black text-destructive">3 000 – 20 000 €</span>
           </div>
           <div className="flex items-center justify-between p-3 rounded-lg bg-secondary/5 border border-secondary/10">
             <span className="text-sm text-muted-foreground">Jatkoturva</span>
