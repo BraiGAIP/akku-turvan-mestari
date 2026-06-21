@@ -16,7 +16,7 @@ const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/ai-assistant
 
 const INITIAL_FLOWS: QuickAction[] = [
   { label: "💰 Haluan tietää hinnan autolleni", message: "Haluan tietää hinnan autolleni" },
-  { label: "🤔 Mikä turva sopii minulle?", message: "Mikä Fragus-tuote sopii autolleni?" },
+  { label: "🤔 Mikä turva sopii minulle?", message: "Mikä Jatkoturva-tuote sopii autolleni?" },
   { label: "🛡️ Haluan suojan heti", message: "Haluan suojan heti" },
 ];
 
