@@ -114,7 +114,7 @@ const SavingsCalculator = ({ onStartFlow }: Props) => {
                 {monthly} € / kk
               </p>
               <p className="text-xs text-muted-foreground mt-1">
-                eli {yearly} € vuodessa
+                eli {yearly} € vuodessa · sis. ALV 25,5 %
               </p>
             </div>
 
