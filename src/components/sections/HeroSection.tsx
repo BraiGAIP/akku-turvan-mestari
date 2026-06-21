@@ -147,7 +147,7 @@ const HeroSection = ({ onStartFlow }: HeroSectionProps) => (
           <div className="flex flex-col items-center sm:items-end gap-2">
             <Button
               size="lg"
-              className="h-14 px-10 text-base rounded-full bg-gradient-to-r from-primary to-primary/80 btn-glow hover:scale-[1.03] hover:translate-y-[-1px] transition-all duration-200"
+              className="h-14 px-10 text-base rounded-full btn-brand hover:translate-y-[-1px] transition-all duration-200"
               onClick={onStartFlow}
             >
               Laske hinta heti
@@ -168,7 +168,7 @@ const HeroSection = ({ onStartFlow }: HeroSectionProps) => (
         </div>
       </div>
 
-      <p className="mt-6 text-sm font-medium text-destructive/70 text-center md:text-left">
+      <p className="mt-6 text-sm font-medium text-muted-foreground text-center md:text-left">
         Ilman suojaa yksi vika voi maksaa tuhansia euroja
       </p>
     </div>
