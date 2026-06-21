@@ -9,15 +9,14 @@ const PartnerBanner = () => (
           <Award className="w-6 h-6 text-accent" />
         </div>
         <div>
-          <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Virallinen kumppani</p>
-          <p className="text-xl font-black text-foreground">Fragus Group</p>
+          <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Suomalainen palvelu</p>
+          <p className="text-xl font-black text-foreground">Jatkoturva</p>
         </div>
       </div>
       <div className="h-px w-16 bg-border/30 hidden md:block" />
       <p className="text-muted-foreground text-center md:text-left max-w-md">
-        Eurooppalainen toimija ajoneuvoturvassa – yli{" "}
-        <span className="font-semibold text-foreground">20 vuoden kokemus</span>{" "}
-        ajoneuvojen suojatuotteissa.
+        Auton kunnossapitosopimukset suoraan verkosta – ilman autoliikettä. Sopimukset hallinnoi{" "}
+        <span className="font-semibold text-foreground">Fragus Warranty Finland Oy</span>.
       </p>
       <div className="h-px w-16 bg-border/30 hidden md:block" />
       <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 border border-secondary/15">
