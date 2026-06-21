@@ -25,8 +25,8 @@ const FLOW_RESPONSES: Record<string, { content: string; buttons?: QuickAction[] 
     content: "Hyvä valinta 👍\n\nSyötä auton tiedot, niin näytän hinnan heti. Koko prosessi vie alle 2 minuuttia.",
     buttons: [{ label: "Näe hinta autollesi →", message: "__START_FLOW__" }],
   },
-  "Mikä Fragus-tuote sopii autolleni?": {
-    content: "Jatkoturvalta saat kaikki neljä Fragus GOSafe -tuotetta:\n\n🛡️ Basic — edullinen perusturva vanhempaan autoon\n👑 Premium — kattava bensiini-, diesel- ja hybridiautoille (suosituin)\n⚡ Electric — täyssähköautolle, sisältää korkeajänniteakun\n🔋 Premium & Battery — lataushybridille, Premium + akkuturva\n\nKerro autosi käyttövoima ja ikä, niin suosittelen oikean.",
+  "Mikä Jatkoturva-tuote sopii autolleni?": {
+    content: "Jatkoturvalta saat neljä tuotelinjaa:\n\n🛡️ Perusturva — edullinen perusturva vanhempaan autoon\n👑 Premium — kattava bensiini-, diesel- ja hybridiautoille (suosituin)\n⚡ Sähköturva — täyssähköautolle, sisältää korkeajänniteakun\n🔋 Akkuturva — lataushybridille, Premium + akkuturva\n\nKerro autosi käyttövoima ja ikä, niin suosittelen oikean.",
     buttons: [{ label: "Laske hinta autollesi →", message: "__START_FLOW__" }],
   },
   "Haluan suojan heti": {
