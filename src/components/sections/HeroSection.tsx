@@ -93,7 +93,7 @@ const HeroSection = ({ onStartFlow }: HeroSectionProps) => (
             Moottorin, vaihteiston tai akun korjaus 3 000–20 000 €
           </p>
           <p className="text-sm text-brand-gradient font-bold mt-1">
-            Jatkoturva alkaen vain 19 €/kk
+            Jatkoturva alkaen 21 €/kk (sis. ALV 25,5 %)
           </p>
         </div>
 

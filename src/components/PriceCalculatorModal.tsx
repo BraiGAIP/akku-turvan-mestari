@@ -463,7 +463,7 @@ const PriceCalculatorModal = ({ open, onComplete, onClose }: Props) => {
                     <span className="text-lg font-bold text-white/70">€ / kk</span>
                   </div>
                   <p className="text-sm text-white/40 mt-1">
-                    tai {lowestYearly} € / vuosi
+                    tai {lowestYearly} € / vuosi · sis. ALV 25,5 %
                   </p>
                 </div>
 

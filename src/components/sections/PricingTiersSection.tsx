@@ -123,11 +123,14 @@ const PricingTiersSection = ({ onStartFlow, onSelectProduct }: PricingTiersSecti
 
                 {/* Monthly price – PRIMARY emphasis */}
                 <p className="text-4xl font-black text-secondary mt-3">
-                  {product.monthlyPrice}<span className="text-lg font-bold text-secondary/80"> €/kk</span>
+                  alk. {product.monthlyPrice}<span className="text-lg font-bold text-secondary/80"> €/kk</span>
                 </p>
                 {/* Full price – secondary */}
                 <p className="text-sm text-muted-foreground mt-1">
-                  tai {product.fullPrice} € kertamaksuna
+                  tai {product.fullPrice} € kertamaksuna (36 kk)
+                </p>
+                <p className="text-xs text-muted-foreground/80 mt-0.5">
+                  Hinta sis. ALV 25,5 %. Ryhmä A.
                 </p>
 
                 <div className="h-px bg-border/50 my-4" />

@@ -38,8 +38,8 @@ export const products: Product[] = [
     name: "Jatkoturva Perusturva",
     subtitle: "Fragus GOSafe Basic",
     tagline: "Edullinen perussuoja vanhemmalle polttomoottoriautolle",
-    monthlyPrice: 15,        // TODO: vahvista hinta
-    fullPrice: 540,          // TODO: vahvista hinta
+    monthlyPrice: 21,        // 36 kk Ryhmä A, sis. ALV 25,5 %
+    fullPrice: 740,          // 294,78 × 2 × 1,255 ≈ 739,90 €, sis. ALV
     months: 36,
     color: "text-cyan-400",
     icon: "Shield",
@@ -60,8 +60,8 @@ export const products: Product[] = [
     name: "Jatkoturva Premium",
     subtitle: "Fragus GOSafe Premium",
     tagline: "Laaja kattavuus polttomoottori- ja hybridiautoille",
-    monthlyPrice: 29,        // TODO: vahvista hinta
-    fullPrice: 1044,         // TODO: vahvista hinta
+    monthlyPrice: 43,        // 36 kk Ryhmä A, sis. ALV 25,5 %
+    fullPrice: 1523,         // 606,90 × 2 × 1,255 ≈ 1 523,32 €, sis. ALV
     months: 36,
     color: "text-violet-400",
     icon: "Crown",
@@ -82,8 +82,8 @@ export const products: Product[] = [
     name: "Jatkoturva Sähköturva",
     subtitle: "Fragus GOSafe Electric",
     tagline: "Täysturva sähköautolle — sisältää korkeajänniteakun",
-    monthlyPrice: 27,        // TODO: vahvista hinta
-    fullPrice: 972,          // TODO: vahvista hinta
+    monthlyPrice: 49,        // 36 kk Ryhmä A, sis. ALV 25,5 %
+    fullPrice: 1779,         // 708,90 × 2 × 1,255 ≈ 1 779,34 €, sis. ALV
     months: 36,
     color: "text-emerald-400",
     icon: "Zap",
@@ -104,8 +104,8 @@ export const products: Product[] = [
     name: "Jatkoturva Akkuturva",
     subtitle: "Fragus GOSafe Premium & Battery",
     tagline: "Kattavin paketti lataushybridille ja yhdistelmäajoneuvoille",
-    monthlyPrice: 35,        // TODO: vahvista hinta
-    fullPrice: 1260,         // TODO: vahvista hinta
+    monthlyPrice: 64,        // 36 kk Ryhmä A, sis. ALV 25,5 %
+    fullPrice: 2291,         // 912,90 × 2 × 1,255 ≈ 2 291,38 €, sis. ALV
     months: 36,
     color: "text-amber-400",
     icon: "BadgeCheck",

@@ -11,12 +11,12 @@ const AVG_REPAIR: Record<FuelType, { low: number; high: number; label: string }>
   sahko:    { low: 4500, high: 20000, label: "Sähkö" },
 };
 
-// Rough plan price scaling by age (€/kk)
+// Plan price estimate by car age (€/kk, 36 kk sopimus, sis. ALV 25,5 %)
 const planMonthlyByAge = (age: number) => {
-  if (age <= 3) return 19;
-  if (age <= 6) return 24;
-  if (age <= 10) return 32;
-  return 39;
+  if (age <= 3) return 64;   // Premium & Battery / uudempi auto
+  if (age <= 6) return 49;   // Electric / Premium
+  if (age <= 10) return 43;  // Premium
+  return 21;                  // Basic / vanhempi auto
 };
 
 interface Props {
@@ -114,7 +114,7 @@ const SavingsCalculator = ({ onStartFlow }: Props) => {
                 {monthly} € / kk
               </p>
               <p className="text-xs text-muted-foreground mt-1">
-                eli {yearly} € vuodessa
+                eli {yearly} € vuodessa · sis. ALV 25,5 %
               </p>
             </div>
 

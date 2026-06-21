@@ -43,8 +43,11 @@ const CTASection = ({ onStartFlow }: CTASectionProps) => (
           Jatkoturva suojaa jopa 20 000 € korjauskuluilta
         </h2>
 
-        <p className="text-secondary text-xl font-black text-center mb-8">
-          Alkaen vain 41 € / kk
+        <p className="text-secondary text-xl font-black text-center mb-1">
+          Alkaen 21 € / kk
+        </p>
+        <p className="text-xs text-muted-foreground text-center mb-8">
+          Hinta sis. ALV 25,5 %
         </p>
 
         {/* Value list */}
