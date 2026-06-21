@@ -16,7 +16,7 @@ const CoverageSection = () => (
     <div className="max-w-6xl mx-auto relative">
       <div className="text-center mb-14">
         <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-secondary bg-secondary/10 mb-4">
-          Fragus GOSafe -valikoima
+          Jatkoturvan tuotevalikoima
         </span>
         <h2 className="text-3xl md:text-4xl font-black text-foreground tracking-tight mb-4">
           Neljä turvatasoa — yksi sopii sinunkin autoosi
