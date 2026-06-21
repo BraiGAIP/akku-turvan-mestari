@@ -7,7 +7,7 @@ const TrustSection = () => (
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center mb-16">
         {[
           { icon: Lock, label: "Turvallinen maksu", desc: "SSL-suojattu" },
-          { icon: Award, label: "Fragus-kumppani", desc: "Virallinen jälleenmyyjä" },
+          { icon: Award, label: "Virallinen toimija", desc: "Suomalainen palvelu" },
           { icon: Shield, label: "14 pv peruutus", desc: "Riskitön kokeilu" },
           { icon: FileText, label: "Selkeät ehdot", desc: "Ei piilokuluja" },
         ].map(({ icon: Icon, label, desc }) => (
@@ -30,11 +30,11 @@ const TrustSection = () => (
           <div className="space-y-3">
             <div>
               <p className="text-muted-foreground text-xs uppercase tracking-wider font-semibold mb-0.5">Tuote</p>
-              <p className="text-foreground">Fragus GOSafe -kunnossapitosopimukset</p>
+              <p className="text-foreground">Jatkoturvan kunnossapitosopimukset</p>
             </div>
             <div>
-              <p className="text-muted-foreground text-xs uppercase tracking-wider font-semibold mb-0.5">Kumppani</p>
-              <p className="text-foreground">Fragus Group – Euroopan johtava ajoneuvosuojatuotteiden tarjoaja</p>
+              <p className="text-muted-foreground text-xs uppercase tracking-wider font-semibold mb-0.5">Tuotelinjat</p>
+              <p className="text-foreground">Perusturva · Premium · Sähköturva · Akkuturva</p>
             </div>
           </div>
           <div className="space-y-3">
@@ -62,7 +62,7 @@ const TrustSection = () => (
           </div>
         </div>
         <p className="text-xs text-muted-foreground mt-6 pt-4 border-t border-border">
-          Jatkoturva on Fragus Warranty Finland Oy:n virallinen jälleenmyyjä Suomessa. Kaikki sopimukset noudattavat Fraguksen virallisia GOSafe-ehtoja (Basic, Premium, Electric, Premium & Battery).
+          Jatkoturva on Suomessa toimiva auton kunnossapitosopimusten tarjoaja. Sopimuslinjat: Perusturva, Premium, Sähköturva ja Akkuturva.
         </p>
       </div>
     </div>

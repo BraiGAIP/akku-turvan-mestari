@@ -184,7 +184,7 @@ const EVModelPage = () => {
             <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center"><Shield className="w-4 h-4 text-primary-foreground" /></div>
             <span className="font-bold text-foreground">Jatkoturva</span>
           </Link>
-          <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} Jatkoturva · Perustuu Fragus GoSafe Electric -tuotteeseen</p>
+          <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} Jatkoturva · Sähköauton kunnossapitosopimus</p>
         </div>
       </footer>
     </div>

@@ -64,7 +64,7 @@ export const getEVData = (brand: string, model: string): EVModel | undefined => 
   return evDatabase.find(ev => ev.brand === brand && ev.model === model);
 };
 
-// Eligibility types based on Fragus GoSafe Electric
+// Eligibility types
 export type EligibilityResult = 
   | { status: "full"; maxAge: number; maxKm: number }
   | { status: "limited"; maxAge: number; maxKm: number }
@@ -83,7 +83,7 @@ export const checkEligibility = (year: number, mileage: number): EligibilityResu
   return { status: "full", maxAge: 10, maxKm: 200000 };
 };
 
-// Repair limits based on Fragus GoSafe Electric
+// Repair limits
 export interface RepairLimit {
   months: number;
   label: string;
@@ -97,7 +97,7 @@ export const repairLimits: RepairLimit[] = [
   { months: 36, label: "36 kk", fullLimit: 15000, limitedLimit: 5000 },
 ];
 
-// Coverage categories based on Fragus GoSafe Electric (sales-friendly names)
+// Coverage categories (sales-friendly names)
 export const coverageCategories = [
   { id: "motor", icon: "Zap", title: "Sähköajomoottori", description: "Auton sydän – sähkömoottori ja sen komponentit turvattu" },
   { id: "controller", icon: "Cpu", title: "Moottorin ohjainlaitteet", description: "Moottorin ohjauselektroniikka ja invertteri suojattu" },
@@ -172,7 +172,7 @@ export const calculatePricing = (
       name: "12 kuukautta",
       price: Math.round(basePrice),
       monthlyPrice: Math.round(basePrice / 12),
-      coverage: isLimited ? "Rajoitettu turva" : "Täysi GoSafe-turva",
+      coverage: isLimited ? "Rajoitettu turva" : "Täysi turva",
       duration: "12 kk",
       repairLimit: limits[0],
       features: [
@@ -189,7 +189,7 @@ export const calculatePricing = (
       name: "24 kuukautta",
       price: Math.round(basePrice * 1.7),
       monthlyPrice: Math.round((basePrice * 1.7) / 24),
-      coverage: isLimited ? "Rajoitettu turva" : "Täysi GoSafe-turva",
+      coverage: isLimited ? "Rajoitettu turva" : "Täysi turva",
       duration: "24 kk",
       repairLimit: limits[1],
       highlighted: true,
@@ -207,7 +207,7 @@ export const calculatePricing = (
       name: "36 kuukautta",
       price: Math.round(basePrice * 2.3),
       monthlyPrice: Math.round((basePrice * 2.3) / 36),
-      coverage: isLimited ? "Rajoitettu turva" : "Täysi GoSafe-turva",
+      coverage: isLimited ? "Rajoitettu turva" : "Täysi turva",
       duration: "36 kk",
       repairLimit: limits[2],
       features: [

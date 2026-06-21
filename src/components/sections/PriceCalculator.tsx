@@ -450,7 +450,7 @@ const PriceCalculator = ({ onStartFlow }: Props) => {
             <p className="text-[11px] text-muted-foreground leading-relaxed">
               Hinnoittelu perustuu valittuun tehoryhmään. Asiakas vastaa antamiensa tietojen
               oikeellisuudesta — jos auton todellinen teho on suurempi kuin sopimukseen
-              merkitty, Fragus voi evätä korvauksen. Tarkista auton kW-luku rekisteriotteesta.
+              merkitty, sopimuksen mukainen korvaus voidaan evätä. Tarkista auton kW-luku rekisteriotteesta.
             </p>
           </div>
         </div>

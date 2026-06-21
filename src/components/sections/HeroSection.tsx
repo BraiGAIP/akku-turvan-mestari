@@ -58,7 +58,7 @@ const HeroSection = ({ onStartFlow }: HeroSectionProps) => (
         {/* Trust badge with gold accent */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-6">
           <Zap className="w-4 h-4 text-accent" />
-          <span className="text-sm font-semibold text-accent">Virallinen Fragus-kumppani Suomessa</span>
+          <span className="text-sm font-semibold text-accent">Suomalainen auton lisäturva verkosta</span>
         </div>
 
         <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-black text-foreground leading-[1.05] tracking-tight uppercase mb-4">
@@ -71,7 +71,7 @@ const HeroSection = ({ onStartFlow }: HeroSectionProps) => (
           Fraguksen jatkoturva suojaa sinua jopa 20 000 € yllätyskorjauksilta.
         </p>
 
-        <h2 className="sr-only">Fragus GOSafe – Suomen luotettavin lisäturva</h2>
+        <h2 className="sr-only">Jatkoturva – Suomen selkein lisäturva</h2>
 
 
         {/* Trust badges */}

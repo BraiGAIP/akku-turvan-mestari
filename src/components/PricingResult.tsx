@@ -109,7 +109,7 @@ const PricingResult = ({ data, onBack }: Props) => {
           </div>
           <div>
             <p className="font-bold text-foreground">{data.brand} {data.model} {data.year}</p>
-            <p className="text-sm text-muted-foreground">{isLimited ? "Rajoitettu turva" : "Täysi GoSafe-turva"} · Hinta perustuu ajoneuvon tietoihin</p>
+            <p className="text-sm text-muted-foreground">{isLimited ? "Rajoitettu turva" : "Täysi turva"} · Hinta perustuu ajoneuvon tietoihin</p>
           </div>
           {data.isManualEntry && (
             <span className="ml-auto text-xs bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">Arvio</span>

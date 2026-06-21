@@ -13,7 +13,7 @@
 export interface Product {
   id: string;
   name: string;
-  subtitle: string;          // Fragus-tuotenimi
+  subtitle: string;          // Tuotelinjan kuvaus
   tagline: string;
   monthlyPrice: number;      // 36 kk sopimuksen kuukausihinta (alkaen)
   fullPrice: number;         // 36 kk sopimuksen kertahinta (alkaen)
@@ -36,7 +36,7 @@ export const products: Product[] = [
   {
     id: "gosafe-basic",
     name: "Jatkoturva Perusturva",
-    subtitle: "Fragus GOSafe Basic",
+    subtitle: "Jatkoturva Perusturva",
     tagline: "Edullinen perussuoja vanhemmalle polttomoottoriautolle",
     monthlyPrice: 21,        // 36 kk Ryhmä A, sis. ALV 25,5 %
     fullPrice: 740,          // 294,78 × 2 × 1,255 ≈ 739,90 €, sis. ALV
@@ -58,7 +58,7 @@ export const products: Product[] = [
   {
     id: "gosafe-premium",
     name: "Jatkoturva Premium",
-    subtitle: "Fragus GOSafe Premium",
+    subtitle: "Jatkoturva Premium",
     tagline: "Laaja kattavuus polttomoottori- ja hybridiautoille",
     monthlyPrice: 43,        // 36 kk Ryhmä A, sis. ALV 25,5 %
     fullPrice: 1523,         // 606,90 × 2 × 1,255 ≈ 1 523,32 €, sis. ALV
@@ -80,7 +80,7 @@ export const products: Product[] = [
   {
     id: "gosafe-electric",
     name: "Jatkoturva Sähköturva",
-    subtitle: "Fragus GOSafe Electric",
+    subtitle: "Jatkoturva Sähköturva",
     tagline: "Täysturva sähköautolle — sisältää korkeajänniteakun",
     monthlyPrice: 49,        // 36 kk Ryhmä A, sis. ALV 25,5 %
     fullPrice: 1779,         // 708,90 × 2 × 1,255 ≈ 1 779,34 €, sis. ALV
@@ -102,7 +102,7 @@ export const products: Product[] = [
   {
     id: "gosafe-premium-battery",
     name: "Jatkoturva Akkuturva",
-    subtitle: "Fragus GOSafe Premium & Battery",
+    subtitle: "Jatkoturva Akkuturva",
     tagline: "Kattavin paketti lataushybridille ja yhdistelmäajoneuvoille",
     monthlyPrice: 64,        // 36 kk Ryhmä A, sis. ALV 25,5 %
     fullPrice: 2291,         // 912,90 × 2 × 1,255 ≈ 2 291,38 €, sis. ALV

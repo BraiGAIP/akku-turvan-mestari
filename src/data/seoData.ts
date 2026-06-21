@@ -37,7 +37,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-05-20",
     readTime: "5 min",
     metaTitle: "Auton lisäturva ilman autoliikettä | Jatkoturva",
-    metaDescription: "Tiesitkö, että voit hankkia auton lisäturvan verkosta ilman autoliikettä? Jatkoturva myy Fragus GOSafe -kunnossapitosopimuksen kenelle tahansa — myös jo omistamaasi autoon.",
+    metaDescription: "Tiesitkö, että voit hankkia auton lisäturvan verkosta ilman autoliikettä? Jatkoturva myy Jatkoturvan kunnossapitosopimuksen kenelle tahansa — myös jo omistamaasi autoon.",
     content: `
 ## Auton lisäturva ilman autoliikettä — näin se onnistuu verkossa
 
@@ -65,9 +65,9 @@ Tai niin on tähän asti ollut.
 
 ## Jatkoturva myy lisäturvan suoraan sinulle — ilman autoliikettä
 
-Jatkoturva on virallinen Fragus Group -kumppani Suomessa. Fragus on Euroopan johtava ajoneuvoturvien tarjoaja yli 20 vuoden kokemuksella.
+Jatkoturva on Suomessa toimiva auton kunnossapitosopimusten tarjoaja.
 
-Jatkoturvan kautta voit hankkia Fragus GOSafe -kunnossapitosopimuksen suoraan verkosta:
+Jatkoturvan kautta voit hankkia Jatkoturvan kunnossapitosopimuksen suoraan verkosta:
 
 - **Autoon joka sinulla on jo alla** — ei tarvitse ostaa uutta autoa
 
@@ -134,12 +134,12 @@ Et sitoudu ennen maksua. Voit myös maksaa kuukausittain alkaen 19 €/kk.
   {
     slug: "lisaturva-tuontiautoon",
     title: "Tuontiauto Suomeen — muista lisäturva jonka muut eivät myy",
-    excerpt: "Tuontiautoon on vaikea saada lisäturvaa Suomessa — autoliikkeet eivät myy sitä omille asiakkailleen. Jatkoturva myy Fragus GOSafe -sopimuksen myös tuontiauton omistajalle verkossa.",
+    excerpt: "Tuontiautoon on vaikea saada lisäturvaa Suomessa — autoliikkeet eivät myy sitä omille asiakkailleen. Jatkoturva myy Jatkoturvan sopimuksen myös tuontiauton omistajalle verkossa.",
     category: "Tuontiautot",
     date: "2026-05-10",
     readTime: "6 min",
     metaTitle: "Lisäturva tuontiautoon — näin se onnistuu | Jatkoturva",
-    metaDescription: "Tuontiautoon on vaikea saada lisäturvaa Suomessa — autoliikkeet eivät myy sitä. Jatkoturva myy Fragus GOSafe -kunnossapitosopimuksen myös tuontiauton omistajalle verkossa.",
+    metaDescription: "Tuontiautoon on vaikea saada lisäturvaa Suomessa — autoliikkeet eivät myy sitä. Jatkoturva myy Jatkoturvan kunnossapitosopimuksen myös tuontiauton omistajalle verkossa.",
     content: `
 ## Tuontiauto Suomeen — muista lisäturva jonka muut eivät myy
 
@@ -165,7 +165,7 @@ Tuloksena: tuontiauton omistaja ajaa ilman turvaa, vaikka haluaisi maksaa siitä
 
 ## Jatkoturva: lisäturva myös tuontiautoon
 
-Jatkoturva on Suomessa toimiva virallinen Fragus Group -kumppani. Fragus on eurooppalainen toimija — ei suomalainen autoliike. Siksi heidän tuotteensa eivät ole sidottuja yksittäisen liikkeen myyntiketjuun.
+Jatkoturva on Suomessa toimiva auton kunnossapitosopimusten tarjoaja — emme ole sidottuja yksittäisen autoliikkeen myyntiketjuun.
 
 Jatkoturvalta voit hankkia lisäturvan tuontiautoon näin:
 
@@ -191,7 +191,7 @@ Jos tuontiauto on jo muutaman vuoden ikäinen, tehdastakuu on todennäköisesti 
 
 ## Mihin autoihin sopimus sopii?
 
-Fragus GOSafe -sopimukset sopivat laajasti eri ajoneuvoihin:
+Jatkoturvan sopimukset sopivat laajasti eri ajoneuvoihin:
 
 - **Bensiini- ja dieselautot** — Perusturva, Täysturva tai Huippuajajan turva
 
@@ -225,7 +225,7 @@ Ei välttämättä. Rekisterinumero riittää sopimuksen tekemiseen. Huoltohisto
 
 **Onko sopimus voimassa myös ulkomailla?**
 
-Kyllä. Fragus GOSafe -sopimus on voimassa koko Euroopassa.
+Kyllä. Jatkoturvan sopimus on voimassa koko Euroopassa.
 
 **Voinko siirtää sopimuksen jos myyn auton?**
 
