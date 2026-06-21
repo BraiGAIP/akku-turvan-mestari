@@ -32,7 +32,7 @@ const HeroSection = ({ onStartFlow }: HeroSectionProps) => (
   <section
     className="relative min-h-[85vh] md:min-h-screen flex items-center pt-16 overflow-hidden"
     style={{
-      backgroundImage: 'url(/hero-bg.jpg)',
+      backgroundImage: 'url(/hero-bg.png)',
       backgroundSize: 'cover',
       backgroundPosition: 'center center',
       backgroundRepeat: 'no-repeat',
