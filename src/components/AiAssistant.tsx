@@ -16,18 +16,18 @@ const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/ai-assistant
 
 const INITIAL_FLOWS: QuickAction[] = [
   { label: "💰 Haluan tietää hinnan autolleni", message: "Haluan tietää hinnan autolleni" },
-  { label: "🤔 Mietin kannattaako akkuturva", message: "Mietin kannattaako akkuturva" },
+  { label: "🤔 Mikä turva sopii minulle?", message: "Mikä Fragus-tuote sopii autolleni?" },
   { label: "🛡️ Haluan suojan heti", message: "Haluan suojan heti" },
 ];
 
 const FLOW_RESPONSES: Record<string, { content: string; buttons?: QuickAction[] }> = {
   "Haluan tietää hinnan autolleni": {
-    content: "Hyvä valinta 👍\n\nSyötä auton tiedot sivun yläosassa olevalla painikkeella, niin näytän hinnan heti. Koko prosessi vie alle 2 minuuttia.",
+    content: "Hyvä valinta 👍\n\nSyötä auton tiedot, niin näytän hinnan heti. Koko prosessi vie alle 2 minuuttia.",
     buttons: [{ label: "Näe hinta autollesi →", message: "__START_FLOW__" }],
   },
-  "Mietin kannattaako akkuturva": {
-    content: "Sähköauton akun korjaus voi maksaa 5 000–20 000 €.\n\nJatkoturva on järkevä erityisesti jos:\n✔ Auto ei ole uusi\n✔ Ajat paljon\n✔ Haluat välttää yllättävät kulut\n\nUseimmat ottavat turvan ennen kuin ongelmia ilmenee – silloin se on halvin.",
-    buttons: [{ label: "Näytä hinta autolleni →", message: "__START_FLOW__" }],
+  "Mikä Fragus-tuote sopii autolleni?": {
+    content: "Jatkoturvalta saat kaikki neljä Fragus GOSafe -tuotetta:\n\n🛡️ Basic — edullinen perusturva vanhempaan autoon\n👑 Premium — kattava bensiini-, diesel- ja hybridiautoille (suosituin)\n⚡ Electric — täyssähköautolle, sisältää korkeajänniteakun\n🔋 Premium & Battery — lataushybridille, Premium + akkuturva\n\nKerro autosi käyttövoima ja ikä, niin suosittelen oikean.",
+    buttons: [{ label: "Laske hinta autollesi →", message: "__START_FLOW__" }],
   },
   "Haluan suojan heti": {
     content: "Hienoa 👍\n\nAloitetaan – tarvitsen vain autosi tiedot. Koko prosessi vie alle 2 minuuttia.",
@@ -189,7 +189,7 @@ const AiAssistant = () => {
           >
             <p className="text-sm font-semibold text-foreground mb-1">Hei 👋</p>
             <p className="text-sm text-muted-foreground">
-              Autan sinua löytämään oikean akkuturvan nopeasti. Mikä tilanne sinulla on?
+              Autan sinua löytämään oikean Fragus-lisäturvan autollesi. Mikä tilanne sinulla on?
             </p>
             <button
               onClick={(e) => { e.stopPropagation(); setShowBubble(false); }}
@@ -236,7 +236,7 @@ const AiAssistant = () => {
               <div className="space-y-3">
                 <div className="bg-muted rounded-2xl rounded-bl-sm px-4 py-3 text-sm text-foreground leading-relaxed">
                   <p className="font-semibold mb-1">Hei 👋</p>
-                  <p>Autan sinua löytämään oikean akkuturvan nopeasti. Mikä tilanne sinulla on?</p>
+                  <p>Autan sinua löytämään oikean Fragus-lisäturvan autollesi. Mikä tilanne sinulla on?</p>
                 </div>
                 <div className="space-y-2">
                   {INITIAL_FLOWS.map(({ label, message }) => (

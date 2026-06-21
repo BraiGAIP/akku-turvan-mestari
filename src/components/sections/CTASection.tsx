@@ -61,11 +61,12 @@ const CTASection = ({ onStartFlow }: CTASectionProps) => (
         <div className="rounded-xl bg-muted/50 border border-border p-5 mb-8">
           <h3 className="font-bold text-foreground text-sm mb-2 flex items-center gap-2">
             <AlertTriangle className="w-4 h-4 text-accent" />
-            Miksi asiakkaat ottavat akkuturvan?
+            Miksi asiakkaat ottavat Jatkoturvan?
           </h3>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Sähköauton akun korjaus voi maksaa tuhansia euroja.
-            Useimmat ottavat turvan ennen kuin ongelmia ilmenee – silloin se on halvin.
+            Moottoriremontti, vaihteistovaurio tai sähköauton akun korjaus voi maksaa
+            tuhansia euroja. Useimmat ottavat turvan ennen kuin ongelmia ilmenee — silloin
+            se on halvin.
           </p>
         </div>
 

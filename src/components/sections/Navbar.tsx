@@ -23,7 +23,7 @@ const Navbar = ({ onStartFlow }: NavbarProps) => {
         <div className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
           <a href="#miten" className="hover:text-foreground transition-colors">Miten toimii</a>
           <a href="#turva" className="hover:text-foreground transition-colors">Turvatasot</a>
-          <Link to="/akkuturva" className="hover:text-foreground transition-colors">Mallit</Link>
+          <Link to="/akkuturva" className="hover:text-foreground transition-colors">EV-mallit</Link>
           <Link to="/blogi" className="hover:text-foreground transition-colors">Blogi</Link>
           <a href="#faq" className="hover:text-foreground transition-colors">UKK</a>
         </div>
@@ -52,7 +52,7 @@ const Navbar = ({ onStartFlow }: NavbarProps) => {
         <div className="md:hidden border-t border-border/50 bg-background/95 backdrop-blur-xl px-6 py-4 space-y-3">
           <a href="#miten" className="block text-sm font-medium text-muted-foreground hover:text-foreground" onClick={() => setMobileOpen(false)}>Miten toimii</a>
           <a href="#turva" className="block text-sm font-medium text-muted-foreground hover:text-foreground" onClick={() => setMobileOpen(false)}>Turvatasot</a>
-          <Link to="/akkuturva" className="block text-sm font-medium text-muted-foreground hover:text-foreground">Mallit</Link>
+          <Link to="/akkuturva" className="block text-sm font-medium text-muted-foreground hover:text-foreground">EV-mallit</Link>
           <Link to="/blogi" className="block text-sm font-medium text-muted-foreground hover:text-foreground">Blogi</Link>
           <a href="#faq" className="block text-sm font-medium text-muted-foreground hover:text-foreground" onClick={() => setMobileOpen(false)}>UKK</a>
           <a href="tel:+358401234567" className="flex items-center gap-2 text-sm font-bold text-foreground py-2">

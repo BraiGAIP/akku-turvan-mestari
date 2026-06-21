@@ -1,3 +1,4 @@
+import React from "react";
 import { Shield, Crown, Zap, BadgeCheck, Check } from "lucide-react";
 import { products } from "@/data/productData";
 
