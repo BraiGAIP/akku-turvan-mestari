@@ -151,16 +151,18 @@ const PricingResult = ({ data, onBack }: Props) => {
           </div>
         </div>
 
-        {/* Battery highlight */}
-        <div className="mb-8 rounded-xl p-6 border-2 border-secondary/30 bg-secondary/5">
-          <div className="flex items-start gap-4">
-            <Battery className="w-6 h-6 text-secondary flex-shrink-0 mt-0.5" />
-            <div>
-              <h3 className="font-bold text-foreground mb-1">Kattaa myös akun kapasiteetin heikkenemisen</h3>
-              <p className="text-sm text-muted-foreground">Korvaa, jos kapasiteetti laskee alle 70 % tai alenema ylittää 6 % / 12 kk.</p>
+        {/* Battery highlight — näytetään vain jos vastaava EV-malli löytyy tietokannasta */}
+        {evData && (
+          <div className="mb-8 rounded-xl p-6 border-2 border-secondary/30 bg-secondary/5">
+            <div className="flex items-start gap-4">
+              <Battery className="w-6 h-6 text-secondary flex-shrink-0 mt-0.5" />
+              <div>
+                <h3 className="font-bold text-foreground mb-1">Kattaa myös akun kapasiteetin heikkenemisen</h3>
+                <p className="text-sm text-muted-foreground">Korvaa, jos kapasiteetti laskee alle 70 % tai alenema ylittää 6 % / 12 kk. Edellyttää kapasiteettitestiä sopimuksen alkaessa.</p>
+              </div>
             </div>
           </div>
-        </div>
+        )}
 
         {/* Payment method selector */}
         <div className="mb-6">
