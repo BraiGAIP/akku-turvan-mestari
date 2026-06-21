@@ -30,11 +30,11 @@ const TrustSection = () => (
           <div className="space-y-3">
             <div>
               <p className="text-muted-foreground text-xs uppercase tracking-wider font-semibold mb-0.5">Tuote</p>
-              <p className="text-foreground">Fragus GOSafe -kunnossapitosopimukset</p>
+              <p className="text-foreground">Jatkoturvan kunnossapitosopimukset</p>
             </div>
             <div>
-              <p className="text-muted-foreground text-xs uppercase tracking-wider font-semibold mb-0.5">Kumppani</p>
-              <p className="text-foreground">Fragus Group – Euroopan johtava ajoneuvosuojatuotteiden tarjoaja</p>
+              <p className="text-muted-foreground text-xs uppercase tracking-wider font-semibold mb-0.5">Tuotelinjat</p>
+              <p className="text-foreground">Perusturva · Premium · Sähköturva · Akkuturva</p>
             </div>
           </div>
           <div className="space-y-3">
