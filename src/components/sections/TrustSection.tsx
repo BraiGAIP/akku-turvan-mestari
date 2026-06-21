@@ -7,7 +7,7 @@ const TrustSection = () => (
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center mb-16">
         {[
           { icon: Lock, label: "Turvallinen maksu", desc: "SSL-suojattu" },
-          { icon: Award, label: "Fragus-kumppani", desc: "Virallinen jälleenmyyjä" },
+          { icon: Award, label: "Virallinen toimija", desc: "Suomalainen palvelu" },
           { icon: Shield, label: "14 pv peruutus", desc: "Riskitön kokeilu" },
           { icon: FileText, label: "Selkeät ehdot", desc: "Ei piilokuluja" },
         ].map(({ icon: Icon, label, desc }) => (
