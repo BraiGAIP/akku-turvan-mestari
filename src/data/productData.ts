@@ -102,7 +102,7 @@ export const products: Product[] = [
   {
     id: "gosafe-premium-battery",
     name: "Jatkoturva Akkuturva",
-    subtitle: "Fragus GOSafe Premium & Battery",
+    subtitle: "Jatkoturva Akkuturva",
     tagline: "Kattavin paketti lataushybridille ja yhdistelmäajoneuvoille",
     monthlyPrice: 64,        // 36 kk Ryhmä A, sis. ALV 25,5 %
     fullPrice: 2291,         // 912,90 × 2 × 1,255 ≈ 2 291,38 €, sis. ALV
