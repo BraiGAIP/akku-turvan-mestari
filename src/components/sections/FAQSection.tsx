@@ -3,15 +3,15 @@ import { ChevronDown } from "lucide-react";
 const faqs = [
   {
     q: "Mitkä tuotteet Jatkoturva myy?",
-    a: "Jatkoturva on Fragus Warranty Finland Oy:n virallinen jälleenmyyjä ja myy KAIKKI neljä GOSafe-kunnossapitosopimusta: Basic (edullinen perusturva), Premium (kattava polttomoottori- ja hybridiautoille), Electric (täyssähköautot, sisältää korkeajänniteakun), sekä Premium & Battery (Premium-suoja yhdistettynä akkuturvaan lataushybrideille).",
+    a: "Jatkoturva myy neljä omaa tuotelinjaa: Perusturva (edullinen perusturva), Premium (kattava polttomoottori- ja hybridiautoille), Sähköturva (täyssähköautot, sisältää korkeajänniteakun), sekä Akkuturva (Premium-suoja yhdistettynä akkuturvaan lataushybrideille).",
   },
   {
-    q: "Mikä on Basic- ja Premium-turvan ero?",
+    q: "Mikä on Perusturvan ja Premium-turvan ero?",
     a: "Basic kattaa moottorin ja voimansiirron sisäiset osat ja maksaa vähemmän — korjauskatto on 2 500–4 000 € sopimuskaudesta riippuen, eikä omavastuuta ole. Premium kattaa lisäksi ohjainlaitteet, turbon, polttoaine- ja pakokaasujärjestelmän, jäähdytyksen ja sähkölaitteet, korjauskatto on 6 000–15 000 € ja omavastuu 100 € / vika. Premium soveltuu useimmille — Basic on järkevä vanhempaan tai edullisempaan autoon.",
   },
   {
-    q: "Kenelle GOSafe Electric on tarkoitettu?",
-    a: "Täyssähköauton (BEV) omistajalle. Se kattaa sähköajomoottorin, ohjainlaitteen, korkeajänniteakun (myös kapasiteetin laskun alle 70 %), latausjärjestelmän, DC/DC- ja DC/AC-muuntimet, akun jäähdytyksen, turvalaitteet ja jarrut. Akun kapasiteetin laskua varten Fragus tekee kirjallisen kapasiteettitestin sopimuksen alkaessa.",
+    q: "Kenelle Sähköturva on tarkoitettu?",
+    a: "Täyssähköauton (BEV) omistajalle. Se kattaa sähköajomoottorin, ohjainlaitteen, korkeajänniteakun (myös kapasiteetin laskun alle 70 %), latausjärjestelmän, DC/DC- ja DC/AC-muuntimet, akun jäähdytyksen, turvalaitteet ja jarrut. Akun kapasiteetin laskua varten teemme kirjallisen kapasiteettitestin sopimuksen alkaessa.",
   },
   {
     q: "Mikä on Premium & Battery -tuote?",
@@ -19,19 +19,19 @@ const faqs = [
   },
   {
     q: "Onko omavastuuta?",
-    a: "Basic-turvassa ei ole omavastuuta lainkaan. Premium-, Electric- ja Premium & Battery -tuotteissa omavastuu on 100 € per vika ja se maksetaan korjaamolle. Kaikissa muissa kuluissa Fragus maksaa hyväksytyn korjauksen suoraan korjaamolle korjauskattoon saakka.",
+    a: "Perusturvassa ei ole omavastuuta lainkaan. Premium-, Sähköturva- ja Akkuturva-tuotteissa omavastuu on 100 € per vika ja se maksetaan korjaamolle. Kaikissa muissa kuluissa hyväksytty korjaus maksetaan suoraan korjaamolle korjauskattoon saakka.",
   },
   {
     q: "Mitkä ovat korjauskatot sopimuskausittain?",
-    a: "Basic: 12 kk 2 500 €, 24 kk 3 000 €, 36 kk 4 000 €. Premium / Electric / Premium & Battery (alle 10-vuotias, alle 200 000 km): 12 kk 6 000 €, 24 kk 10 000 €, 36 kk 15 000 €. Vanhemmille autoille tai yli 200 000 km ajaneille sovelletaan rajoitettua sisältöä ja matalampia kattoja (3 000–5 000 €).",
+    a: "Perusturva: 12 kk 2 500 €, 24 kk 3 000 €, 36 kk 4 000 €. Premium / Sähköturva / Akkuturva (alle 10-vuotias, alle 200 000 km): 12 kk 6 000 €, 24 kk 10 000 €, 36 kk 15 000 €. Vanhemmille autoille tai yli 200 000 km ajaneille sovelletaan rajoitettua sisältöä ja matalampia kattoja (3 000–5 000 €).",
   },
   {
     q: "Mille autoille turva sopii?",
-    a: "Auto saa olla enintään 20 vuotta vanha ja siinä saa olla enintään 300 000 km. Täysi sisältö koskee alle 10-vuotiaita autoja, joissa on alle 200 000 km. Tämän jälkeen sovelletaan rajoitettua sisältöä (B-osat). Auton on oltava vikaton sopimuksen alkaessa eikä se saa olla vakuutusyhtiön lunastama (Premium/Electric/Premium & Battery).",
+    a: "Auto saa olla enintään 20 vuotta vanha ja siinä saa olla enintään 300 000 km. Täysi sisältö koskee alle 10-vuotiaita autoja, joissa on alle 200 000 km. Tämän jälkeen sovelletaan rajoitettua sisältöä (B-osat). Auton on oltava vikaton sopimuksen alkaessa eikä se saa olla vakuutusyhtiön lunastama (Premium/Sähköturva/Akkuturva).",
   },
   {
     q: "Miten toimin kun auto vikaantuu?",
-    a: "Tee vikailmoitus Fraguksen verkkolomakkeen kautta ENNEN auton viemistä korjaamolle. Fragus osoittaa korjaamon, missä korjaus tehdään. Korjaamo saa laskutusluvan Frakselta — sinun ei tarvitse maksaa muuta kuin mahdollinen omavastuu (100 € Premium/Electric/Premium & Battery -tuotteissa).",
+    a: "Tee vikailmoitus Jatkoturvan verkkolomakkeen kautta ENNEN auton viemistä korjaamolle. Osoitamme korjaamon, missä korjaus tehdään. Korjaamo saa laskutusluvan suoraan meiltä — sinun ei tarvitse maksaa muuta kuin mahdollinen omavastuu (100 € Premium/Sähköturva/Akkuturva-tuotteissa).",
   },
   {
     q: "Voinko siirtää sopimuksen uudelle omistajalle?",

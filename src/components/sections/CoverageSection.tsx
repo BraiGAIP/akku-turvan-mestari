@@ -7,7 +7,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 };
 
 /**
- * Esittelee kaikki neljä Fragus-tuotetta ja niiden kattavuuden tasavertaisesti.
+ * Esittelee kaikki neljä Jatkoturvan tuotetta ja niiden kattavuuden tasavertaisesti.
  * Korvaa aiemman pelkkä-sähköauto-näkymän.
  */
 const CoverageSection = () => (
