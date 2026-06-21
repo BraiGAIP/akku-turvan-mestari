@@ -1,16 +1,34 @@
+// ============================================================================
+//  Jatkoturva — Fraguksen virallinen tuotevalikoima Suomessa
+// ----------------------------------------------------------------------------
+//  Tuotteet vastaavat Fragus Warranty Finland Oy:n virallisia sopimusehtoja
+//  (Basic 9/2025, Electric 9/2025, Premium 4/2024, Premium & Battery 10/2025).
+//  Korjauskatot ja omavastuut on poimittu suoraan ehdoista.
+//
+//  ⚠️  HINNAT (monthlyPrice / fullPrice) OVAT TÄLLÄ HETKELLÄ PLACEHOLDEREITA.
+//      Vahvista Jatkoturvan lopulliset jälleenmyyntihinnat ennen julkaisua.
+//      Muuta vain alla olevat luvut — muu logiikka käyttää näitä arvoja.
+// ============================================================================
+
 export interface Product {
   id: string;
   name: string;
-  subtitle: string;
+  subtitle: string;          // Fragus-tuotenimi
   tagline: string;
-  monthlyPrice: number;
-  fullPrice: number;
+  monthlyPrice: number;      // 36 kk sopimuksen kuukausihinta (alkaen)
+  fullPrice: number;         // 36 kk sopimuksen kertahinta (alkaen)
   months: number;
   color: string;
   icon: string;
   coverageLevel: 1 | 2 | 3;
   vehicleTypes: string[];
   highlights: string[];
+  repairCaps: {              // Fraguksen viralliset korjauskatot, €
+    "12": number;
+    "24": number;
+    "36": number;
+  };
+  deductible: number;        // omavastuu / vika, €
   recommended: boolean;
 }
 
@@ -18,141 +36,89 @@ export const products: Product[] = [
   {
     id: "gosafe-basic",
     name: "Perusturva",
-    subtitle: "GOSafe Basic",
-    tagline: "Luotettava perusturva jokapäiväiseen ajoon",
-    monthlyPrice: 19,
-    fullPrice: 684,
+    subtitle: "Fragus GOSafe Basic",
+    tagline: "Edullinen perussuoja vanhemmalle polttomoottoriautolle",
+    monthlyPrice: 15,        // TODO: vahvista hinta
+    fullPrice: 540,          // TODO: vahvista hinta
     months: 36,
     color: "text-cyan-400",
     icon: "Shield",
     coverageLevel: 1,
     vehicleTypes: ["Bensiini", "Diesel", "Hybridi"],
     highlights: [
-      "Moottori- ja voimansiirtoviat",
-      "Turbo- ja kompressoriviat",
-      "Sähkö- ja elektroniikkaviat",
-      "24/7 tiepalvelu",
+      "Moottorin sisäiset osat ja jakohihna",
+      "Vaihteiston ja taka-akselin sisäosat",
+      "Käynnistinmoottori ja laturi",
+      "Ei omavastuuta",
     ],
+    repairCaps: { "12": 2500, "24": 3000, "36": 4000 },
+    deductible: 0,
     recommended: false,
   },
   {
-    id: "gosafe-complete",
-    name: "Täysturva",
-    subtitle: "GOSafe Complete",
-    tagline: "Kattavin suoja kaikille polttomoottoriautoille",
-    monthlyPrice: 27,
-    fullPrice: 972,
-    months: 36,
-    color: "text-amber-400",
-    icon: "BadgeCheck",
-    coverageLevel: 2,
-    vehicleTypes: ["Bensiini", "Diesel", "Hybridi"],
-    highlights: [
-      "Kaikki Perusturvan edut",
-      "Ilma- ja alustajärjestelmät",
-      "Polttoaine- ja jäähdytysjärjestelmät",
-      "Erikoistyökalut ja testaus",
-    ],
-    recommended: true,
-  },
-  {
     id: "gosafe-premium",
-    name: "Huippuajajan turva",
-    subtitle: "GOSafe Premium",
-    tagline: "Premium-tason turva arvokkaille ajoneuvoille",
-    monthlyPrice: 35,
-    fullPrice: 1260,
+    name: "Premium-turva",
+    subtitle: "Fragus GOSafe Premium",
+    tagline: "Laaja kattavuus polttomoottori- ja hybridiautoille",
+    monthlyPrice: 29,        // TODO: vahvista hinta
+    fullPrice: 1044,         // TODO: vahvista hinta
     months: 36,
     color: "text-violet-400",
     icon: "Crown",
     coverageLevel: 3,
-    vehicleTypes: ["Bensiini", "Diesel", "Hybridi", "Premium"],
+    vehicleTypes: ["Bensiini", "Diesel", "Hybridi"],
     highlights: [
-      "Kaikki Täysturvan edut",
-      "Korkeammat korvauskatot",
-      "Vaihteisto- ja kytkinvauriot",
-      "Kattava matkavakuutus",
+      "Moottori, vaihteisto, voimansiirto ja nelivedon osat",
+      "Ohjainlaitteet ja ohjelmisto­päivitykset",
+      "Turbo, polttoaine- ja pakokaasujärjestelmä",
+      "Korjauskatto jopa 15 000 € / sopimuskausi",
     ],
-    recommended: false,
+    repairCaps: { "12": 6000, "24": 10000, "36": 15000 },
+    deductible: 100,
+    recommended: true,
   },
   {
     id: "gosafe-electric",
     name: "Sähköturva",
-    subtitle: "GOSafe Electric",
-    tagline: "Älykäs turva sähköajoneuvoille",
-    monthlyPrice: 32,
-    fullPrice: 1152,
+    subtitle: "Fragus GOSafe Electric",
+    tagline: "Täysturva sähköautolle — sisältää korkeajänniteakun",
+    monthlyPrice: 27,        // TODO: vahvista hinta
+    fullPrice: 972,          // TODO: vahvista hinta
     months: 36,
     color: "text-emerald-400",
     icon: "Zap",
     coverageLevel: 2,
-    vehicleTypes: ["Sähkö", "Ladattava hybridi"],
+    vehicleTypes: ["Sähkö"],
     highlights: [
-      "Sähkömoottori- ja invertteriviat",
-      "Akun kapasiteettitakuu",
-      "Latausjärjestelmän viat",
-      "Hybridin sähkökomponentit",
+      "Sähköajomoottori ja ohjainlaitteet",
+      "Korkeajänniteakku ja kapasiteetin lasku",
+      "Latausjärjestelmä, DC/DC- ja DC/AC-muuntimet",
+      "Akun jäähdytys ja turvalaitteet",
     ],
+    repairCaps: { "12": 6000, "24": 10000, "36": 15000 },
+    deductible: 100,
     recommended: false,
   },
   {
-    id: "gosafe-battery",
-    name: "Akkuturva",
-    subtitle: "GOSafe Battery",
-    tagline: "Erikoisturva sähköauton akulle",
-    monthlyPrice: 18,
-    fullPrice: 648,
+    id: "gosafe-premium-battery",
+    name: "Premium + Akkuturva",
+    subtitle: "Fragus GOSafe Premium & Battery",
+    tagline: "Kattavin paketti lataushybridille ja yhdistelmäajoneuvoille",
+    monthlyPrice: 35,        // TODO: vahvista hinta
+    fullPrice: 1260,         // TODO: vahvista hinta
     months: 36,
-    color: "text-sky-400",
-    icon: "Battery",
-    coverageLevel: 1,
-    vehicleTypes: ["Sähkö", "Ladattava hybridi"],
+    color: "text-amber-400",
+    icon: "BadgeCheck",
+    coverageLevel: 3,
+    vehicleTypes: ["Lataushybridi", "Hybridi"],
     highlights: [
-      "Akun kapasiteettivaje",
-      "Akun soluvauriot",
-      "Latausvikojen aiheuttamat vauriot",
-      "Korvaus jopa 10 000 € asti",
+      "Kaikki Premium-turvan kattavuus",
+      "Korkeajänniteakku ja kapasiteettiturva",
+      "Sähkömoottorit ja invertterit",
+      "Korjauskatto jopa 15 000 € / sopimuskausi",
     ],
-    recommended: false,
-  },
-  {
-    id: "gosafe-motorcycle",
-    name: "Moottoripyöräturva",
-    subtitle: "GOSafe Motorcycle",
-    tagline: "Kevyt ja kattava turva moottoripyörälle",
-    monthlyPrice: 17,
-    fullPrice: 612,
-    months: 36,
-    color: "text-orange-400",
-    icon: "Wrench",
-    coverageLevel: 1,
-    vehicleTypes: ["Moottoripyörä"],
-    highlights: [
-      "Moottori- ja vaihteistoviat",
-      "Sähkö- ja sytytysjärjestelmät",
-      "Jarru- ja alustavirheet",
-      "24/7 tiepalvelu koko Euroopassa",
-    ],
-    recommended: false,
-  },
-  {
-    id: "gosafe-motorhome",
-    name: "Matkailuautoturva",
-    subtitle: "GOSafe Motorhome",
-    tagline: "Luotettava kumppani matkailuautoilijalle",
-    monthlyPrice: 29,
-    fullPrice: 1044,
-    months: 36,
-    color: "text-rose-400",
-    icon: "Car",
-    coverageLevel: 2,
-    vehicleTypes: ["Matkailuauto", "Asuntovaunu"],
-    highlights: [
-      "Moottori- ja asunto-osan viat",
-      "Sähkö-, vesi- ja kaasujärjestelmät",
-      "Jääkaappi, lämmitin ja ilmastointi",
-      "Matkavakuutus koko Euroopassa",
-    ],
+    repairCaps: { "12": 6000, "24": 10000, "36": 15000 },
+    deductible: 100,
     recommended: false,
   },
 ];

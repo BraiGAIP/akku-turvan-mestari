@@ -122,7 +122,7 @@ const PricingResult = ({ data, onBack }: Props) => {
             <h3 className="font-bold text-foreground mb-4">Ilman suojaa vs. Jatkoturva</h3>
             <div className="flex items-center gap-6 flex-wrap">
               <div className="flex-1 min-w-[160px]">
-                <p className="text-sm text-muted-foreground mb-1">Akun korjaus</p>
+                <p className="text-sm text-muted-foreground mb-1">Tyypillinen yllätyskorjaus</p>
                 <p className="text-3xl font-black text-destructive">{evData.avgReplacementCost.toLocaleString("fi-FI")} €</p>
               </div>
               <ArrowRight className="w-5 h-5 text-muted-foreground hidden md:block" />
@@ -151,16 +151,18 @@ const PricingResult = ({ data, onBack }: Props) => {
           </div>
         </div>
 
-        {/* Battery highlight */}
-        <div className="mb-8 rounded-xl p-6 border-2 border-secondary/30 bg-secondary/5">
-          <div className="flex items-start gap-4">
-            <Battery className="w-6 h-6 text-secondary flex-shrink-0 mt-0.5" />
-            <div>
-              <h3 className="font-bold text-foreground mb-1">Kattaa myös akun kapasiteetin heikkenemisen</h3>
-              <p className="text-sm text-muted-foreground">Korvaa, jos kapasiteetti laskee alle 70 % tai alenema ylittää 6 % / 12 kk.</p>
+        {/* Battery highlight — näytetään vain jos vastaava EV-malli löytyy tietokannasta */}
+        {evData && (
+          <div className="mb-8 rounded-xl p-6 border-2 border-secondary/30 bg-secondary/5">
+            <div className="flex items-start gap-4">
+              <Battery className="w-6 h-6 text-secondary flex-shrink-0 mt-0.5" />
+              <div>
+                <h3 className="font-bold text-foreground mb-1">Kattaa myös akun kapasiteetin heikkenemisen</h3>
+                <p className="text-sm text-muted-foreground">Korvaa, jos kapasiteetti laskee alle 70 % tai alenema ylittää 6 % / 12 kk. Edellyttää kapasiteettitestiä sopimuksen alkaessa.</p>
+              </div>
             </div>
           </div>
-        </div>
+        )}
 
         {/* Payment method selector */}
         <div className="mb-6">
@@ -238,8 +240,8 @@ const PricingResult = ({ data, onBack }: Props) => {
             Tämä on pieni hinta verrattuna mahdolliseen riskiin
           </h3>
           <div className="flex items-center justify-between p-3 rounded-lg bg-destructive/5 border border-destructive/10">
-            <span className="text-sm text-muted-foreground">Akun korjaus</span>
-            <span className="text-sm font-black text-destructive">5 000 – 20 000 €</span>
+            <span className="text-sm text-muted-foreground">Tyypillinen yllätyskorjaus</span>
+            <span className="text-sm font-black text-destructive">3 000 – 20 000 €</span>
           </div>
           <div className="flex items-center justify-between p-3 rounded-lg bg-secondary/5 border border-secondary/10">
             <span className="text-sm text-muted-foreground">Jatkoturva</span>

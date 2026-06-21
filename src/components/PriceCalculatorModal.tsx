@@ -218,7 +218,7 @@ const PriceCalculatorModal = ({ open, onComplete, onClose }: Props) => {
             {step === "method" && (
               <div>
                 <h2 className="text-xl font-black text-white mb-1 tracking-tight">
-                  Laske akkuturvan hinta autollesi
+                  Laske Jatkoturvan hinta autollesi
                 </h2>
                 <p className="text-sm text-white/50 mb-6">
                   Syötä tiedot – saat hinnan heti. Ei sitoutumista.
@@ -516,7 +516,7 @@ const PriceCalculatorModal = ({ open, onComplete, onClose }: Props) => {
                     className="w-full h-13 rounded-xl text-base font-bold bg-gradient-to-r from-primary to-primary/80 btn-glow hover:scale-[1.02] transition-transform"
                     onClick={handleBuy}
                   >
-                    Osta akkuturva <ArrowRight className="w-4 h-4 ml-1" />
+                    Osta lisäturva <ArrowRight className="w-4 h-4 ml-1" />
                   </Button>
                   <Button
                     variant="ghost"

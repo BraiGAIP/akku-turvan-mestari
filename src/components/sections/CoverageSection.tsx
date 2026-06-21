@@ -1,78 +1,93 @@
-import { Zap, Car, Shield, Battery, Sparkles, Thermometer, PlugZap, ShieldCheck, Wind, Cpu, Check } from "lucide-react";
+import React from "react";
+import { Shield, Crown, Zap, BadgeCheck, Check } from "lucide-react";
+import { products } from "@/data/productData";
 
-const categories = [
-  { icon: Zap, title: "Sähköajomoottori", desc: "Sähkömoottori ja sen komponentit turvattu" },
-  { icon: Cpu, title: "Moottorin ohjainlaitteet", desc: "Ohjauselektroniikka ja invertteri suojattu" },
-  { icon: Car, title: "Voimansiirto", desc: "Vaihteisto ja kriittiset osat katettu" },
-  { icon: Shield, title: "Jarru- ja ohjausjärjestelmä", desc: "Keskeiset jarru- ja ohjauskomponentit" },
-  { icon: Battery, title: "Korkeajänniteakku (HV)", desc: "Sähköauton kallein osa turvattu" },
-  { icon: PlugZap, title: "Latausjärjestelmä", desc: "Sisäinen laturi ja muuntimet" },
-  { icon: Thermometer, title: "Akun jäähdytys", desc: "Lämpötilanhallinta ja jäähdytyspiiri" },
-  { icon: ShieldCheck, title: "Turvalaitteet", desc: "Airbag ja turvajärjestelmät" },
-  { icon: Wind, title: "Lämmitys ja jäähdytys", desc: "Ilmastointijärjestelmä suojattu" },
-  { icon: Sparkles, title: "Mukavuustoiminnot", desc: "Sähköiset lisävarusteet" },
-];
+const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+  Shield, Crown, Zap, BadgeCheck,
+};
 
+/**
+ * Esittelee kaikki neljä Fragus-tuotetta ja niiden kattavuuden tasavertaisesti.
+ * Korvaa aiemman pelkkä-sähköauto-näkymän.
+ */
 const CoverageSection = () => (
-  <>
-    <section className="py-20 px-6 relative">
-      <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-secondary/5 blur-[120px]" />
-      <div className="max-w-6xl mx-auto relative">
-        <div className="text-center mb-14">
-          <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-secondary bg-secondary/10 mb-4">
-            GoSafe Electric
-          </span>
-          <h2 className="text-3xl md:text-4xl font-black text-foreground tracking-tight mb-4">Mitä kunnossapitosopimus kattaa?</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Kattava turva sähköauton kaikille kriittisille komponenteille.
-            Perustuu Fraguksen virallisiin sopimusehtoihin.
-          </p>
-        </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-3">
-          {categories.map((c) => (
-            <div key={c.title} className="glass-card rounded-xl p-4 hover:border-primary/30 hover:translate-y-[-2px] transition-all duration-300">
-              <c.icon className="w-5 h-5 text-secondary mb-2" />
-              <h3 className="font-semibold text-foreground text-sm mb-1">{c.title}</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">{c.desc}</p>
-            </div>
-          ))}
-        </div>
-        <p className="text-center text-xs text-muted-foreground mt-6">
-          Korvaa tekniset viat ja rikkoutumiset – ei normaalia kulumista · Perustuu Fraguksen virallisiin ehtoihin
+  <section className="py-20 px-6 relative">
+    <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-secondary/5 blur-[120px]" />
+    <div className="max-w-6xl mx-auto relative">
+      <div className="text-center mb-14">
+        <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-secondary bg-secondary/10 mb-4">
+          Fragus GOSafe -valikoima
+        </span>
+        <h2 className="text-3xl md:text-4xl font-black text-foreground tracking-tight mb-4">
+          Neljä turvatasoa — yksi sopii sinunkin autoosi
+        </h2>
+        <p className="text-muted-foreground max-w-2xl mx-auto">
+          Jatkoturva myy KOKO Fraguksen virallisen tuotevalikoiman: perinteisestä
+          polttomoottoriautosta sähköautoon ja lataushybridiin. Jokaisen tuotteen
+          kattavuus ja korjauskatto perustuvat Fraguksen virallisiin sopimusehtoihin.
         </p>
       </div>
-    </section>
 
-    <section className="py-12 px-6">
-      <div className="max-w-4xl mx-auto rounded-2xl p-8 border border-secondary/20 bg-secondary/5">
-        <div className="flex flex-col md:flex-row items-start gap-6">
-          <div className="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center flex-shrink-0">
-            <Battery className="w-7 h-7 text-secondary" />
-          </div>
-          <div>
-            <h3 className="text-2xl font-black text-foreground mb-3">
-              Kattaa myös akun kapasiteetin heikkenemisen
-            </h3>
-
-            <p className="text-muted-foreground leading-relaxed mb-5">
-               Sähköauton akun kapasiteetti laskee ajan myötä. Jatkoturva korvaa,
-              jos kapasiteetti laskee merkittävästi.
-            </p>
-            <div className="grid sm:grid-cols-2 gap-3">
-              <div className="flex items-start gap-2 text-sm text-foreground bg-muted/50 rounded-lg p-3 border border-border">
-                <Check className="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" />
-                <span>Korvaa kapasiteetin laskun <strong>alle 70 %</strong></span>
+      <div className="grid sm:grid-cols-2 gap-5">
+        {products.map((p) => {
+          const Icon = iconMap[p.icon] ?? Shield;
+          return (
+            <div
+              key={p.id}
+              className="glass-card rounded-2xl p-6 hover:border-primary/30 hover:translate-y-[-2px] transition-all duration-300"
+            >
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-12 h-12 rounded-xl bg-muted/40 flex items-center justify-center flex-shrink-0">
+                  <Icon className={`w-6 h-6 ${p.color}`} />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg font-bold text-foreground">{p.name}</h3>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                    {p.subtitle}
+                  </p>
+                  <p className="text-sm text-muted-foreground mt-1">{p.tagline}</p>
+                </div>
               </div>
-              <div className="flex items-start gap-2 text-sm text-foreground bg-muted/50 rounded-lg p-3 border border-border">
-                <Check className="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" />
-                <span>Seuranta: alenema <strong>yli 6 % / 12 kk</strong></span>
+
+              <ul className="space-y-2 mb-4">
+                {p.highlights.map((h) => (
+                  <li key={h} className="flex items-start gap-2 text-sm text-foreground/90">
+                    <Check className="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" />
+                    {h}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="border-t border-border/40 pt-3 text-xs text-muted-foreground flex flex-wrap gap-x-4 gap-y-1">
+                <span>
+                  Korjauskatto 36 kk:{" "}
+                  <strong className="text-foreground">
+                    {p.repairCaps["36"].toLocaleString("fi-FI")} €
+                  </strong>
+                </span>
+                <span>
+                  Omavastuu:{" "}
+                  <strong className="text-foreground">
+                    {p.deductible === 0 ? "0 €" : `${p.deductible} € / vika`}
+                  </strong>
+                </span>
+                <span>
+                  Sopimuskaudet:{" "}
+                  <strong className="text-foreground">12 / 24 / 36 kk</strong>
+                </span>
               </div>
             </div>
-          </div>
-        </div>
+          );
+        })}
       </div>
-    </section>
-  </>
+
+      <p className="text-center text-xs text-muted-foreground mt-8">
+        Korvaa tekniset viat ja rikkoutumiset — ei normaalia kulumista, kolareita
+        eikä ennen sopimuksen alkua olleita vikoja · Perustuu Fraguksen virallisiin
+        sopimusehtoihin
+      </p>
+    </div>
+  </section>
 );
 
 export default CoverageSection;

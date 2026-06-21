@@ -23,27 +23,17 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 
 const filters = [
   { key: "all", label: "Kaikki" },
-  { key: "cars", label: "Autot" },
-  { key: "electric", label: "Sähköautot" },
-  { key: "motorcycle", label: "Moottoripyörät" },
-  { key: "motorhome", label: "Matkailuajoneuvot" },
+  { key: "ice", label: "Bensiini / Diesel" },
+  { key: "hybrid", label: "Hybridi & lataushybridi" },
+  { key: "electric", label: "Sähköauto" },
 ] as const;
 
 function getFilterKey(product: Product): string[] {
   const keys: string[] = [];
   const vt = product.vehicleTypes;
-  if (vt.includes("Bensiini") || vt.includes("Diesel") || vt.includes("Hybridi") || vt.includes("Premium")) {
-    keys.push("cars");
-  }
-  if (vt.includes("Sähkö") || vt.includes("Ladattava hybridi")) {
-    keys.push("electric");
-  }
-  if (vt.includes("Moottoripyörä")) {
-    keys.push("motorcycle");
-  }
-  if (vt.includes("Matkailuauto") || vt.includes("Asuntovaunu")) {
-    keys.push("motorhome");
-  }
+  if (vt.includes("Bensiini") || vt.includes("Diesel")) keys.push("ice");
+  if (vt.includes("Hybridi") || vt.includes("Lataushybridi")) keys.push("hybrid");
+  if (vt.includes("Sähkö")) keys.push("electric");
   return keys;
 }
 
@@ -103,7 +93,7 @@ const PricingTiersSection = ({ onStartFlow, onSelectProduct }: PricingTiersSecti
           ))}
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {filteredProducts.map((product) => {
             const IconComponent = iconMap[product.icon] || Shield;
             return (
