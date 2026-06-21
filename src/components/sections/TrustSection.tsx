@@ -62,7 +62,7 @@ const TrustSection = () => (
           </div>
         </div>
         <p className="text-xs text-muted-foreground mt-6 pt-4 border-t border-border">
-          Jatkoturva on Fragus Warranty Finland Oy:n virallinen jälleenmyyjä Suomessa. Kaikki sopimukset noudattavat Fraguksen virallisia GOSafe-ehtoja (Basic, Premium, Electric, Premium & Battery).
+          Jatkoturva on Suomessa toimiva auton kunnossapitosopimusten tarjoaja. Sopimuslinjat: Perusturva, Premium, Sähköturva ja Akkuturva.
         </p>
       </div>
     </div>
