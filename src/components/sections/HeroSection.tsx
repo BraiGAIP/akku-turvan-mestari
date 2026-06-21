@@ -39,13 +39,13 @@ const HeroSection = ({ onStartFlow }: HeroSectionProps) => (
       position: 'relative',
     }}
   >
-    {/* Dark, neutral overlay — image recedes into the background */}
+    {/* Lighter overlay — background image stays visible */}
     <div
       style={{
         position: 'absolute',
         inset: 0,
         background:
-          'linear-gradient(135deg, rgba(10,15,25,0.92) 0%, rgba(10,15,25,0.78) 55%, rgba(10,15,25,0.62) 100%)',
+          'linear-gradient(135deg, rgba(15,20,35,0.55) 0%, rgba(15,20,35,0.30) 55%, rgba(15,20,35,0.10) 100%)',
         zIndex: 1,
       }}
     />
@@ -53,7 +53,7 @@ const HeroSection = ({ onStartFlow }: HeroSectionProps) => (
       style={{
         position: 'absolute',
         inset: 0,
-        background: 'rgba(10,15,25,0.35)',
+        background: 'rgba(15,20,35,0.15)',
         zIndex: 1,
       }}
     />
