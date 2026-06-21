@@ -15,8 +15,10 @@ const SiteFooter = () => (
           Evästeet
         </button>
       </div>
-      <p className="text-xs text-muted-foreground">
-        © {new Date().getFullYear()} Jatkoturva · Perustuu Fragus GoSafe -tuotteeseen
+      <p className="text-xs text-muted-foreground text-center md:text-right">
+        © {new Date().getFullYear()} Jatkoturva
+        <br />
+        <span className="opacity-60">Sopimukset hallinnoi Fragus Warranty Finland Oy</span>
       </p>
     </div>
   </footer>
