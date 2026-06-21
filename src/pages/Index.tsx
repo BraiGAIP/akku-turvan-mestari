@@ -13,6 +13,7 @@ import SiteFooter from "@/components/sections/SiteFooter";
 import Testimonials from "@/components/sections/Testimonials";
 import ComparisonTable from "@/components/sections/ComparisonTable";
 import SavingsCalculator from "@/components/sections/SavingsCalculator";
+import PriceCalculator from "@/components/sections/PriceCalculator";
 import CompetitiveAdvantageSection from "@/components/sections/CompetitiveAdvantageSection";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import PriceCalculatorModal from "@/components/PriceCalculatorModal";
@@ -46,6 +47,7 @@ const Index = () => {
       <ScrollReveal className="section-light" delay={50}><ComparisonTable /></ScrollReveal>
       <ScrollReveal className="section-light-alt" delay={50}><CostComparison onStartFlow={startFlow} /></ScrollReveal>
       <ScrollReveal className="section-light" delay={50}><SavingsCalculator onStartFlow={startFlow} /></ScrollReveal>
+      <ScrollReveal className="section-light-alt" delay={50}><PriceCalculator onStartFlow={startFlow} /></ScrollReveal>
       <ScrollReveal className="section-dark-deep" delay={100}><CoverageSection /></ScrollReveal>
       <ScrollReveal className="section-light" delay={50}><PricingTiersSection onStartFlow={startFlow} /></ScrollReveal>
       <ScrollReveal className="section-light-alt"><Testimonials /></ScrollReveal>
