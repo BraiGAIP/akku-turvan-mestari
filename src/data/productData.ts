@@ -35,7 +35,7 @@ export interface Product {
 export const products: Product[] = [
   {
     id: "gosafe-basic",
-    name: "Perusturva",
+    name: "Jatkoturva Perusturva",
     subtitle: "Fragus GOSafe Basic",
     tagline: "Edullinen perussuoja vanhemmalle polttomoottoriautolle",
     monthlyPrice: 15,        // TODO: vahvista hinta
@@ -57,7 +57,7 @@ export const products: Product[] = [
   },
   {
     id: "gosafe-premium",
-    name: "Premium-turva",
+    name: "Jatkoturva Premium",
     subtitle: "Fragus GOSafe Premium",
     tagline: "Laaja kattavuus polttomoottori- ja hybridiautoille",
     monthlyPrice: 29,        // TODO: vahvista hinta
@@ -79,7 +79,7 @@ export const products: Product[] = [
   },
   {
     id: "gosafe-electric",
-    name: "Sähköturva",
+    name: "Jatkoturva Sähköturva",
     subtitle: "Fragus GOSafe Electric",
     tagline: "Täysturva sähköautolle — sisältää korkeajänniteakun",
     monthlyPrice: 27,        // TODO: vahvista hinta
@@ -101,7 +101,7 @@ export const products: Product[] = [
   },
   {
     id: "gosafe-premium-battery",
-    name: "Premium + Akkuturva",
+    name: "Jatkoturva Akkuturva",
     subtitle: "Fragus GOSafe Premium & Battery",
     tagline: "Kattavin paketti lataushybridille ja yhdistelmäajoneuvoille",
     monthlyPrice: 35,        // TODO: vahvista hinta
