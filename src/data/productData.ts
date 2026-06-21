@@ -80,7 +80,7 @@ export const products: Product[] = [
   {
     id: "gosafe-electric",
     name: "Jatkoturva Sähköturva",
-    subtitle: "Fragus GOSafe Electric",
+    subtitle: "Jatkoturva Sähköturva",
     tagline: "Täysturva sähköautolle — sisältää korkeajänniteakun",
     monthlyPrice: 49,        // 36 kk Ryhmä A, sis. ALV 25,5 %
     fullPrice: 1779,         // 708,90 × 2 × 1,255 ≈ 1 779,34 €, sis. ALV
