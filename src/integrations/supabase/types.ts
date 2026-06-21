@@ -145,6 +145,69 @@ export type Database = {
           },
         ]
       }
+      pricing_settings: {
+        Row: {
+          description: string | null
+          key: string
+          updated_at: string
+          value_numeric: number | null
+          value_text: string | null
+        }
+        Insert: {
+          description?: string | null
+          key: string
+          updated_at?: string
+          value_numeric?: number | null
+          value_text?: string | null
+        }
+        Update: {
+          description?: string | null
+          key?: string
+          updated_at?: string
+          value_numeric?: number | null
+          value_text?: string | null
+        }
+        Relationships: []
+      }
+      product_prices: {
+        Row: {
+          consumer_price_gross: number
+          created_at: string
+          id: string
+          notes: string | null
+          power_tier: string | null
+          product_id: string
+          term_months: number
+          updated_at: string
+          vat_rate: number
+          wholesale_price_net: number
+        }
+        Insert: {
+          consumer_price_gross: number
+          created_at?: string
+          id?: string
+          notes?: string | null
+          power_tier?: string | null
+          product_id: string
+          term_months: number
+          updated_at?: string
+          vat_rate?: number
+          wholesale_price_net: number
+        }
+        Update: {
+          consumer_price_gross?: number
+          created_at?: string
+          id?: string
+          notes?: string | null
+          power_tier?: string | null
+          product_id?: string
+          term_months?: number
+          updated_at?: string
+          vat_rate?: number
+          wholesale_price_net?: number
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           created_at: string
