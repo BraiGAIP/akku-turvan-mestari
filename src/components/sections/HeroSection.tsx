@@ -39,13 +39,21 @@ const HeroSection = ({ onStartFlow }: HeroSectionProps) => (
       position: 'relative',
     }}
   >
-    {/* Dark overlay for text readability */}
+    {/* Dark, neutral overlay — image recedes into the background */}
     <div
       style={{
         position: 'absolute',
         inset: 0,
         background:
-          'linear-gradient(135deg, rgba(10,18,32,0.82) 0%, rgba(10,18,32,0.45) 60%, rgba(10,18,32,0.2) 100%)',
+          'linear-gradient(135deg, rgba(10,15,25,0.92) 0%, rgba(10,15,25,0.78) 55%, rgba(10,15,25,0.62) 100%)',
+        zIndex: 1,
+      }}
+    />
+    <div
+      style={{
+        position: 'absolute',
+        inset: 0,
+        background: 'rgba(10,15,25,0.35)',
         zIndex: 1,
       }}
     />
@@ -55,44 +63,44 @@ const HeroSection = ({ onStartFlow }: HeroSectionProps) => (
 
     <div className="relative z-10 max-w-7xl mx-auto px-6 py-16 md:py-24 w-full" style={{ position: 'relative', zIndex: 2 }}>
       <div className="max-w-2xl mb-14">
-        {/* Trust badge with gold accent */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-6">
-          <Zap className="w-4 h-4 text-accent" />
-          <span className="text-sm font-semibold text-accent">Suomalainen auton lisäturva verkosta</span>
+        {/* Trust badge — restrained */}
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-foreground/5 border border-foreground/15 mb-6">
+          <Zap className="w-4 h-4 text-foreground/80" />
+          <span className="text-sm font-semibold text-foreground/85">Suomalainen auton lisäturva verkosta</span>
         </div>
 
         <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-black text-foreground leading-[1.05] tracking-tight uppercase mb-4">
-          Auton kunnossapitosopimus <span className="text-brand-gradient">käytetylle autolle</span>
+          Auton kunnossapitosopimus <span className="text-secondary">käytetylle autolle</span>
         </h1>
-        <p className="text-xl md:text-2xl font-bold text-foreground/85 leading-snug mb-3">
+        <p className="text-xl md:text-2xl font-semibold text-foreground/80 leading-snug mb-3">
           Kun tehdastakuu päättyy — me jatkamme.
         </p>
-        <p className="text-base md:text-lg text-foreground/75 leading-snug mb-6">
-          Fraguksen jatkoturva suojaa sinua jopa 20 000 € yllätyskorjauksilta.
+        <p className="text-base md:text-lg text-foreground/65 leading-snug mb-6">
+          Jatkoturva suojaa sinua jopa 20 000 € yllätyskorjauksilta.
         </p>
 
         <h2 className="sr-only">Jatkoturva – Suomen selkein lisäturva</h2>
 
 
-        {/* Trust badges */}
+        {/* Trust badges — calmer, no gradient fill */}
         <div className="flex flex-wrap gap-2 mb-6">
           {["Ei omavastuuta", "Päätös tunnissa", "Kotimainen palvelu"].map((label) => (
             <span
               key={label}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-gradient-soft border border-[#C44579]/30 text-sm font-bold text-foreground"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-foreground/[0.04] border border-foreground/12 text-sm font-semibold text-foreground/90"
             >
-              <Check className="w-4 h-4 text-[#C44579]" strokeWidth={3} />
+              <Check className="w-4 h-4 text-secondary" strokeWidth={3} />
               {label}
             </span>
           ))}
         </div>
 
-        {/* Pain amplifier */}
-        <div className="bg-[#F2F4F7]/92 backdrop-blur-md border border-[#4C2EB8]/25 rounded-xl px-5 py-3 mb-6 inline-block shadow-lg">
-          <p className="text-base md:text-lg font-bold text-destructive">
+        {/* Pain amplifier — dark card, calm contrast */}
+        <div className="bg-card/80 backdrop-blur-md border border-border rounded-xl px-5 py-3 mb-6 inline-block shadow-lg">
+          <p className="text-base md:text-lg font-bold text-foreground">
             Moottorin, vaihteiston tai akun korjaus 3 000–20 000 €
           </p>
-          <p className="text-sm text-brand-gradient font-bold mt-1">
+          <p className="text-sm text-secondary font-semibold mt-1">
             Jatkoturva alkaen 21 €/kk (sis. ALV 25,5 %)
           </p>
         </div>
