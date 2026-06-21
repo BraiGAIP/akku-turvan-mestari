@@ -58,8 +58,9 @@ const CostComparison = ({ onStartFlow }: CostComparisonProps) => (
           <CostBar label="Sähköauton korkeajänniteakku"              value={12000} max={20000} variant="danger" />
           <CostBar label="Lataushybridin invertteri ja sähkömoottori" value={7500}  max={20000} variant="danger" />
           <div className="border-t border-border pt-6">
-            <CostBar label="Jatkoturva 36 kk — kerralla alkaen" value={540} max={20000} variant="success" />
-            <p className="text-secondary font-bold text-sm mt-2">eli alkaen 15 € kuukaudessa</p>
+            <CostBar label="Jatkoturva 36 kk — kerralla alkaen" value={740} max={20000} variant="success" />
+            <p className="text-secondary font-bold text-sm mt-2">eli alkaen 21 € kuukaudessa</p>
+            <p className="text-xs text-muted-foreground mt-0.5">Hinnat sis. ALV 25,5 %.</p>
           </div>
         </div>
         <div className="mt-8 p-4 rounded-xl bg-secondary/5 border border-secondary/20 flex items-start gap-3">
