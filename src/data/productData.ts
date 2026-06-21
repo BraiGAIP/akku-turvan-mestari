@@ -58,7 +58,7 @@ export const products: Product[] = [
   {
     id: "gosafe-premium",
     name: "Jatkoturva Premium",
-    subtitle: "Fragus GOSafe Premium",
+    subtitle: "Jatkoturva Premium",
     tagline: "Laaja kattavuus polttomoottori- ja hybridiautoille",
     monthlyPrice: 43,        // 36 kk Ryhmä A, sis. ALV 25,5 %
     fullPrice: 1523,         // 606,90 × 2 × 1,255 ≈ 1 523,32 €, sis. ALV
