@@ -79,16 +79,16 @@ const HeroSection = ({ onStartFlow }: HeroSectionProps) => (
           {["Ei omavastuuta", "Päätös tunnissa", "Kotimainen palvelu"].map((label) => (
             <span
               key={label}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-gradient-soft border border-[#FF4D9D]/30 text-sm font-bold text-foreground"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-gradient-soft border border-[#C44579]/30 text-sm font-bold text-foreground"
             >
-              <Check className="w-4 h-4 text-[#FF4D9D]" strokeWidth={3} />
+              <Check className="w-4 h-4 text-[#C44579]" strokeWidth={3} />
               {label}
             </span>
           ))}
         </div>
 
         {/* Pain amplifier */}
-        <div className="bg-[#F2F4F7]/92 backdrop-blur-md border border-[#6A3DF0]/25 rounded-xl px-5 py-3 mb-6 inline-block shadow-lg">
+        <div className="bg-[#F2F4F7]/92 backdrop-blur-md border border-[#4C2EB8]/25 rounded-xl px-5 py-3 mb-6 inline-block shadow-lg">
           <p className="text-base md:text-lg font-bold text-destructive">
             Moottorin, vaihteiston tai akun korjaus 3 000–20 000 €
           </p>

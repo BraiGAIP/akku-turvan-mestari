@@ -10,7 +10,7 @@ const rows: Array<{ feature: string; us: string; them: string }> = [
 ];
 
 const Cell = ({ kind }: { kind: string }) => {
-  if (kind === "yes") return <Check className="w-5 h-5 text-[#FF4D9D] mx-auto" strokeWidth={3} />;
+  if (kind === "yes") return <Check className="w-5 h-5 text-[#C44579] mx-auto" strokeWidth={3} />;
   if (kind === "no")  return <X className="w-5 h-5 text-muted-foreground/60 mx-auto" />;
   if (kind === "dash") return <Minus className="w-5 h-5 text-muted-foreground/60 mx-auto" />;
   return <span className="text-xs text-muted-foreground">Vaihtelee</span>;

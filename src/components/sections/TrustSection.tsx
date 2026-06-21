@@ -42,10 +42,10 @@ const TrustSection = () => (
               <p className="text-muted-foreground text-xs uppercase tracking-wider font-semibold mb-1">Yhteystiedot</p>
               <div className="space-y-1.5 text-foreground">
                 <a href="tel:+358401234567" className="flex items-center gap-2 hover:text-brand-gradient">
-                  <Phone className="w-3.5 h-3.5 text-[#FF4D9D]" /> 040 123 4567
+                  <Phone className="w-3.5 h-3.5 text-[#C44579]" /> 040 123 4567
                 </a>
                 <a href="mailto:info@jatkoturva.fi" className="flex items-center gap-2 hover:text-brand-gradient">
-                  <span className="text-[#FF4D9D]">@</span> info@jatkoturva.fi
+                  <span className="text-[#C44579]">@</span> info@jatkoturva.fi
                 </a>
                 <a href="https://wa.me/358401234567" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-brand-gradient">
                   <span className="text-[#25D366] font-bold text-xs">WA</span> WhatsApp 040 123 4567

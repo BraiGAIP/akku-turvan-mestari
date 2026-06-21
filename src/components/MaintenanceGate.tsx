@@ -34,7 +34,7 @@ function MaintenancePage() {
         <span
           className="mt-10 text-5xl font-light select-none"
           style={{
-            backgroundImage: "linear-gradient(90deg, #6A3DF0, #FF4D9D)",
+            backgroundImage: "linear-gradient(90deg, #4C2EB8, #C44579)",
             WebkitBackgroundClip: "text",
             backgroundClip: "text",
             color: "transparent",

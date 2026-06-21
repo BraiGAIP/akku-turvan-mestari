@@ -32,7 +32,7 @@ export default function CompetitiveAdvantageSection({ onStartFlow }: Competitive
   return (
     <section
       style={{
-        background: "linear-gradient(135deg, #6A3DF0, #FF4D9D)",
+        background: "linear-gradient(135deg, #4C2EB8, #C44579)",
       }}
       className="w-full py-12 md:py-16"
     >
@@ -104,7 +104,7 @@ export default function CompetitiveAdvantageSection({ onStartFlow }: Competitive
             className="h-12 px-7 font-bold w-full md:w-auto rounded-lg"
             style={{
               backgroundColor: "#FFFFFF",
-              color: "#6A3DF0",
+              color: "#4C2EB8",
             }}
             onMouseEnter={(e) => {
               (e.currentTarget as HTMLButtonElement).style.backgroundColor = "rgba(255,255,255,0.9)";
