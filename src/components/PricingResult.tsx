@@ -24,6 +24,8 @@ const PricingResult = ({ data, onBack }: Props) => {
   const [clientSecret, setClientSecret] = useState<string | null>(null);
   const [isLoadingPayment, setIsLoadingPayment] = useState(false);
   const [paymentOption, setPaymentOption] = useState<"full" | "monthly">("monthly");
+  const [customerEmail, setCustomerEmail] = useState("");
+  const [showEmailPrompt, setShowEmailPrompt] = useState(false);
 
   const evData = getEVData(data.brand, data.model);
   const eligibility = checkEligibility(data.year, data.mileage);
