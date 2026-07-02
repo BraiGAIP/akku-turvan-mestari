@@ -1,11 +1,15 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { CoverageTier, calculatePricing, getEVData, checkEligibility, repairLimits } from "@/data/evDatabase";
 import type { VehicleData } from "@/components/QualificationFlow";
 import { Shield, Check, AlertTriangle, ArrowRight, ArrowLeft, Lock, CreditCard, FileText, Battery, Wrench, Info, Zap, Calendar, Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { toast } from "@/hooks/use-toast";
 import StripeCheckout from "./StripeCheckout";
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 interface Props {
   data: VehicleData;
