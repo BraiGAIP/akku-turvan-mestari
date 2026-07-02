@@ -1,11 +1,15 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { CoverageTier, calculatePricing, getEVData, checkEligibility, repairLimits } from "@/data/evDatabase";
 import type { VehicleData } from "@/components/QualificationFlow";
 import { Shield, Check, AlertTriangle, ArrowRight, ArrowLeft, Lock, CreditCard, FileText, Battery, Wrench, Info, Zap, Calendar, Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { toast } from "@/hooks/use-toast";
 import StripeCheckout from "./StripeCheckout";
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 interface Props {
   data: VehicleData;
@@ -20,6 +24,8 @@ const PricingResult = ({ data, onBack }: Props) => {
   const [clientSecret, setClientSecret] = useState<string | null>(null);
   const [isLoadingPayment, setIsLoadingPayment] = useState(false);
   const [paymentOption, setPaymentOption] = useState<"full" | "monthly">("monthly");
+  const [customerEmail, setCustomerEmail] = useState("");
+  const [showEmailPrompt, setShowEmailPrompt] = useState(false);
 
   const evData = getEVData(data.brand, data.model);
   const eligibility = checkEligibility(data.year, data.mileage);
@@ -39,24 +45,58 @@ const PricingResult = ({ data, onBack }: Props) => {
 
   const handleOpenCheckout = async () => {
     if (!selected) return;
+
+    if (paymentOption === "monthly") {
+      toast({
+        title: "Kuukausimaksu vaatii yhteydenoton",
+        description:
+          "Kuukausimaksu järjestetään erillisellä osamaksusopimuksella. Ota yhteyttä myyntiin tai valitse 'Maksa kerralla' jatkaaksesi verkossa.",
+      });
+      return;
+    }
+
+    if (!EMAIL_RE.test(customerEmail.trim())) {
+      setShowEmailPrompt(true);
+      toast({
+        title: "Sähköpostiosoite tarvitaan",
+        description: "Syötä sähköpostiosoitteesi kuittia ja sopimusta varten.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsLoadingPayment(true);
     try {
       const { data: intentData, error } = await supabase.functions.invoke('create-payment-intent', {
         body: {
-          amount: selected.price,
+          // Stripe expects the smallest currency unit (cents for EUR)
+          amount: Math.round(selected.price * 100),
           currency: 'eur',
           productName: `Jatkoturva - ${data.brand} ${data.model} (${selected.duration})`,
-          customerEmail: '',
+          customerEmail: customerEmail.trim(),
         },
       });
       if (error || intentData?.error) {
         console.error('Payment intent error:', error || intentData?.error);
+        toast({
+          title: "Maksun aloitus epäonnistui",
+          description:
+            (intentData?.error as string) ||
+            error?.message ||
+            "Yritä uudelleen tai ota yhteyttä asiakaspalveluun.",
+          variant: "destructive",
+        });
       } else {
         setClientSecret(intentData.clientSecret);
         setShowStripeModal(true);
       }
     } catch (err) {
       console.error('Error creating payment intent:', err);
+      toast({
+        title: "Maksun aloitus epäonnistui",
+        description: err instanceof Error ? err.message : "Tuntematon virhe.",
+        variant: "destructive",
+      });
     } finally {
       setIsLoadingPayment(false);
     }
@@ -299,35 +339,54 @@ const PricingResult = ({ data, onBack }: Props) => {
 
       {/* Sticky CTA */}
       <div className="fixed bottom-0 left-0 right-0 z-40 bg-background/90 backdrop-blur-md border-t border-border/50">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-          {selected && (
-            <div className="hidden sm:block">
-              <p className="font-black text-lg text-foreground">{paymentOption === "monthly" ? `${selected.monthlyPrice} €/kk` : `${selected.price} €`}</p>
-              <p className="text-xs text-muted-foreground">{selected.duration} · {data.brand} {data.model}</p>
+        <div className="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-3">
+          {paymentOption === "full" && (showEmailPrompt || customerEmail) && (
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
+              <label htmlFor="customer-email" className="text-xs text-muted-foreground sm:min-w-[120px]">
+                Sähköposti kuittia varten
+              </label>
+              <Input
+                id="customer-email"
+                type="email"
+                inputMode="email"
+                autoComplete="email"
+                placeholder="etunimi.sukunimi@example.com"
+                value={customerEmail}
+                onChange={(e) => setCustomerEmail(e.target.value)}
+                className="flex-1"
+              />
             </div>
           )}
-          <div className="flex flex-col items-center sm:items-end gap-1 flex-1 sm:flex-initial">
-            <Button
-              size="lg"
-              className="h-13 px-10 rounded-full text-base"
-              disabled={!selectedTier || isLoadingPayment}
-              onClick={handleOpenCheckout}
-            >
-              {isLoadingPayment ? (
-                <>
-                  <Loader2 className="w-5 h-5 animate-spin mr-2" />
-                  Ladataan...
-                </>
-              ) : paymentOption === "monthly" ? (
-                <>Aloita — vain {selected?.monthlyPrice} €/kk <ArrowRight className="w-5 h-5 ml-1" /></>
-              ) : (
-                <>Osta nyt — {selected?.price} € <ArrowRight className="w-5 h-5 ml-1" /></>
-              )}
-            </Button>
-            <p className="text-[10px] text-muted-foreground flex items-center gap-2">
-              <Lock className="w-3 h-3" />
-              Et sitoudu ennen maksua · Turva alkaa heti · Peruuta koska tahansa
-            </p>
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+            {selected && (
+              <div className="hidden sm:block">
+                <p className="font-black text-lg text-foreground">{paymentOption === "monthly" ? `${selected.monthlyPrice} €/kk` : `${selected.price} €`}</p>
+                <p className="text-xs text-muted-foreground">{selected.duration} · {data.brand} {data.model}</p>
+              </div>
+            )}
+            <div className="flex flex-col items-center sm:items-end gap-1 flex-1 sm:flex-initial">
+              <Button
+                size="lg"
+                className="h-13 px-10 rounded-full text-base"
+                disabled={!selectedTier || isLoadingPayment}
+                onClick={handleOpenCheckout}
+              >
+                {isLoadingPayment ? (
+                  <>
+                    <Loader2 className="w-5 h-5 animate-spin mr-2" />
+                    Ladataan...
+                  </>
+                ) : paymentOption === "monthly" ? (
+                  <>Pyydä kuukausimaksutarjous <ArrowRight className="w-5 h-5 ml-1" /></>
+                ) : (
+                  <>Osta nyt — {selected?.price} € <ArrowRight className="w-5 h-5 ml-1" /></>
+                )}
+              </Button>
+              <p className="text-[10px] text-muted-foreground flex items-center gap-2">
+                <Lock className="w-3 h-3" />
+                Et sitoudu ennen maksua · Turva alkaa heti · Peruuta koska tahansa
+              </p>
+            </div>
           </div>
         </div>
       </div>
