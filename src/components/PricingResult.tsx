@@ -45,24 +45,58 @@ const PricingResult = ({ data, onBack }: Props) => {
 
   const handleOpenCheckout = async () => {
     if (!selected) return;
+
+    if (paymentOption === "monthly") {
+      toast({
+        title: "Kuukausimaksu vaatii yhteydenoton",
+        description:
+          "Kuukausimaksu järjestetään erillisellä osamaksusopimuksella. Ota yhteyttä myyntiin tai valitse 'Maksa kerralla' jatkaaksesi verkossa.",
+      });
+      return;
+    }
+
+    if (!EMAIL_RE.test(customerEmail.trim())) {
+      setShowEmailPrompt(true);
+      toast({
+        title: "Sähköpostiosoite tarvitaan",
+        description: "Syötä sähköpostiosoitteesi kuittia ja sopimusta varten.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsLoadingPayment(true);
     try {
       const { data: intentData, error } = await supabase.functions.invoke('create-payment-intent', {
         body: {
-          amount: selected.price,
+          // Stripe expects the smallest currency unit (cents for EUR)
+          amount: Math.round(selected.price * 100),
           currency: 'eur',
           productName: `Jatkoturva - ${data.brand} ${data.model} (${selected.duration})`,
-          customerEmail: '',
+          customerEmail: customerEmail.trim(),
         },
       });
       if (error || intentData?.error) {
         console.error('Payment intent error:', error || intentData?.error);
+        toast({
+          title: "Maksun aloitus epäonnistui",
+          description:
+            (intentData?.error as string) ||
+            error?.message ||
+            "Yritä uudelleen tai ota yhteyttä asiakaspalveluun.",
+          variant: "destructive",
+        });
       } else {
         setClientSecret(intentData.clientSecret);
         setShowStripeModal(true);
       }
     } catch (err) {
       console.error('Error creating payment intent:', err);
+      toast({
+        title: "Maksun aloitus epäonnistui",
+        description: err instanceof Error ? err.message : "Tuntematon virhe.",
+        variant: "destructive",
+      });
     } finally {
       setIsLoadingPayment(false);
     }
